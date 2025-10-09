@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Ultimate Cyber Form</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+
+   @font-face {
+      font-family: 'MyFont';
+      src: url('MyFont.C:/Users/WINDOWS 11/Desktop/my_project/templates/2 Kamran (1).ttf') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'C:/Users/WINDOWS 11/Desktop/my_project/templates/2 Kamran (1).ttf', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      background: #050510;
+      color: #fff;
+    }
+
+    /* --- بک‌گراند Grid نئونی --- */
+    .grid-bg {
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: 
+        linear-gradient(90deg, rgba(0,255,255,0.15) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(0,255,255,0.15) 1px, transparent 1px);
+      background-size: 80px 80px;
+      animation: moveGrid 20s linear infinite;
+      z-index: 0;
+    }
+    @keyframes moveGrid {
+      from { transform: translate(0,0) }
+      to { transform: translate(-80px,-80px) }
+    }
+
+    /* --- ذرات شناور --- */
+    .particles span {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: #0ff;
+      border-radius: 50%;
+      animation: float 10s linear infinite;
+    }
+    .particles span:nth-child(odd){ background:#f0f; }
+    @keyframes float {
+      from { transform: translateY(100vh); opacity: 0; }
+      50% { opacity: 1; }
+      to { transform: translateY(-10vh); opacity: 0; }
+    }
+
+    /* --- فرم شیشه‌ای با حاشیه RGB --- */
+    .form-container {
+      width: 440px;
+      padding: 45px 35px;
+      border-radius: 20px;
+      background: rgba(20,20,40,0.55);
+      backdrop-filter: blur(20px);
+      border: 3px solid transparent;
+      background-clip: padding-box;
+      box-shadow: 0 0 25px rgba(0,255,255,0.3), 0 0 60px rgba(255,0,255,0.2);
+      text-align: center;
+      z-index: 2;
+      transform: rotateY(90deg) scale(0.6);
+      opacity: 0;
+      animation: formAppear 1.5s ease forwards;
+    }
+    @keyframes formAppear {
+      to { transform: rotateY(0) scale(1); opacity: 1; }
+    }
+    .form-container::before {
+      content:"";
+      position:absolute;
+      inset:0;
+      border-radius:20px;
+      padding:2px;
+      background: linear-gradient(135deg, cyan, magenta, blue, lime);
+      background-size:400% 400%;
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      animation: borderAnim 8s linear infinite;
+      z-index:-1;
+    }
+    @keyframes borderAnim {
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+    }
+
+    h2 {
+      margin-bottom: 25px;
+      font-size: 26px;
+      color: #0ff;
+      text-shadow: 0 0 12px cyan, 0 0 24px magenta;
+    }
+
+    /* --- فیلدهای ورودی --- */
+    .input-box {
+      position: relative;
+      margin: 22px 0;
+    }
+    .input-box input,
+    .input-box select {
+      width: 90%;
+      padding: 14px 16px;
+      border: none;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.08);
+      color: #000000;
+      font-size: 15px;
+      outline: none;
+      transition: 0.4s ease;
+    }
+    .input-box input:focus,
+    .input-box select:focus {
+      background: rgba(255,255,255,0.15);
+      box-shadow: 0 0 15px cyan, inset 0 0 10px rgba(0,255,255,0.4);
+    }
+    /* افکت موج نور */
+    .input-box input:focus::after {
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:0;
+      width:100%;
+      height:2px;
+      background:linear-gradient(90deg,cyan,magenta,blue);
+      animation: laser 1s linear forwards;
+    }
+    @keyframes laser {
+      from{transform:scaleX(0);opacity:0}
+      to{transform:scaleX(1);opacity:1}
+    }
+
+    /* لیبل شناور */
+    .input-box label {
+      position: absolute;
+      left: 16px;
+      top: 14px;
+      color: rgba(255,255,255,0.6);
+      font-size: 14px;
+      pointer-events: none;
+      transition: 0.3s ease;
+    }
+    .input-box input:focus + label,
+    .input-box input:not(:placeholder-shown) + label,
+    .input-box select:focus + label {
+      top: -12px;
+      left: 12px;
+      font-size: 12px;
+      color: #f0f;
+      text-shadow: 0 0 10px magenta;
+    }
+
+    /* --- دکمه انفجاری --- */
+    button {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      margin-top: 25px;
+      padding: 14px;
+      border: none;
+      border-radius: 14px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      background: linear-gradient(90deg, #00f0ff, #b400ff, #00ff88);
+      color: #fff;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 15px cyan;
+    }
+    button:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 30px #0ff, 0 0 60px #b0f, 0 0 90px #0f8;
+    }
+    button::after {
+      content:"";
+      position:absolute;
+      left:50%;top:50%;
+      width:0;height:0;
+      background:rgba(255,255,255,0.4);
+      border-radius:50%;
+      transform:translate(-50%,-50%);
+      transition:width .6s,height .6s;
+      z-index:0;
+    }
+    button:active::after {
+      width:500px;height:500px;transition:0s;
+    }
+
+    /* لینک */
+    .link { margin-top: 20px; font-size: 14px; }
+    .link a { color:#0f8;text-decoration:none;font-weight:bold;text-shadow:0 0 10px #0f8; }
+
+    /* لوگو */
+    .logo {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 3;
+    }
+    .logo img {
+      height: 80px;
+      width: auto;
+      filter: drop-shadow(0 0 15px cyan);
+    }
+  </style>
+</head>
+<body>
+  <!-- Grid -->
+  <div class="grid-bg"></div>
+
+  <!-- Particles -->
+  <div class="particles">
+    <span style="left:10%;animation-duration:8s;"></span>
+    <span style="left:30%;animation-duration:12s;"></span>
+    <span style="left:50%;animation-duration:10s;"></span>
+    <span style="left:70%;animation-duration:14s;"></span>
+    <span style="left:90%;animation-duration:9s;"></span>
+  </div>
+
+  <!-- Logo -->
+
+  <!-- Form -->
+  <div class="form-container">
+
+    <form action="{{ url_for('signup') }}" method="POST">
+      <div class="input-box">
+        <input type="text" name="name" placeholder=" " required>
+        <label>نام و نام خانوادگی</label>
+      </div>
+      <div class="input-box">
+        <input type="text" name="national_id" placeholder=" " maxlength="10" pattern="\d{10}" required>
+        <label>کد ملی</label>
+      </div>
+      <div class="input-box">
+        <input type="password" name="password" placeholder=" " required>
+        <label>رمز عبور</label>
+      </div>
+      <div class="input-box">
+        <select name="grade_label" required>
+          <option value="" disabled selected hidden></option>
+          <option value="grade_7">هفتم</option>
+          <option value="grade_8">هشتم</option>
+          <option value="grade_9">نهم</option>
+          <option value="grade_10_tajrobi">دهم تجربی</option>
+          <option value="grade_10_riazi">دهم ریاضی</option>
+          <option value="grade_10_ensani">دهم انسانی</option>
+          <option value="grade_11_riazi">یازدهم ریاضی</option>
+          <option value="grade_11_ensani">یازدهم انسانی</option>
+          <option value="grade_11_tajrobi">یازدهم تجربی</option>
+          <option value="grade_12_ensani">دوازدهم انسانی</option>
+          <option value="grade_12_tajrobi">دوازدهم تجربی</option>
+          <option value="grade_12_riazi">دوازدهم ریاضی</option>
+          <option value="graduate_tajrobi">فارغ‌التحصیل تجربی</option>
+          <option value="graduate_riazi">فارغ‌التحصیل ریاضی</option>
+          <option value="graduate_ensani">فارغ‌التحصیل انسانی</option>
+        </select>
+        <label>مقطع تحصیلی</label>
+      </div>
+
+      <button type="submit"> ثبت‌نام 🚀</button>
+    </form>
+
+
+    <div class="link">
+      <p>قبلاً ثبت‌نام کرده‌اید؟ <a href="{{ url_for('login') }}">ورود کنید</a></p>
+    </div>
+  </div>
+</body>
+</html>
+

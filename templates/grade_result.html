@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <header class="site-header"> <!-- اگر هدر ثابت داری، ارتفاعش رو در CSS محاسبه کن -->
+    <!-- محتویات هدر -->
+  </header>
+<link rel="stylesheet">
+<meta charset="UTF-8">
+
+
+<style>
+
+/* CSS */
+html, body {
+  height: 100%;
+  margin: 0; /* مهم: حذف margin پیش‌فرض برای جلوگیری از اسکرول */
+  overflow-x: hidden;
+}
+
+.hero {
+  height: 199%;           
+  width: 115%;
+  background-image: url("C:/Users/WINDOWS 11/Desktop/my_project/static/images/عکس برنامه.jpg");
+  background-size:contain;      /* تصویر را برای پوشش کامل برش می‌دهد */
+  background-position: center; /* حفظ تمرکز روی مرکز تصویر */
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;         /* مرکز‌چین عمودی محتوا */
+  justify-content: center;     /* مرکز‌چین افقی محتوا */
+  justify-content: center;
+  align-items: center;
+}
+
+/* اگر می‌خواهی لایه تیره/شفاف روش باشه */
+ero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  background: rgba(0,0,0,0.25); /* یا شفاف‌تر/تیره‌تر به دلخواه */
+}
+
+/* در موبایل ممکنه بخوای متن کوچکتر باشه */
+
+
+
+
+/* کل صفحه، عکس کاور */
+.page {
+
+ font-family: 'Vazirmatn', sans-serif;
+  background-size: 30%;       /* عکس کاور کل صفحه */
+  background-position: center;  /* وسط چین */
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* باکس جدول داخل بخش سفید */
+.table-box {
+width: 50%;
+font-family: 'Vazirmatn', sans-serif;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 150px;
+}
+
+/* استایل جدول */
+table {
+  table-layout: fixed;   /* سایز سلول‌ها ثابت میشه */
+  width: 150%;           /* یا هر عرضی که خواستی */
+}
+
+td {
+  border: 0px solid #ffffff;
+  text-align: center;
+  font-weight: bold;
+   font-family: 'Vazirmatn', sans-serif;
+   font-size: 12px;
+   width: 30px;
+   height: 10px;
+}
+
+</style>
+</head>
+<body>
+
+<!-- HTML -->
+
+
+
+<section class="hero"  style="background-image:url('{{url_for('static',filename='images/عکس برنامه.jpg')}}');">
+
+  <div class="table-box">
+  
+      <!-- اینجا جدولت --><div class="page">
+ 
+  <table>
+   
+  <!-- ردیف 1 -->
+  <tr>
+  <td id="cell_r0_c0" style="color: rgb(255, 75, 75); grid-column: 1 / 2; grid-row: 1 / 2; font-size: 16px;    font-family: 'Vazirmatn', sans-serif ; height: 30px;"> شنبه   </td>
+
+  <td id="cell_r1_c1" style="height: 80px; width: 50px;">{{ table.get('cell_r1_c1', 'سطر1 ستون1') }}</td>
+  <td id="cell_r1_c2">{{ table.get('cell_r1_c2', 'سطر1 ستون2') }}</td>
+  <td id="cell_r1_c3">{{ table.get('cell_r1_c3', 'سطر1 ستون3') }}</td>
+  <td id="cell_r1_c4">{{ table.get('cell_r1_c4', 'سطر1 ستون3') }}</td>
+  <td id="cell_r1_c5">{{ table.get('cell_r1_c5', 'سطر1 ستون3') }}</td>
+  <td id="cell_r1_c6">{{ table.get('cell_r1_c6', 'سطر1 ستون3') }}</td>
+  <td id="cell_r1_c7">{{ table.get('cell_r1_c7', 'سطر1 ستون3') }}</td>
+  <td id="cell_r1_c8">{{ table.get('cell_r1_c8', 'سطر1 ستون3') }}</td>
+  <td id="cell_r1_c9">{{ table.get('cell_r1_c9', 'سطر1 ستون3') }}</td>
+<td id="cell_r1_c12">{{ table.get('cell_r1_c12', 'سطر1 ستون3') }}</td>
+<td id="cell_r1_c13">{{ table.get('cell_r1_c13', 'سطر1 ستون3') }}</td>
+<td id="cell_r1_c14">{{ table.get('cell_r1_c14', 'سطر1 ستون3') }}</td>
+  <td id="cell_r1_c10">{{ table.get('cell_r1_c10', 'سطر1 ستون3') }}</td>
+  
+  <td id="cell_r1_c11" style="color: rgb(255, 75, 75);  font-size: 14.5px; font-family: 'Vazirmatn', sans-serif; ">{{ table.get('cell_r1_c11', 'سطر1 ستون3') }}</td>
+</tr>
+
+
+
+
+  <!-- ردیف 2 -->
+  <tr>
+  <td id="cell_r0_c0" style="color: rgb(255, 75, 75); font-size: 16px;    font-family: 'Vazirmatn', sans-serif ;   height: 50px;">یکشنبه </td>
+  <td id="cell_r2_c1" style="height: 80px;  width: 70px;">{{ table.get('cell_r2_c1', 'سطر1 ستون1') }}</td>
+  <td id="cell_r2_c2">{{ table.get('cell_r2_c2', 'سطر1 ستون2') }}</td>
+  <td id="cell_r2_c3">{{ table.get('cell_r2_c3', 'سطر1 ستون3') }}</td>
+  <td id="cell_r2_c4">{{ table.get('cell_r2_c4', 'سطر1 ستون3') }}</td>
+  <td id="cell_r2_c5">{{ table.get('cell_r2_c5', 'سطر1 ستون3') }}</td>
+  <td id="cell_r2_c6">{{ table.get('cell_r2_c6', 'سطر1 ستون3') }}</td>
+  <td id="cell_r2_c7">{{ table.get('cell_r2_c7', 'سطر1 ستون3') }}</td>
+  <td id="cell_r2_c8">{{ table.get('cell_r2_c8', 'سطر1 ستون3') }}</td>
+  <td id="cell_r2_c9">{{ table.get('cell_r2_c9', 'سطر1 ستون3') }}</td>
+  <td id="cell_r2_c10">{{ table.get('cell_r2_c10', 'سطر1 ستون3') }}</td>
+  <td id="cell_r2_c12">{{ table.get('cell_r2_c12', 'سطر1 ستون3') }}</td>
+  <td id="cell_r2_c13">{{ table.get('cell_r2_c13', 'سطر1 ستون3') }}</td>
+  <td id="cell_r2_c14">{{ table.get('cell_r2_c14', 'سطر1 ستون3') }}</td>
+  <td id="cell_r2_c11" style="color: rgb(255, 75, 75); font-size: 14.5px;">{{ table.get('cell_r2_c11', 'سطر1 ستون3') }}</td>
+</tr>
+
+
+
+  <!-- ردیف 3 -->
+  <tr>
+  <td  style="color: rgb(255, 75, 75);font-size: 16px;    font-family: 'Vazirmatn', sans-serif ;      height: 50px; ">دوشنبه</td>
+  <td id="cell_r3_c1" style="height: 80px;  width: 70px;" >{{ table.get('cell_r3_c1', 'سطر1 ستون1') }}</td>
+  <td id="cell_r3_c2">{{ table.get('cell_r3_c2', 'سطر1 ستون2') }}</td>
+  <td id="cell_r3_c3">{{ table.get('cell_r3_c3', 'سطر1 ستون3') }}</td>
+  <td id="cell_r3_c4">{{ table.get('cell_r3_c4', 'سطر1 ستون3') }}</td>
+  <td id="cell_r3_c5">{{ table.get('cell_r3_c5', 'سطر1 ستون3') }}</td>
+  <td id="cell_r3_c6">{{ table.get('cell_r3_c6', 'سطر1 ستون3') }}</td>
+  <td id="cell_r3_c7">{{ table.get('cell_r3_c7', 'سطر1 ستون3') }}</td>
+  <td id="cell_r3_c8">{{ table.get('cell_r3_c8', 'سطر1 ستون3') }}</td>
+  <td id="cell_r3_c9">{{ table.get('cell_r3_c9', 'سطر1 ستون3') }}</td>
+  <td id="cell_r3_c10">{{ table.get('cell_r3_c10', 'سطر1 ستون3') }}</td>
+  <td id="cell_r3_c12">{{ table.get('cell_r3_c12', 'سطر1 ستون3') }}</td>
+  <td id="cell_r3_c13">{{ table.get('cell_r3_c13', 'سطر1 ستون3') }}</td>
+  <td id="cell_r3_c14">{{ table.get('cell_r3_c14', 'سطر1 ستون3') }}</td>
+
+  <td id="cell_r3_c11" style="color: rgb(255, 75, 75); font-size: 14.5px;">{{ table.get('cell_r3_c11', 'سطر1 ستون3') }}</td>
+</tr>
+
+  <tr>
+  <td  style="color: rgb(255, 75, 75); font-size: 16px;    font-family: 'Vazirmatn', sans-serif ;  height: 50px;">سه شنبه</td>
+  <td id="cell_r4_c1" style="height: 80px;  width: 70px;">{{ table.get('cell_r4_c1', 'سطر1 ستون1') }}</td>
+  <td id="cell_r4_c2">{{ table.get('cell_r4_c2', 'سطر1 ستون2') }}</td>
+  <td id="cell_r4_c3">{{ table.get('cell_r4_c3', 'سطر1 ستون3') }}</td>
+  <td id="cell_r4_c4">{{ table.get('cell_r4_c4', 'سطر1 ستون3') }}</td>
+  <td id="cell_r4_c5">{{ table.get('cell_r4_c5', 'سطر1 ستون3') }}</td>
+  <td id="cell_r4_c6">{{ table.get('cell_r4_c6', 'سطر1 ستون3') }}</td>
+  <td id="cell_r4_c7">{{ table.get('cell_r4_c7', 'سطر1 ستون3') }}</td>
+  <td id="cell_r4_c8">{{ table.get('cell_r4_c8', 'سطر1 ستون3') }}</td>
+  <td id="cell_r4_c9">{{ table.get('cell_r4_c9', 'سطر1 ستون3') }}</td>
+  <td id="cell_r4_c10">{{ table.get('cell_r4_c10', 'سطر1 ستون3') }}</td>
+  <td id="cell_r4_c12">{{ table.get('cell_r4_c12', 'سطر1 ستون3') }}</td>
+  <td id="cell_r4_c13">{{ table.get('cell_r4_c13', 'سطر1 ستون3') }}</td>
+  <td id="cell_r4_c14">{{ table.get('cell_r4_c14', 'سطر1 ستون3') }}</td>
+  <td id="cell_r4_c11" style="color: rgb(255, 75, 75); font-size: 14.5px;">{{ table.get('cell_r4_c11', 'سطر1 ستون3') }}</td>
+</tr>
+
+  <tr>
+  <td style="color: rgb(255, 75, 75);font-size: 16px;    font-family: 'Vazirmatn', sans-serif ; height: 80px;" >چهارشنبه</td>
+  <td id="cell_r5_c1" style="height: 80px;  width: 70px;">{{ table.get('cell_r5_c1', 'سطر1 ستون1') }}</td>
+  <td id="cell_r5_c2">{{ table.get('cell_r5_c2', 'سطر1 ستون2') }}</td>
+  <td id="cell_r5_c3">{{ table.get('cell_r5_c3', 'سطر1 ستون3') }}</td>
+  <td id="cell_r5_c4">{{ table.get('cell_r5_c4', 'سطر1 ستون3') }}</td>
+  <td id="cell_r5_c5">{{ table.get('cell_r5_c5', 'سطر1 ستون3') }}</td>
+  <td id="cell_r5_c6">{{ table.get('cell_r5_c6', 'سطر1 ستون3') }}</td>
+  <td id="cell_r5_c7">{{ table.get('cell_r5_c7', 'سطر1 ستون3') }}</td>
+  <td id="cell_r5_c8">{{ table.get('cell_r5_c8', 'سطر1 ستون3') }}</td>
+  <td id="cell_r5_c9">{{ table.get('cell_r5_c9', 'سطر1 ستون3') }}</td>
+  <td id="cell_r5_c10">{{ table.get('cell_r5_c10', 'سطر1 ستون3') }}</td>
+  <td id="cell_r5_c12">{{ table.get('cell_r5_c12', 'سطر1 ستون3') }}</td>
+  <td id="cell_r5_c13">{{ table.get('cell_r5_c13', 'سطر1 ستون3') }}</td>
+  <td id="cell_r5_c14">{{ table.get('cell_r5_c14', 'سطر1 ستون3') }}</td>
+  <td id="cell_r5_c11" style="color: rgb(255, 75, 75);  font-size: 14.5px;">{{ table.get('cell_r5_c11', 'سطر1 ستون3') }}</td>
+</tr>
+
+
+
+  <tr>
+  <td  style="color: rgb(255, 75, 75);font-size: 16px;    font-family: 'Vazirmatn', sans-serif ; height: 80px;">پنجشنبه</td>
+  <td id="cell_r6_c1" style="height: 80px;  width: 70px;">{{ table.get('cell_r6_c1', 'سطر1 ستون1') }}</td>
+  <td id="cell_r6_c2">{{ table.get('cell_r6_c2', 'سطر1 ستون2') }}</td>
+  <td id="cell_r6_c3">{{ table.get('cell_r6_c3', 'سطر1 ستون3') }}</td>
+  <td id="cell_r6_c4">{{ table.get('cell_r6_c4', 'سطر1 ستون3') }}</td>
+  <td id="cell_r6_c5">{{ table.get('cell_r6_c5', 'سطر1 ستون3') }}</td>
+  <td id="cell_r6_c6">{{ table.get('cell_r6_c6', 'سطر1 ستون3') }}</td>
+  <td id="cell_r6_c7">{{ table.get('cell_r6_c7', 'سطر1 ستون3') }}</td>
+  <td id="cell_r6_c8">{{ table.get('cell_r6_c8', 'سطر1 ستون3') }}</td>
+  <td id="cell_r6_c9">{{ table.get('cell_r6_c9', 'سطر1 ستون3') }}</td>
+  <td id="cell_r6_c10">{{ table.get('cell_r6_c10', 'سطر1 ستون3') }}</td>
+  <td id="cell_r6_c12">{{ table.get('cell_r6_c12', 'سطر1 ستون3') }}</td>
+  <td id="cell_r6_c13">{{ table.get('cell_r6_c13', 'سطر1 ستون3') }}</td>
+  <td id="cell_r6_c14">{{ table.get('cell_r6_c14', 'سطر1 ستون3') }}</td>
+  <td id="cell_r6_c11" style="color: rgb(255, 75, 75);  font-size: 16px;">{{ table.get('cell_r6_c11', 'سطر1 ستون3') }}</td>
+</tr>
+
+
+  <tr>
+  <td  style="color: rgb(255, 75, 75); font-size: 16px;    font-family: 'Vazirmatn', sans-serif ; height: 80px;">جمعه</td>
+  <td id="cell_r7_c1" style="height: 80px;  width: 70px;">{{ table.get('cell_r7_c1', 'سطر1 ستون1') }}</td>
+  <td id="cell_r7_c2">{{ table.get('cell_r7_c2', 'سطر1 ستون2') }}</td>
+  <td id="cell_r7_c3">{{ table.get('cell_r7_c3', 'سطر1 ستون3') }}</td>
+  <td id="cell_r7_c4">{{ table.get('cell_r7_c4', 'سطر1 ستون3') }}</td>
+  <td id="cell_r7_c5">{{ table.get('cell_r7_c5', 'سطر1 ستون3') }}</td>
+  <td id="cell_r7_c6">{{ table.get('cell_r7_c6', 'سطر1 ستون3') }}</td>
+  <td id="cell_r7_c7">{{ table.get('cell_r7_c7', 'سطر1 ستون3') }}</td>
+  <td id="cell_r7_c8">{{ table.get('cell_r7_c8', 'سطر1 ستون3') }}</td>
+  <td id="cell_r7_c9">{{ table.get('cell_r7_c9', 'سطر1 ستون3') }}</td>
+  <td id="cell_r7_c10">{{ table.get('cell_r7_c10', 'سطر1 ستون3') }}</td>
+  <td id="cell_r7_c12">{{ table.get('cell_r7_c12', 'سطر1 ستون3') }}</td>
+  <td id="cell_r7_c13">{{ table.get('cell_r7_c13', 'سطر1 ستون3') }}</td>
+  <td id="cell_r7_c14">{{ table.get('cell_r7_c14', 'سطر1 ستون3') }}</td>
+  <td id="cell_r7_c11" style="color: rgb(255, 75, 75);  font-size: 14.5px;">{{ table.get('cell_r7_c11', 'سطر1 ستون3') }}</td>
+ </tr>
+
+
+
+  
+
+  </table>
+  </div>
+</section>
+
+  <!-- بقیه محتوا در بخش‌های بعدی -->
+
+
+
+
+
+
+</div>
+
+
+
+<!-- لوگو بالا سمت راست -->
+
+
+</body>
+</html>
+

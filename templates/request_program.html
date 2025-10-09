@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>درخواست برنامه</title>
+  <style>
+    /* بک‌گراند ویدیو تمام صفحه */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Tahoma, sans-serif;
+      overflow: hidden;
+    }
+    video.bg {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    /* کارت شیشه‌ای */
+    .container {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 400px;
+      height: 250px;
+      padding: 25px 30px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+      color: #fff;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    label {
+      font-size: 14px;
+      margin-top: 15px;
+      display: block;
+    }
+    select, input[type=radio], button {
+      margin-top: 8px;
+    }
+    select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      background: rgba(255,255,255,0.2);
+      color: #fff;
+    }
+    select option { color: #000; } /* برای دیدن متن در لیست */
+    .radio label {
+      display: block;
+      margin-top: 8px;
+      cursor: pointer;
+    }
+    .radio input { margin-left: 6px; }
+    button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      background: #484950;
+      color: white;
+      transition: 0.3s;
+    }
+    button:hover { background: #030303; }
+
+    /* لوگو گوشه بالا راست */
+.logo {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+}
+.logo img {
+  height: 150px; /* سایز لوگو */
+  width: auto;
+}
+
+  </style>
+</head>
+<body>
+
+<!-- ویدیو پس‌زمینه -->
+<video autoplay muted loop class="bg">
+  <source src="C:\Users\WINDOWS 11\Desktop\my_project\2cc876cff49305a61c11194a72c067e423580082-1080p.mp4" type="video/mp4">
+</video>
+<div class="logo">
+  <img src="C:\Users\WINDOWS 11\Desktop\my_project\photo_2025-08-27_16-54-29.jpg" alt="لوگو">
+</div>
+
+
+<div class="container">
+  <form method="POST">
+
+    <!-- نوع برنامه -->
+    <label>نوع برنامه مورد نظر:</label>
+    <div class="radio">
+      <label><input type="radio" name="program_type" value="normal" required> برنامه عادی</label>
+      <label><input type="radio" name="program_type" value="ultimatum"> برنامه اولتیماتوم</label>
+    </div>
+
+    <!-- مقطع تحصیلی -->
+    <label>مقطع تحصیلی:</label>
+    <select name="grade" required>
+      <option value="هفتم">هفتم</option>
+      <option value="هشتم">هشتم</option>
+      <option value="نهم">نهم</option>
+      <option value="دهم تجربی">دهم تجربی</option>
+      <option value="دهم ریاضی">دهم ریاضی</option>
+      <option value="دهم انسانی">دهم انسانی</option>
+      <option value="یازدهم تجربی">یازدهم تجربی</option>
+      <option value="یازدهم ریاضی">یازدهم ریاضی</option>
+      <option value="یازدهم انسانی">یازدهم انسانی</option>
+      <option value="دوازدهم تجربی">دوازدهم تجربی</option>
+      <option value="دوازدهم ریاضی">دوازدهم ریاضی</option>
+      <option value="دوازدهم انسانی">دوازدهم انسانی</option>
+      <option value="فارغ التحصیل تجربی">فارغ التحصیل تجربی</option>
+      <option value="فارغ التحصیل انسانی">فارغ التحصیل انسانی</option>
+      <option value="فارغ التحصیل ریاضی">فارغ التحصیل ریاضی</option>
+    </select>
+
+    <button type="submit">ادامه</button>
+  </form>
+</div>
+
+</body>
+</html>

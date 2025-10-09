@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سوالات مقطع هفتم</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap');
+
+body {
+    font-family: 'Vazirmatn', sans-serif;
+    background: linear-gradient(135deg, #fdfdfd, #f6f7fb);
+    color: #2a2a2a;
+    margin: 0;
+    padding: 0;
+    line-height: 1.8;
+}
+
+.container {
+    max-width: 880px;
+    margin: 50px auto;
+    background: #ffffffcc; /* سفید نیمه‌شفاف */
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+.container:hover {
+    box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+    transform: translateY(-3px);
+}
+
+h2 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 35px;
+    color: #222;
+    position: relative;
+}
+h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #5b6cff, #8f9dff);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+label {
+    display: block;
+    margin-top: 22px;
+    font-weight: 500;
+    font-size: 15px;
+    color: #444;
+}
+
+select,
+input[type="text"] {
+    width: 100%;
+    padding: 12px 14px;
+    margin-top: 8px;
+    font-size: 15px;
+    border-radius: 12px;
+    border: 1px solid #e1e4eb;
+    background:  #e4efff;
+;
+    transition: all 0.25s ease;
+}
+select:focus,
+input[type="text"]:focus {
+    border-color: #5b6cff;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(91, 108, 255, 0.15);
+    outline: none;
+}
+
+input[type="checkbox"] {
+    accent-color: #5b6cff;
+    margin-right: 6px;
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: 0.2s ease;
+}
+input[type="checkbox"]:hover {
+    transform: scale(1.15);
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 35px;
+    background: linear-gradient(135deg, #5b6cff, #6f86ff);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'Vazirmatn', sans-serif;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 14px rgba(91, 108, 255, 0.25);
+}
+button:hover {
+    background: linear-gradient(135deg, #4a59d9, #6f86ff);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(91, 108, 255, 0.35);
+}
+button:active {
+    transform: scale(0.98);
+}
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>سوالات مقطع هشتم</h2>
+    <form method="POST" action="/submit-answers">
+
+        <!-- سوال 1 -->
+        <label>برای مطالعه درس علوم ......چه نیاز مطالعاتی را برای خود میبینید مبحث خود را نیز انتخاب کنید</label>
+        <select name="q1" required>
+            <option value="گزینه اول ">مطالعه 1 الی 2 ساعت </option>
+            <option value="گزینه دوم">مطالعه 2 الی 4 ساعت </option>
+            <option value="گزینه سوم ">مطالعه 4 الی 6 ساعت </option>
+            <option value="گزینه چهارم">مطالعه 6 الی 8 ساعت </option>
+            <option value="گزینه پنجم">مطالعه بالای 8 ساعت</option>
+            <option value="گزینه ششم">مطالعه تشریحی </option>
+            <option value="گزینه هفتم ">تست زیر 50</option>
+            <option value="گزینه هشتم ">تست 50 ال 100</option>
+            <option value="گزینه نهم ">تست 100 الی150</option>
+            <option value="گزینه دهم ">تست 150 الی 200</option>
+            <option value="گزینه یازدهم  ">تست 200 الی 300</option> 
+            <option value="گزنه دوازدهم">تست  بالای 300</option>
+            <option value="گزینه سیزدهم ">مرور</option>
+            <option value="گزینه چهاردهم ">ازمون</option>
+            <option value="گزینه پانزدهم ">تمرین تشریحی</option>
+            <option value="گزینه شانزدهم ">ویدیو 1 الی 2 ساعت</option>
+            <option value="گزینه هفدهتم ">ویدیو 2 الی 4 ساعت</option>
+            <option value="گزینه هیجدهم ">ویدیو4 الی 6 ساعت</option>
+            <option value="گزینه نوزدهم">ویدیو 6 الی 8 ساعت</option>
+            <option value="گزینه  بیستم ">ویدیو بالای 8</option>
+        </select>
+        <select name="topic_q1" required>
+            <option value=" نفکر و تجزیه ">تفکر و تجربه</option>
+            <option value=" اندازه گیری در علوم و ابزار های ان">اندازه‌گیری در علوم و ابزارهای آن</option>
+            <option value="اتم ها الفبای مواد "> اتم‌ها ؛الفبای مواد</option>
+            <option value="مواد پیرامون ما"> مواد پیرامون ما</option>
+            <option value=" از معدن تا خانه"> از معدن تا خانه</option>
+            <option value=" سفر اب روی زمین"> سفر آب روی زمین</option>
+           
+            <option value="انرژی و تبدیل انها"> انرژی و تبدیل‌های آن</option>
+            <option value= "منابع انرژی">منابع انرژی</option>
+            <option value=" گرما و بهینه سازی مصرف انرژی">گرما و بهینه‌سازی مصرف انرژی</option>
+            <option value="یاخته و سازمانبندی انها">یاخته و سازمان‌بندی آن</option>
+            <option value="سفره سلامت "> سفره سلامت</option>
+            <option value="سفره غذا ">سفر غذا</option>
+            <option value=" گردش مواد ">گردش مواد</option>
+        </select>
+        
+
+        <!-- سوال 2 -->
+        
+        <label> برای مطالعه درس ریاضی ......چه نیاز مطالعاتی را برای خود میبینید </label>
+        <select name="q2" required>
+            <option value="گزینه اول ">مطالعه 1 الی 2 ساعت </option>
+            <option value="گزینه دوم">مطالعه 2 الی 4 ساعت </option>
+            <option value="گزینه سوم ">مطالعه 4 الی 6 ساعت </option>
+            <option value="گزینه چهارم">مطالعه 6 الی 8 ساعت </option>
+            <option value="گزینه پنجم">مطالعه بالای 8 ساعت</option>
+            <option value="گزینه ششم">مطالعه تشریحی </option>
+            <option value="گزینه هفتم ">تست زیر 50</option>
+            <option value="گزینه هشتم ">تست 50 ال 100</option>
+            <option value="گزینه نهم ">تست 100 الی150</option>
+            <option value="گزینه دهم ">تست 150 الی 200</option>
+            <option value="گزینه یازدهم  ">تست 200 الی 300</option> 
+            <option value="گزنه دوازدهم">تست  بالای 300</option>
+            <option value="گزینه سیزدهم ">مرور</option>
+            <option value="گزینه چهاردهم ">ازمون</option>
+            <option value="گزینه پانزدهم ">تمرین تشریحی</option>
+            <option value="گزینه شانزدهم ">ویدیو 1 الی 2 ساعت</option>
+            <option value="گزینه هفدهتم ">ویدیو 2 الی 4 ساعت</option>
+            <option value="گزینه هیجدهم ">ویدیو4 الی 6 ساعت</option>
+            <option value="گزینه نوزدهم">ویدیو 6 الی 8 ساعت</option>
+            <option value="گزینه  بیستم ">ویدیو بالای 8</option>
+        </select>
+        <select name="topic_q2" required>
+            <option value="راهبردهای حل مسئله- روشهای نمادین ">راهبردهای حل مسئله- روشهای نمادین</option>
+            <option value="اندازه‌گیری در علوم و ابزارهای آن">اندازه‌گیری در علوم و ابزارهای آن</option>
+            <option value="عددهای صحیح"> عددهای صحیح</option>
+            <option value=" هندسه و استدلال">  هندسه و استدلال </option>
+            <option value="جبر و معادله "> جبر و معادله </option>
+            <option value="مساحت و حجم "> مساحت و حجم </option>
+            <option value="اعداد طبیعی و اعداد اول  "> اعداد طبیعی و اعداد اول </option>
+            <option value="بردار">  بردار</option>
+            <option value="توان"> توان</option>
+            <option value="احتمال"> احتمال</option>
+            <option value="اعداد گویا "> اعداد گویا </option>
+            <option value="تبدیل های هندسی ">  تبدیل های هندسی </option>
+
+        </select>
+        
+        <!-- سوال 3 -->
+       
+        <label> برای مطالعه درس مطالعات اجتماعی  ......چه نیاز مطالعاتی را برای خود میبینید </label>
+        <select name="q3" required>
+            <option value="گزینه اول ">مطالعه 1 الی 2 ساعت </option>
+            <option value="گزینه دوم">مطالعه 2 الی 4 ساعت </option>
+            <option value="گزینه سوم ">مطالعه 4 الی 6 ساعت </option>
+            <option value="گزینه چهارم">مطالعه 6 الی 8 ساعت </option>
+            <option value="گزینه پنجم">مطالعه بالای 8 ساعت</option>
+            <option value="گزینه ششم">مطالعه تشریحی </option>
+            <option value="گزینه سیزدهم ">مرور</option>
+            <option value="گزینه چهاردهم ">ازمون</option>
+            <option value="گزینه پانزدهم ">تمرین تشریحی</option>
+            <option value="گزینه شانزدهم ">ویدیو 1 الی 2 ساعت</option>
+            <option value="گزینه هفدهتم ">ویدیو 2 الی 4 ساعت</option>
+            <option value="گزینه هیجدهم ">ویدیو4 الی 6 ساعت</option>
+            <option value="گزینه نوزدهم">ویدیو 6 الی 8 ساعت</option>
+            <option value="گزینه  بیستم ">ویدیو بالای 8</option>
+            <option valu="گزینه بیست و یک">فقط مطالعه 2 تا 4 ساعت</option>
+            <option valu="گزینه بیست و دو">فقط مطالعه  4 تا 6 ساعت</option>
+            <option valu="گزینه بیست و سه"> مطالعه نشریحی 2 تا 4 ساعت</option>
+            <option valu="گزینه بیست و چهار">فقط مطالعه تشریحی 4 تا 6 ساعت</option>
+            <option valu="گزینه بیست و شش">نیاز مطالعاتی ندارم</option>
+        </select>
+        <select name="topic_q3" required>
+            <option value="درس یک مطالعات">درس یک </option>
+            <option value="مطالعات درس دو">درس دو</option>
+            <option value="درس  سه مطالعات"> درس سه</option>
+            <option value="درس چهار مطالعات"> درس چهار</option>
+            <option value="مطالعات درس پنج">درس پنج</option>
+            <option value=" مطالعات درس شش"> درس شش</option>
+            <option value="درس هفت مطالعات"> درس هفت</option>
+            <option value="درس هشت مطالعات"> درس هشت </option>
+            <option value="درس نه مطالعات ">درس نه</option>
+            <option value="درس ده مطالعات">درس ده</option>
+            <option value="درس یازده مطالعات">درس یازده</option>
+            <option value="درس دوازده مطالعات">درس دوازده</option>
+            <option value="درس سیزده مطالعات">درس سیزدهم</option>
+            <option value="درس چهارده مطالعات">درس چهاردهم</option>
+        </select>
+        <!-- سوال 4 -->
+       
+        <label> برای مطالعه درس فارسی ......چه نیاز مطالعاتی را برای خود میبینید </label>
+        <select name="q4" required>
+            <option value="گزینه اول ">مطالعه 1 الی 2 ساعت </option>
+            <option value="گزینه دوم">مطالعه 2 الی 4 ساعت </option>
+            <option value="گزینه سوم ">مطالعه 4 الی 6 ساعت </option>
+            <option value="گزینه چهارم">مطالعه 6 الی 8 ساعت </option>
+            <option value="گزینه پنجم">مطالعه بالای 8 ساعت</option>
+            <option value="گزینه ششم">مطالعه تشریحی </option>
+            <option value="گزینه سیزدهم ">مرور</option>
+            <option value="گزینه چهاردهم ">ازمون</option>
+            <option value="گزینه پانزدهم ">تمرین تشریحی</option>
+            <option value="گزینه شانزدهم ">ویدیو 1 الی 2 ساعت</option>
+            <option value="گزینه هفدهتم ">ویدیو 2 الی 4 ساعت</option>
+            <option value="گزینه هیجدهم ">ویدیو4 الی 6 ساعت</option>
+            <option value="گزینه نوزدهم">ویدیو 6 الی 8 ساعت</option>
+            <option value="گزینه  بیستم ">ویدیو بالای 8</option>
+            <option valu="گزینه بیست و یک">فقط مطالعه 2 تا 4 ساعت</option>
+            <option valu="گزینه بیست و دو">فقط مطالعه  4 تا 6 ساعت</option>
+            <option valu="گزینه بیست و سه"> مطالعه نشریحی 2 تا 4 ساعت</option>
+            <option valu="گزینه بیست و چهار">فقط مطالعه تشریحی 4 تا 6 ساعت</option>
+            <option valu="گزینه بیست و شش">نیاز مطالعاتی ندارم</option>
+        </select>
+        <select name="topic_q4" required>
+            <option value="درس یک فارسی">درس یک </option>
+            <option value=" فارسی درس دو">درس دو</option>
+            <option value="درس  سه فارسی"> درس سه</option>
+            <option value=" فارسی درس چهار"> درس چهار</option>
+            <option value=" فارسی درس پنج">درس پنج</option>
+            <option value=" فارسی درس شش"> درس شش</option>
+            <option value="درس هفت فارسی"> درس هفت</option>
+            <option value="درس هشت  فارسی"> درس هشت </option>
+            <option value="درس نه فارسی ">درس نه</option>
+            <option value="درس ده فارسی">درس ده</option>
+            <option value="درس یازده فارسی">درس یازده</option>
+            <option value="درس دوازده فارسی">درس دوازده</option>
+            <option value="درس سیزده فارسی">درس سیزدهم</option>
+            <option value="درس چهارده فارسی">درس چهاردهم</option>
+        </select>
+        <!-- سوال 4 -->
+   
+        <label> برای مطالعه درس عربی ......چه نیاز مطالعاتی را برای خود میبینید </label>
+        <select name="q5" required>
+            <option value="گزینه اول ">مطالعه 1 الی 2 ساعت </option>
+            <option value="گزینه دوم">مطالعه 2 الی 4 ساعت </option>
+            <option value="گزینه سوم ">مطالعه 4 الی 6 ساعت </option>
+            <option value="گزینه چهارم">مطالعه 6 الی 8 ساعت </option>
+            <option value="گزینه پنجم">مطالعه بالای 8 ساعت</option>
+            <option value="گزینه ششم">مطالعه تشریحی </option>
+            <option value="گزینه سیزدهم ">مرور</option>
+            <option value="گزینه چهاردهم ">ازمون</option>
+            <option value="گزینه پانزدهم ">تمرین تشریحی</option>
+            <option value="گزینه شانزدهم ">ویدیو 1 الی 2 ساعت</option>
+            <option value="گزینه هفدهتم ">ویدیو 2 الی 4 ساعت</option>
+            <option value="گزینه هیجدهم ">ویدیو4 الی 6 ساعت</option>
+            <option value="گزینه نوزدهم">ویدیو 6 الی 8 ساعت</option>
+            <option value="گزینه  بیستم ">ویدیو بالای 8</option>
+            <option valu="گزینه بیست و یک">فقط مطالعه 2 تا 4 ساعت</option>
+            <option valu="گزینه بیست و دو">فقط مطالعه  4 تا 6 ساعت</option>
+            <option valu="گزینه بیست و سه"> مطالعه نشریحی 2 تا 4 ساعت</option>
+            <option valu="گزینه بیست و چهار">فقط مطالعه تشریحی 4 تا 6 ساعت</option>
+            <option valu="گزینه بیست و شش">نیاز مطالعاتی ندارم</option>
+        </select>
+        <select name="topic_q5" required>
+            <option value="درس یک عربی">درس یک </option>
+            <option value=" عربی درس دو">درس دو</option>
+            <option value="درس  سه عربی"> درس سه</option>
+            <option value=" عربی درس چهار"> درس چهار</option>
+            <option value=" عربی درس پنج">درس پنج</option>
+        </select>
+        <!-- سوال 4 -->
+        <!-- سوال 6 -->
+     
+        <label> برای مطالعه درس دینی ......چه نیاز مطالعاتی را برای خود میبینید </label>
+        <select name="q6" required>
+            <option value="گزینه اول ">مطالعه 1 الی 2 ساعت </option>
+            <option value="گزینه دوم">مطالعه 2 الی 4 ساعت </option>
+            <option value="گزینه سوم ">مطالعه 4 الی 6 ساعت </option>
+            <option value="گزینه چهارم">مطالعه 6 الی 8 ساعت </option>
+            <option value="گزینه پنجم">مطالعه بالای 8 ساعت</option>
+            <option value="گزینه ششم">مطالعه تشریحی </option>
+            <option value="گزینه سیزدهم ">مرور</option>
+            <option value="گزینه چهاردهم ">ازمون</option>
+            <option value="گزینه پانزدهم ">تمرین تشریحی</option>
+            <option value="گزینه شانزدهم ">ویدیو 1 الی 2 ساعت</option>
+            <option value="گزینه هفدهتم ">ویدیو 2 الی 4 ساعت</option>
+            <option value="گزینه هیجدهم ">ویدیو4 الی 6 ساعت</option>
+            <option value="گزینه نوزدهم">ویدیو 6 الی 8 ساعت</option>
+            <option value="گزینه  بیستم ">ویدیو بالای 8</option>
+            <option valu="گزینه بیست و یک">فقط مطالعه 2 تا 4 ساعت</option>
+            <option valu="گزینه بیست و دو">فقط مطالعه  4 تا 6 ساعت</option>
+            <option valu="گزینه بیست و سه"> مطالعه نشریحی 2 تا 4 ساعت</option>
+            <option valu="گزینه بیست و چهار">فقط مطالعه تشریحی 4 تا 6 ساعت</option>
+            <option valu="گزینه بیست و شش">نیاز مطالعاتی ندارم</option>
+        </select>
+        <select name="topic_q6" required>
+            <option value="درس یک  دینی">درس یک </option>
+            <option value=" دینی درس دو">درس دو</option>
+            <option value="درس  سه دینی"> درس سه</option>
+            <option value=" دینی درس چهار"> درس چهار</option>
+            <option value=" دینی درس پنج">درس پنج</option>
+            <option value=" دینی درس شش"> درس شش</option>
+            <option value=" دینی درس هفت "> درس هفت</option>
+            <option value=" دینی درس هشت "> درس هشت </option>
+            <option value=" دینی درس نه  ">درس نه</option>
+        </select>
+        <!-- سوال 4 -->
+        <!-- سوال 7 -->
+
+        <label> برای مطالعه درس زبان ......چه نیاز مطالعاتی را برای خود میبینید </label>
+        <select name="q7" required>
+            <option value="گزینه اول ">مطالعه 1 الی 2 ساعت </option>
+            <option value="گزینه دوم">مطالعه 2 الی 4 ساعت </option>
+            <option value="گزینه سوم ">مطالعه 4 الی 6 ساعت </option>
+            <option value="گزینه چهارم">مطالعه 6 الی 8 ساعت </option>
+            <option value="گزینه پنجم">مطالعه بالای 8 ساعت</option>
+            <option value="گزینه ششم">مطالعه تشریحی </option>
+            <option value="گزینه سیزدهم ">مرور</option>
+            <option value="گزینه چهاردهم ">ازمون</option>
+            <option value="گزینه پانزدهم ">تمرین تشریحی</option>
+            <option value="گزینه شانزدهم ">ویدیو 1 الی 2 ساعت</option>
+            <option value="گزینه هفدهتم ">ویدیو 2 الی 4 ساعت</option>
+            <option value="گزینه هیجدهم ">ویدیو4 الی 6 ساعت</option>
+            <option value="گزینه نوزدهم">ویدیو 6 الی 8 ساعت</option>
+            <option value="گزینه  بیستم ">ویدیو بالای 8</option>
+            <option valu="گزینه بیست و یک">فقط مطالعه 2 تا 4 ساعت</option>
+            <option valu="گزینه بیست و دو">فقط مطالعه  4 تا 6 ساعت</option>
+            <option valu="گزینه بیست و سه"> مطالعه نشریحی 2 تا 4 ساعت</option>
+            <option valu="گزینه بیست و چهار">فقط مطالعه تشریحی 4 تا 6 ساعت</option>
+            <option valu="گزینه بیست و شش">نیاز مطالعاتی ندارم</option>
+        </select>
+        <select name="topic_q7" required>
+            <option value="درس یک زبان">درس یک </option>
+            <option value=" زبان درس دو">درس دو</option>
+            <option value="درس  سه زبان"> درس سه</option>
+            <option value=" زبان درس چهار"> درس چهار</option>
+            <option value=" زبان درس پنج">درس پنج</option>
+        </select>
+        <!-- سوال 4 -->
+        <!-- سوال 8 -->
+
+        <label> برای مطالعه درس قران ......چه نیاز مطالعاتی را برای خود میبینید </label>
+        <select name="q8" required>
+            <option value="گزینه اول ">مطالعه 1 الی 2 ساعت </option>
+            <option value="گزینه دوم">مطالعه 2 الی 4 ساعت </option>
+            <option value="گزینه سوم ">مطالعه 4 الی 6 ساعت </option>
+            <option value="گزینه چهارم">مطالعه 6 الی 8 ساعت </option>
+            <option value="گزینه پنجم">مطالعه بالای 8 ساعت</option>
+            <option value="گزینه ششم">مطالعه تشریحی </option>
+            <option value="گزینه سیزدهم ">مرور</option>
+            <option value="گزینه چهاردهم ">ازمون</option>
+            <option value="گزینه پانزدهم ">تمرین تشریحی</option>
+            <option value="گزینه شانزدهم ">ویدیو 1 الی 2 ساعت</option>
+            <option value="گزینه هفدهتم ">ویدیو 2 الی 4 ساعت</option>
+            <option value="گزینه هیجدهم ">ویدیو4 الی 6 ساعت</option>
+            <option value="گزینه نوزدهم">ویدیو 6 الی 8 ساعت</option>
+            <option value="گزینه  بیستم ">ویدیو بالای 8</option>
+            <option valu="گزینه بیست و یک">فقط مطالعه 2 تا 4 ساعت</option>
+            <option valu="گزینه بیست و دو">فقط مطالعه  4 تا 6 ساعت</option>
+            <option valu="گزینه بیست و سه"> مطالعه نشریحی 2 تا 4 ساعت</option>
+            <option valu="گزینه بیست و چهار">فقط مطالعه تشریحی 4 تا 6 ساعت</option>
+            <option valu="گزینه بیست و شش">نیاز مطالعاتی ندارم</option>
+        </select>               
+        <select name="topic_q8" required>
+            <option value="درس یک قران">درس یک </option>
+            <option value=" قران درس دو">درس دو</option>
+            <option value=" قران درس  سه "> درس سه</option>
+            <option value=" قران درس چهار"> درس چهار</option>
+            <option value=" قران درس پنج">درس پنج</option>
+            <option value=" قران درس شش"> درس شش</option>
+            <option value=" قران درس هفت"> درس هفت</option>
+            <option value=" قران درس هشت"> درس هشت </option>
+            <option value=" قران درس نه ">درس نه</option>
+            <option value=" قران درس ده ">درس ده</option>
+            <option value=" قران درس یازده ">درس یازده</option>
+            <option value=" قران درس دوازده ">درس دوازده</option>
+        </select>
+        <!-- سوال 4 -->
+        <!-- سوال 9 -->
+       
+              
+        <label> روز هایی که کلاس بیرون دارید(غیر درسی و تفریحی هم  شامل میشود)</label>
+        <input type="checkbox" name="q91" placeholder="شنبه">شنبه
+        <input type="checkbox" name="q92" placeholder=" یکشنبه ">یکشنبه
+        <input type="checkbox" name="q93" placeholder="دوشنبه">دوشنبه
+        <input type="checkbox" name="q94" placeholder="سه شنبه">سه شنبه 
+        <input type="checkbox" name="q95" placeholder="چهارشنبه">چهارشنبه
+        <input type="checkbox" name="q96" placeholder="پنجشنبه">پنجشنبه
+        <input type="checkbox" name="q97" placeholder="جمعه">جمعه
+                 <input type="checkbox" name="q98" placeholder="ندارم">ندارم
+        <!-- سوال 10 -->
+        <label>روز هایی که امتحان مدرسه دارید</label>
+         <input type="checkbox" name="q101" placeholder="شنبه">شنبه
+        <input type="checkbox" name="q102" placeholder=" یکشنبه ">یکشنبه
+        <input type="checkbox" name="q103" placeholder="دوشنبه">دوشنبه
+        <input type="checkbox" name="q104" placeholder="سه شنبه">سه شنبه
+        <input type="checkbox" name="q105" placeholder="چهارشنبه">چهارشنبه
+        <input type="checkbox" name="q106" placeholder="پنجشنبه">پنجشنبه
+        <input type="checkbox" name="q107" placeholder="جمعه">جمعه
+                 <input type="checkbox" name="q108" placeholder="ندارم">ندارم
+
+        <!-- سوال 11 -->
+        <label>درسی که امتحان دارید</label>
+        <input type="text" name="q111" placeholder="پاسخ خود را وارد کنید">
+        <!-- سوال 12 -->
+               <label>ساعت مطالعه پیشش بینی شده برای روز شنبه:</label>
+        <select name="q121" required>
+            <option value="گزینه اول ">6 ساعت</option>
+            <option value="گزینه دوم">7 ساعت</option>
+            <option value="گزینه سوم">8 ساعت</option>
+            <option value="گزینه چهارم">9 ساعت</option>
+            <option value="گزینه پنجم">10 ساعت</option>
+            <option value="گزینه ششم">11 ساعت</option>
+            <option value="گزینه هفتم ">12 ساعت</option>
+            <option value="گزینه هشتم ">13 ساعت</option>
+            <option value="گزینه نهم ">14 ساعت</option>
+            <option value="گزینه دهم ">15 ساعت</option>
+            <option value="گزینه یازدهم ">16 ساعت</option>
+        </select>
+        <!-- سوال 13 -->
+        <label>ساعت مطالعه پیشش بینی شده برای روز یکشنبه:</label>
+        <select name="q122" required>
+            <option value="گزینه اول ">6 ساعت</option>
+            <option value="گزینه دوم">7 ساعت</option>
+            <option value="گزینه سوم ">8 ساعت</option>
+            <option value="گزینه چهارم">9 ساعت</option>
+            <option value="گزینه پنجم">10 ساعت</option>
+            <option value="گزینه ششم">11 ساعت</option>
+            <option value="گزینه هفتم ">12 ساعت</option>
+            <option value="گزینه هشتم ">13 ساعت</option>
+            <option value="گزینه نهم ">14 ساعت</option>
+            <option value="گزینه دهم ">15 ساعت</option>
+            <option value="گزینه یازدهم ">16 ساعت</option>
+        </select>
+
+        <label>ساعت مطالعه پیشش بینی شده برای روز دوشنبه:</label>
+        <select name="q123" required>
+            <option value="گزینه اول ">6 ساعت</option>
+            <option value="گزینه دوم">7 ساعت</option>
+            <option value="گزینه سوم ">8 ساعت</option>
+            <option value="گزینه چهارم">9 ساعت</option>
+            <option value="گزینه پنجم">10 ساعت</option>
+            <option value="گزینه ششم">11 ساعت</option>
+            <option value="گزینه هفتم ">12 ساعت</option>
+            <option value="گزینه هشتم ">13 ساعت</option>
+            <option value="گزینه نهم ">14 ساعت</option>
+            <option value="گزینه دهم ">15 ساعت</option>
+            <option value="گزینه یازدهم ">16 ساعت</option>
+        </select>
+
+
+        <label>ساعت مطالعه پیشش بینی شده برای روز سه شنبه:</label>
+        <select name="q124" required>
+            <option value="گزینه اول ">6 ساعت</option>
+            <option value="گزینه دوم">7 ساعت</option>
+            <option value="گزینه سوم ">8 ساعت</option>
+            <option value="گزینه چهارم">9 ساعت</option>
+            <option value="گزینه پنجم">10 ساعت</option>
+            <option value="گزینه ششم">11 ساعت</option>
+            <option value="گزینه هفتم ">12 ساعت</option>
+            <option value="گزینه هشتم ">13 ساعت</option>
+            <option value="گزینه نهم ">14 ساعت</option>
+            <option value="گزینه دهم ">15 ساعت</option>
+            <option value="گزینه یازدهم ">16 ساعت</option>
+        </select>
+
+
+        <label>ساعت مطالعه پیشش بینی شده برای روز چهار شنبه:</label>
+        <select name="q125" required>
+            <option value="گزینه اول ">6 ساعت</option>
+            <option value="گزینه دوم">7 ساعت</option>
+            <option value="گزینه سوم ">8 ساعت</option>
+            <option value="گزینه چهارم">9 ساعت</option>
+            <option value="گزینه پنجم">10 ساعت</option>
+            <option value="گزینه ششم">11 ساعت</option>
+            <option value="گزینه هفتم ">12 ساعت</option>
+            <option value="گزینه هشتم ">13 ساعت</option>
+            <option value="گزینه نهم ">14 ساعت</option>
+            <option value="گزینه دهم ">15 ساعت</option>
+            <option value="گزینه یازدهم ">16 ساعت</option>
+        </select>
+        <!-- سوال 17 -->
+
+        <label>ساعت مطالعه پیشش بینی شده برای روز پنجشنبه:</label>
+        <select name="q126" required>
+            <option value="گزینه اول ">6 ساعت</option>
+            <option value="گزینه دوم">7 ساعت</option>
+            <option value="گزینه سوم ">8 ساعت</option>
+            <option value="گزینه چهارم">9 ساعت</option>
+            <option value="گزینه پنجم">10 ساعت</option>
+            <option value="گزینه ششم">11 ساعت</option>
+            <option value="گزینه هفتم ">12 ساعت</option>
+            <option value="گزینه هشتم ">13 ساعت</option>
+            <option value="گزینه نهم ">14 ساعت</option>
+            <option value="گزینه دهم ">15 ساعت</option>
+            <option value="گزینه یازدهم ">16 ساعت</option>
+        </select>
+        
+
+        <label>ساعت مطالعه پیشش بینی شده برای روز جمعه:</label>
+        <select name="q127" required>
+            <option value="گزینه اول ">6 ساعت</option>
+            <option value="گزینه دوم">7 ساعت</option>
+            <option value="گزینه سوم ">8 ساعت</option>
+            <option value="گزینه چهارم">9 ساعت</option>
+            <option value="گزینه پنجم">10 ساعت</option>
+            <option value="گزینه ششم">11 ساعت</option>
+            <option value="گزینه هفتم ">12 ساعت</option>
+            <option value="گزینه هشتم ">13 ساعت</option>
+            <option value="گزینه نهم ">14 ساعت</option>
+            <option value="گزینه دهم ">15 ساعت</option>
+            <option value="گزینه یازدهم ">16 ساعت</option>
+        </select>
+        <button type="submit">ارسال پاسخ‌ها</button>
+    </form>
+</div>
+
+
+</body>
+</html>

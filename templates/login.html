@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+
+  <title> login</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700&display=swap');
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Vazirmatn', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #dfe9f3, #ffffff);
+  overflow: hidden;
+}
+
+/* افکت بک‌گراند شیشه‌ای با دایره‌های محو */
+body::before, body::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.6;
+  animation: floaty 10s ease-in-out infinite alternate;
+}
+body::before {
+  width: 400px; height: 400px;
+  top: -100px; left: -100px;
+  background: #060a30;
+}
+body::after {
+  width: 350px; height: 350px;
+  bottom: -100px; right: -100px;
+  background: #360425;
+}
+@keyframes floaty {
+  from { transform: translateY(0); }
+  to { transform: translateY(-40px); }
+}
+
+/* فرم اصلی */
+.form-container {
+  width: 380px;
+  padding: 45px 35px;
+  border-radius: 22px;
+  background: rgba(93, 92, 92, 0.65);
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  
+  text-align: center;
+  z-index: 1;
+  animation: popIn 1s ease forwards;
+  transform: scale(0.9);
+  opacity: 0;
+}
+@keyframes popIn {
+  to { transform: scale(1); opacity: 1; }
+}
+
+h2 {
+  margin-bottom: 28px;
+  font-size: 26px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #5b6cff, #6f86ff, #ff66cc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 0.5px;
+  position: relative;
+}
+h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #5b6cff, #ff66cc);
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+/* ورودی‌ها */
+.input-box {
+  position: relative;
+  margin: 25px 0;
+}
+.input-box input {
+  width: 90%;
+  padding: 14px 12px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  font-size: 15px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.6);
+  transition: all 0.3s ease;
+}
+.input-box input:focus {
+  border-color: #5b6cff;
+  background: #fff;
+  box-shadow: 0 0 12px rgba(91,108,255,0.25);
+}
+
+/* لیبل شناور */
+.input-box label {
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  font-size: 14px;
+  color: #050505;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+.input-box input:focus + label,
+.input-box input:not(:placeholder-shown) + label {
+  top: -10px;
+  left: 10px;
+  font-size: 12px;
+  color: #5b6cff;
+  background: #fff;
+  padding: 0 6px;
+  border-radius: 4px;
+}
+
+/* دکمه */
+button {
+  width: 100%;
+  margin-top: 25px;
+  padding: 14px;
+  border: none;
+  border-radius: 14px;
+  font-size: 17px;
+  font-weight: 700;
+  font-family: 'Vazirmatn', sans-serif;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #5b6cff, #6f86ff, #ff66cc);
+  color: #fff;
+  box-shadow: 0 8px 22px rgba(91,108,255,0.35);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+button::before {
+  content: "";
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.5), transparent);
+  transition: 0.5s;
+}
+button:hover::before {
+  left: 100%;
+}
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(91,108,255,0.45);
+}
+button:active {
+  transform: scale(0.96);
+}
+
+/* لینک پایین */
+.link {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #444;
+}
+.link a {
+  color: #080808;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.2s;
+}
+.link a:hover {
+  color: #ff66cc;
+}
+
+
+  </style>
+</head>
+<body>
+  <!-- Grid -->
+ 
+
+  <!-- Particles -->
+  <div class="particles">
+    <span style="left:10%;animation-duration:8s;"></span>
+    <span style="left:30%;animation-duration:12s;"></span>
+    <span style="left:50%;animation-duration:10s;"></span>
+    <span style="left:70%;animation-duration:14s;"></span>
+    <span style="left:90%;animation-duration:9s;"></span>
+  </div>
+
+  <!-- Logo -->
+
+
+  <!-- Form -->
+  <div class="form-container">
+
+    <form action="{{ url_for('login') }}" method="POST">
+      <div class="input-box">
+        <input type="text" name="name" placeholder=" " required>
+        <label>نام و نام خانوادگی</label>
+      </div>
+      <div class="input-box">
+        <input type="text" name="national_id" placeholder=" " maxlength="10" pattern="\d{10}" required>
+        <label>کد ملی</label>
+      </div>
+      <div class="input-box">
+        <input type="password" name="password" placeholder=" " required>
+        <label>رمز عبور</label>
+      </div>
+
+   <!-- اینجا همون فیلدهای فرم -->
+   <button type="submit">رفتن به نتایج</button>
+</form>
+    
+    </form>
+
+    <div class="link">
+      <p>قبلاً ثبت‌نام کرده‌اید؟ <a href="{{ url_for('login') }}">ورود کنید</a></p>
+    </div>
+  </div>
+</body>
+</html>

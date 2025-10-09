@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>لطفاً صبر کنید</title>
+    <style>
+        body { font-family: Arial; text-align: center; padding-top: 50px; }
+        #countdown { font-size: 48px; color: #333; }
+    </style>
+</head>
+<body>
+    <h1>لطفاً صبر کنید...</h1>
+
+<p>برنامه شما در <span id="countdown"></span> آماده خواهد شد.</p>
+
+<script>
+    // دریافت زمان از سرور
+    let totalSeconds = {{ hours }} * 3600 + {{ minutes }} * 60 + {{ seconds }};
+    const countdownElem = document.getElementById("countdown");
+
+    const interval = setInterval(() => {
+        if (totalSeconds <= 0) {
+            clearInterval(interval);
+            window.location.href = "{{ url_for('grade_result') }}";
+            return;
+        }
+
+        totalSeconds--;
+        const h = Math.floor(totalSeconds / 3600);
+        const m = Math.floor((totalSeconds % 3600) / 60);
+        const s = totalSeconds % 60;
+
+        countdownElem.textContent = `${h} ساعت، ${m} دقیقه و ${s} ثانیه`;
+    }, 1000);
+</script>
+
+
+</body>
+</html>
