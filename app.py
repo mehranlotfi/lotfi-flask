@@ -113,66 +113,98 @@ def grade_page(grade_label):
 
     return render_template(f"{grade_label}.html")
 
-
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
-        national_id = request.form.get("national_id", "").strip()
-        password = request.form.get("password", "").strip()
+        national_id = request.form["national_id"].strip()
+        password = request.form["password"].strip()
 
-        if not national_id or not password:
-            flash("لطفاً همه فیلدها را پر کنید.")
-            return redirect(url_for("login"))
+        user = User.query.filter_by(national_id=national_id, password=password).first()
 
-        user = User.query.filter_by(national_id=national_id).first()
-        if not user:
-            flash("کاربری با این کد ملی یافت نشد.")
-            return redirect(url_for("login"))
+        if user:
+            session["uid"] = user.id
 
-        if not check_password_hash(user.password_hash, password):
-            flash("رمز عبور اشتباه است.")
-            return redirect(url_for("login"))
+            # اگر کاربر قبلاً پاسخ داده
+            if user.submitted_at:
+                now = datetime.utcnow()
+                diff = now - user.submitted_at
 
-        # مطمئن شو session سالم ست میشه
-        session["uid"] = int(user.id)
+                # اگر کمتر از 1 دقیقه گذشته → برو به wait
+                if diff < timedelta(seconds=60):
+                    return redirect(url_for("wait"))
 
-        now = datetime.now(timezone.utc)
+                # اگر بین 1 دقیقه تا 7 روز گذشته → برو به grade_result
+                elif diff < timedelta(days=7):
+                    return redirect(url_for("grade_result"))
 
-        # اگر قبلاً جدول تولید شده و کمتر از 7 روز گذشته، مستقیم نمایش بده
-        gen_at = getattr(user, "table_generated_at", None)
-        if user.table and gen_at:
-            if gen_at.tzinfo is None:
-                gen_at = gen_at.replace(tzinfo=timezone.utc)
-            if now - gen_at <= timedelta(days=7):
-                table = json.loads(user.table) if isinstance(user.table, str) else user.table
-                return render_template("grade_result.html", user=user, table=table)
+            # در غیر این صورت (کاربر جدید)
+            return redirect(url_for("grade_12_tajrobi"))
 
-        # اگر هنوز پاسخی نداده -> هدایت به صفحهٔ گرید تا پر کنه
-        if not user.submitted_at:
-            return redirect(url_for("grade_page", grade_label=user.grade_label))
-
-        # اگر پاسخش فرستاده شده ولی 12 ساعت نگذشته -> صفحهٔ انتظار با شمارش معکوس
-        submitted_at = user.submitted_at
-        if submitted_at.tzinfo is None:
-            submitted_at = submitted_at.replace(tzinfo=timezone.utc)
-
-        ready_time = submitted_at + timedelta(minutes=1)
-        if now < ready_time:
-            remaining = ready_time - now
-            hours = remaining.seconds // 3600
-            minutes = (remaining.seconds % 3600) // 60
-            seconds = remaining.seconds % 60
-            return render_template("wait.html", hours=hours, minutes=minutes, seconds=seconds)
-
-        # در غیر این صورت: جدول رو بساز، ذخیره کن و نمایش بده
-        answers = {ans.question_number: ans.answer for ans in user.answers}
-        table = run_algorithm(answers)
-        user.table = json.dumps(table, ensure_ascii=False)
-        user.table_generated_at = now
-        db.session.commit()
-        return render_template("grade_result.html", user=user, table=table)
+        return render_template("login.html", error="کد ملی یا رمز اشتباه است")
 
     return render_template("login.html")
+
+
+
+# @app.route("/login", methods=["GET", "POST"])
+# def login():
+#     if request.method == "POST":
+#         national_id = request.form.get("national_id", "").strip()
+#         password = request.form.get("password", "").strip()
+
+#         if not national_id or not password:
+#             flash("لطفاً همه فیلدها را پر کنید.")
+#             return redirect(url_for("login"))
+
+#         user = User.query.filter_by(national_id=national_id).first()
+#         if not user:
+#             flash("کاربری با این کد ملی یافت نشد.")
+#             return redirect(url_for("login"))
+
+#         if not check_password_hash(user.password_hash, password):
+#             flash("رمز عبور اشتباه است.")
+#             return redirect(url_for("login"))
+
+#         # مطمئن شو session سالم ست میشه
+#         session["uid"] = int(user.id)
+
+#         now = datetime.now(timezone.utc)
+
+#         # اگر قبلاً جدول تولید شده و کمتر از 7 روز گذشته، مستقیم نمایش بده
+#         gen_at = getattr(user, "table_generated_at", None)
+#         if user.table and gen_at:
+#             if gen_at.tzinfo is None:
+#                 gen_at = gen_at.replace(tzinfo=timezone.utc)
+#             if now - gen_at <= timedelta(days=7):
+#                 table = json.loads(user.table) if isinstance(user.table, str) else user.table
+#                 return render_template("grade_result.html", user=user, table=table)
+
+#         # اگر هنوز پاسخی نداده -> هدایت به صفحهٔ گرید تا پر کنه
+#         if not user.submitted_at:
+#             return redirect(url_for("grade_page", grade_label=user.grade_label))
+
+#         # اگر پاسخش فرستاده شده ولی 12 ساعت نگذشته -> صفحهٔ انتظار با شمارش معکوس
+#         submitted_at = user.submitted_at
+#         if submitted_at.tzinfo is None:
+#             submitted_at = submitted_at.replace(tzinfo=timezone.utc)
+
+#         ready_time = submitted_at + timedelta(minutes=1)
+#         if now < ready_time:
+#             remaining = ready_time - now
+#             hours = remaining.seconds // 3600
+#             minutes = (remaining.seconds % 3600) // 60
+#             seconds = remaining.seconds % 60
+#             return render_template("wait.html", hours=hours, minutes=minutes, seconds=seconds)
+
+#         # در غیر این صورت: جدول رو بساز، ذخیره کن و نمایش بده
+#         answers = {ans.question_number: ans.answer for ans in user.answers}
+#         table = run_algorithm(answers)
+#         user.table = json.dumps(table, ensure_ascii=False)
+#         user.table_generated_at = now
+#         db.session.commit()
+#         return render_template("grade_result.html", user=user, table=table)
+
+#     return render_template("login.html")
 
 
 def map_grade_to_label(grade_fa):
@@ -215,18 +247,29 @@ def wait():
         flash("شما هنوز پاسخی ارسال نکرده‌اید.", "warning")
         return redirect(url_for("index"))
 
-    submitted_at = user.submitted_at
-    if submitted_at.tzinfo is None:
-        submitted_at = submitted_at.replace(tzinfo=timezone.utc)
+    # submitted_at = user.submitted_at
+    # if submitted_at.tzinfo is None:
+    #     submitted_at = submitted_at.replace(tzinfo=timezone.utc)
 
-    now = datetime.now(timezone.utc)
-    ready_time = submitted_at + timedelta(minutes=1)
-    remaining_seconds = max(0, int((ready_time - now).total_seconds()))
-    hours = remaining_seconds // 3600
-    minutes = (remaining_seconds % 3600) // 60
-    seconds = remaining_seconds % 60
+    # now = datetime.now(timezone.utc)
+    # ready_time = submitted_at + timedelta(minutes=1)
+    # remaining_seconds = max(0, int((ready_time - now).total_seconds()))
+    # hours = remaining_seconds // 3600
+    # minutes = (remaining_seconds % 3600) // 60
+    # seconds = remaining_seconds % 60
+    now = datetime.utcnow()
+    diff = now - user.submitted_at
 
-    return render_template("wait.html", hours=hours, minutes=minutes, seconds=seconds)
+    # تست: بعد از 60 ثانیه برو به result
+    if diff > timedelta(seconds=60):
+        return redirect(url_for("grade_result"))
+
+    # اگر هنوز زمان نگذشته:
+    remaining = 60 - diff.total_seconds()
+    return render_template("wait.html", remaining=int(remaining))
+
+
+    # return render_template("wait.html", hours=hours, minutes=minutes, seconds=seconds)
 
 
 
