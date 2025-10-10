@@ -34,30 +34,33 @@ def home():
 def index():
     if request.method == "GET":
         return render_template("wait.html")
+# --- GRADE RESULT (جایگزین grade_result فعلی) ---
 @app.route("/grade_result")
 def grade_result():
     if "uid" not in session:
         return redirect(url_for("login"))
 
     user = User.query.get(session["uid"])
+    if not user:
+        session.pop("uid", None)
+        return redirect(url_for("login"))
+
+    if user.table and getattr(user, "table_generated_at", None):
+        gen_at = user.table_generated_at
+        if gen_at.tzinfo is None:
+            gen_at = gen_at.replace(tzinfo=timezone.utc)
+        if datetime.now(timezone.utc) - gen_at <= timedelta(days=7):
+            table = json.loads(user.table) if isinstance(user.table, str) else user.table
+            return render_template("grade_result.html", user=user, table=table)
 
     if not user.answers:
-        # اگر هنوز پاسخی ثبت نکرده، به صفحه انتظار یا گرید هدایت شود
-        return redirect(url_for("wait"))
-
-    # گرفتن آخرین پاسخ‌ها
+        return redirect(url_for("index"))
     answers = {ans.question_number: ans.answer for ans in user.answers}
-
-    # اجرای الگوریتم روی آخرین پاسخ‌ها
     table = run_algorithm(answers)
-
-    # ذخیره جدول برای دفعات بعد (اختیاری)
     user.table = json.dumps(table, ensure_ascii=False)
+    user.table_generated_at = datetime.now(timezone.utc)
     db.session.commit()
-
-    # رندر صفحه نتایج با جدول جدید
     return render_template("grade_result.html", user=user, table=table)
-
 
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
@@ -132,27 +135,44 @@ def login():
             flash("رمز عبور اشتباه است.")
             return redirect(url_for("login"))
 
-        session["uid"] = user.id
+        # مطمئن شو session سالم ست میشه
+        session["uid"] = int(user.id)
 
-        if user.submitted_at:
-            submitted_at = user.submitted_at
-            if submitted_at.tzinfo is None:
-                submitted_at = submitted_at.replace(tzinfo=timezone.utc)
+        now = datetime.now(timezone.utc)
 
-            now = datetime.now(timezone.utc)
-            ready_time = submitted_at + timedelta(hours=12)  # تست
-
-            if now < ready_time:
-                remaining = ready_time - now
-                minutes = remaining.seconds // 60
-                seconds = remaining.seconds % 60
-                return render_template("wait.html", minutes=minutes, seconds=seconds)
-            else:
-                answers = {ans.question_number: ans.answer for ans in user.answers}
-                table = run_algorithm(answers)
-                user.table = json.dumps(table, ensure_ascii=False)
-                db.session.commit()
+        # اگر قبلاً جدول تولید شده و کمتر از 7 روز گذشته، مستقیم نمایش بده
+        gen_at = getattr(user, "table_generated_at", None)
+        if user.table and gen_at:
+            if gen_at.tzinfo is None:
+                gen_at = gen_at.replace(tzinfo=timezone.utc)
+            if now - gen_at <= timedelta(days=7):
+                table = json.loads(user.table) if isinstance(user.table, str) else user.table
                 return render_template("grade_result.html", user=user, table=table)
+
+        # اگر هنوز پاسخی نداده -> هدایت به صفحهٔ گرید تا پر کنه
+        if not user.submitted_at:
+            return redirect(url_for("grade_page", grade_label=user.grade_label))
+
+        # اگر پاسخش فرستاده شده ولی 12 ساعت نگذشته -> صفحهٔ انتظار با شمارش معکوس
+        submitted_at = user.submitted_at
+        if submitted_at.tzinfo is None:
+            submitted_at = submitted_at.replace(tzinfo=timezone.utc)
+
+        ready_time = submitted_at + timedelta(hours=12)
+        if now < ready_time:
+            remaining = ready_time - now
+            hours = remaining.seconds // 3600
+            minutes = (remaining.seconds % 3600) // 60
+            seconds = remaining.seconds % 60
+            return render_template("wait.html", hours=hours, minutes=minutes, seconds=seconds)
+
+        # در غیر این صورت: جدول رو بساز، ذخیره کن و نمایش بده
+        answers = {ans.question_number: ans.answer for ans in user.answers}
+        table = run_algorithm(answers)
+        user.table = json.dumps(table, ensure_ascii=False)
+        user.table_generated_at = now
+        db.session.commit()
+        return render_template("grade_result.html", user=user, table=table)
 
     return render_template("login.html")
 
@@ -180,12 +200,19 @@ def map_grade_to_label(grade_fa):
         "grade_result": "grade_result",
     }
     return mapping.get(grade_fa, None)
+
+
+
 @app.route("/wait")
 def wait():
     if "uid" not in session:
         return redirect(url_for("login"))
 
     user = User.query.get(session["uid"])
+    if not user:
+        session.pop("uid", None)
+        return redirect(url_for("login"))
+
     if not user.submitted_at:
         flash("شما هنوز پاسخی ارسال نکرده‌اید.", "warning")
         return redirect(url_for("index"))
@@ -197,54 +224,42 @@ def wait():
     now = datetime.now(timezone.utc)
     ready_time = submitted_at + timedelta(hours=12)
     remaining_seconds = max(0, int((ready_time - now).total_seconds()))
-
-    # ساعت، دقیقه و ثانیه محاسبه شود
     hours = remaining_seconds // 3600
     minutes = (remaining_seconds % 3600) // 60
     seconds = remaining_seconds % 60
 
     return render_template("wait.html", hours=hours, minutes=minutes, seconds=seconds)
-  
+
+
+
 @app.route("/submit-answers", methods=["POST"])
 def submit_answers():
     if "uid" not in session:
         return redirect(url_for("login"))
 
     user = User.query.get(session["uid"])
+    if not user:
+        session.pop("uid", None)
+        return redirect(url_for("login"))
 
     Answer.query.filter_by(user_id=user.id).delete()
     db.session.commit()
 
-    
-    answers_form = {k: v.strip() for k, v in request.form.items()}
+    answers_form = {k: v.strip() for k, v in request.form.items() if v.strip()}
     for key, val in answers_form.items():
         ans = Answer(user_id=user.id, question_number=key, answer=val)
         db.session.add(ans)
     db.session.commit()
 
     user.submitted_at = datetime.now(timezone.utc)
+    user.table = None
+    user.table_generated_at = None
     db.session.commit()
 
-    # بررسی زمان آماده بودن جدول
-    submitted_at = user.submitted_at
-    if submitted_at.tzinfo is None:
-        submitted_at = submitted_at.replace(tzinfo=timezone.utc)
-
-    # now = datetime.now(timezone.utc)
-    # ready_time = submitted_at + timedelta(minutes=1)
-
-    # if now < ready_time:
-    #     remaining = ready_time - now
-    #     minutes = remaining.seconds // 60
-    #     seconds = remaining.seconds % 60
-    #     return render_template("wait.html", minutes=minutes, seconds=seconds)
-    # else:
-    #     answers = {ans.question_number: ans.answer for ans in user.answers}
-    #     table = run_algorithm(answers)
-    #     user.table = json.dumps(table, ensure_ascii=False)
-    #     db.session.commit()
-    #     return render_template("grade_result.html", user=user, table=table)
     return redirect(url_for("wait"))
+
+
+
 def run_algorithm(answers):
     table = {}
  

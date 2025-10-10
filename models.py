@@ -13,7 +13,7 @@ class User(db.Model):
 
     submitted_at = db.Column(db.DateTime)   # زمان ارسال فرم
     table = db.Column(db.Text)              # ذخیره جدول خروجی الگوریتم
-
+    table_generated_at = db.Column(db.DateTime, nullable=True)  # NEW
     @property
     def password(self):
         return self.password_hash
