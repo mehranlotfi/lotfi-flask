@@ -158,7 +158,7 @@ def login():
         if submitted_at.tzinfo is None:
             submitted_at = submitted_at.replace(tzinfo=timezone.utc)
 
-        ready_time = submitted_at + timedelta(hours=12)
+        ready_time = submitted_at + timedelta(minutes=1)
         if now < ready_time:
             remaining = ready_time - now
             hours = remaining.seconds // 3600
@@ -222,7 +222,7 @@ def wait():
         submitted_at = submitted_at.replace(tzinfo=timezone.utc)
 
     now = datetime.now(timezone.utc)
-    ready_time = submitted_at + timedelta(hours=12)
+    ready_time = submitted_at + timedelta(minutes=1)
     remaining_seconds = max(0, int((ready_time - now).total_seconds()))
     hours = remaining_seconds // 3600
     minutes = (remaining_seconds % 3600) // 60
@@ -372,8 +372,8 @@ def run_algorithm(answers):
         table["cell_r3_c1"] = " مرور"
         table["cell_r4_c1"] = "  15 تست "
         table["cell_r5_c1"] = " مرور "
-        table["cell_r6_c1"] = "  "
-        table["cell_r7_c1"] = "  "
+        table["cell_r6_c1"] = ""
+        table["cell_r7_c1"] = ""
 
     elif q1_answer=="گزینه چهاردهم":
         table["cell_r1_c1"] = " ازمون"
@@ -590,17 +590,17 @@ def run_algorithm(answers):
         table["cell_r3_c2"] = " مرور"
         table["cell_r4_c2"] = "  15 تست "
         table["cell_r5_c2"] = " مرور "
-        table["cell_r6_c2"] = "  "
-        table["cell_r7_c2"] = "  "
+        table["cell_r6_c2"] = ""
+        table["cell_r7_c2"] = ""
 
     elif q12_answer=="گزینه چهاردهم":
         table["cell_r1_c2"] = " ازمون"
-        table["cell_r2_c2"] = "  "
-        table["cell_r3_c2"] = " "
+        table["cell_r2_c2"] = ""
+        table["cell_r3_c2"] = ""
         table["cell_r4_c2"] = ""
         table["cell_r5_c2"] = " ازمون "
-        table["cell_r6_c2"] = "  "
-        table["cell_r7_c2"] = "  "
+        table["cell_r6_c2"] = ""
+        table["cell_r7_c2"] = ""
     elif q12_answer=="گزینه پانزدهم":
         table["cell_r1_c2"] = " مطالعه و 20تمرین تشریحی"
         table["cell_r2_c2"] = " مطالعه و 20تمرین تشریحی"
@@ -764,13 +764,13 @@ def run_algorithm(answers):
         table["cell_r3_c3"] = " مرور"
         table["cell_r4_c3"] = "  15 تست "
         table["cell_r5_c3"] = " مرور "
-        table["cell_r6_c3"] = "  "
-        table["cell_r7_c3"] = "  "
+        table["cell_r6_c3"] = ""
+        table["cell_r7_c3"] = ""
 
     elif q2_answer=="گزینه چهاردهم":
         table["cell_r1_c3"] = " ازمون"
-        table["cell_r2_c3"] = "  "
-        table["cell_r3_c3"] = " "
+        table["cell_r2_c3"] = ""
+        table["cell_r3_c3"] = ""
         table["cell_r4_c3"] = ""
         table["cell_r5_c3"] = " ازمون "
         table["cell_r6_c3"] = "  "
@@ -940,17 +940,17 @@ def run_algorithm(answers):
         table["cell_r3_c4"] = " مرور"
         table["cell_r4_c4"] = "  15 تست "
         table["cell_r5_c4"] = " مرور "
-        table["cell_r6_c4"] = "  "
-        table["cell_r7_c4"] = "  "
+        table["cell_r6_c4"] = ""
+        table["cell_r7_c4"] = ""
 
     elif q22_answer=="گزینه چهاردهم":
         table["cell_r1_c4"] = " ازمون"
-        table["cell_r2_c4"] = "  "
-        table["cell_r3_c4"] = " "
+        table["cell_r2_c4"] = ""
+        table["cell_r3_c4"] = ""
         table["cell_r4_c4"] = ""
         table["cell_r5_c4"] = " ازمون "
-        table["cell_r6_c4"] = "  "
-        table["cell_r7_c4"] = "  "
+        table["cell_r6_c4"] = ""
+        table["cell_r7_c4"] = ""
     elif q22_answer=="گزینه پانزدهم":
         table["cell_r1_c4"] = " مطالعه و 20تمرین تشریحی"
         table["cell_r2_c4"] = " مطالعه و 20تمرین تشریحی"
@@ -1112,17 +1112,17 @@ def run_algorithm(answers):
         table["cell_r3_c5"] = " مرور"
         table["cell_r4_c5"] = "  15 تست "
         table["cell_r5_c5"] = " مرور "
-        table["cell_r6_c5"] = "  "
-        table["cell_r7_c5"] = "  "
+        table["cell_r6_c5"] = ""
+        table["cell_r7_c5"] = ""
 
     elif q3_answer=="گزینه چهاردهم":
         table["cell_r1_c5"] = " ازمون"
-        table["cell_r2_c5"] = "  "
-        table["cell_r3_c5"] = " "
+        table["cell_r2_c5"] = ""
+        table["cell_r3_c5"] = ""
         table["cell_r4_c5"] = ""
         table["cell_r5_c5"] = " ازمون "
-        table["cell_r6_c5"] = "  "
-        table["cell_r7_c5"] = "  "
+        table["cell_r6_c5"] = ""
+        table["cell_r7_c5"] = ""
     elif q3_answer=="گزینه پانزدهم":
         table["cell_r1_c5"] = " مطالعه و 20تمرین تشریحی"
         table["cell_r2_c5"] = " مطالعه و 20تمرین تشریحی"
@@ -1285,8 +1285,8 @@ def run_algorithm(answers):
         table["cell_r3_c6"] = " مرور"
         table["cell_r4_c6"] = "  15 تست "
         table["cell_r5_c6"] = " مرور "
-        table["cell_r6_c6"] = "  "
-        table["cell_r7_c6"] = "  "
+        table["cell_r6_c6"] = ""
+        table["cell_r7_c6"] = ""
 
     elif q32_answer=="گزینه چهاردهم":
         table["cell_r1_c6"] = " ازمون"
@@ -1973,56 +1973,56 @@ def run_algorithm(answers):
         table["cell_r7_c10"] = ""
     elif q5_answer=="گزینه بیست و یک":
         table["cell_r1_c10"] = "مطالعه"
-        table["cell_r2_c10"] = "-"
-        table["cell_r3_c10"] = "-"
+        table["cell_r2_c10"] = ""
+        table["cell_r3_c10"] = ""
         table["cell_r4_c10"] = " مطالعه "
-        table["cell_r5_c10"] = "-"
-        table["cell_r6_c10"] = "-"
-        table["cell_r7_c10"] = "-"
+        table["cell_r5_c10"] = ""
+        table["cell_r6_c10"] = ""
+        table["cell_r7_c10"] = ""
     elif q5_answer=="گزینه بیست و دو":
         table["cell_r1_c10"] = "مطالعه"
-        table["cell_r2_c10"] = "-"
-        table["cell_r3_c10"] = "-"
+        table["cell_r2_c10"] = ""
+        table["cell_r3_c10"] = ""
         table["cell_r4_c10"] = " مطالعه "
         table["cell_r5_c10"] = " مطالعه "
-        table["cell_r6_c10"] = "-"
-        table["cell_r7_c10"] = "-"
+        table["cell_r6_c10"] = ""
+        table["cell_r7_c10"] = ""
 
     elif q5_answer=="گزینه بیست و سه":
         table["cell_r1_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r2_c10"] = "-"
-        table["cell_r3_c10"] = "-"
-        table["cell_r4_c10"] = "-"
+        table["cell_r2_c10"] = ""
+        table["cell_r3_c10"] = ""
+        table["cell_r4_c10"] = ""
         table["cell_r5_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c10"] = "-"
-        table["cell_r7_c10"] = "-"
+        table["cell_r6_c10"] = ""
+        table["cell_r7_c10"] = ""
 
     elif q5_answer=="گزینه بیستم":
         table["cell_r1_c10"] ="مطالعه و 20 تمرین تشریحی"
-        table["cell_r2_c10"] = "-"
-        table["cell_r3_c10"] = "-"
+        table["cell_r2_c10"] = ""
+        table["cell_r3_c10"] = ""
         table["cell_r4_c10"] = "مطالعه و 20 تمرین تشریحی"
         table["cell_r5_c10"] ="مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c10"] = "-"
-        table["cell_r7_c10"] = "-"
+        table["cell_r6_c10"] = ""
+        table["cell_r7_c10"] = ""
 
     elif q5_answer=="گزینه بیستم":
         table["cell_r1_c10"] = "ویدیو"
-        table["cell_r2_c10"] = "-"
-        table["cell_r3_c10"] = "-"
+        table["cell_r2_c10"] = ""
+        table["cell_r3_c10"] = ""
         table["cell_r4_c10"] = " ویدیو "
         table["cell_r5_c10"] = " ویدیو "
-        table["cell_r6_c10"] = "-"
-        table["cell_r7_c10"] = "-"
+        table["cell_r6_c10"] = ""
+        table["cell_r7_c10"] = ""
 
     elif q5_answer=="گزینه بیستم":
         table["cell_r1_c10"] = "ویدیو"
-        table["cell_r2_c10"] = "-"
-        table["cell_r3_c10"] = "-"
+        table["cell_r2_c10"] = ""
+        table["cell_r3_c10"] = ""
         table["cell_r4_c10"] = " ویدیو "
         table["cell_r5_c10"] = " ویدیو "
-        table["cell_r6_c10"] = "-"
-        table["cell_r7_c10"] = "-"
+        table["cell_r6_c10"] = ""
+        table["cell_r7_c10"] = ""
 
 
 
@@ -2153,38 +2153,38 @@ def run_algorithm(answers):
 
     elif q6_answer=="گزینه بیست و یک":
         table["cell_r1_c13"] = "مطالعه"
-        table["cell_r2_c13"] = "-"
-        table["cell_r3_c13"] = "-"
+        table["cell_r2_c13"] = ""
+        table["cell_r3_c13"] = ""
         table["cell_r4_c13"] = " مطالعه "
-        table["cell_r5_c13"] = "-"
-        table["cell_r6_c13"] = "-"
-        table["cell_r7_c13"] = "-"
+        table["cell_r5_c13"] = ""
+        table["cell_r6_c13"] = ""
+        table["cell_r7_c13"] = ""
     elif q6_answer=="گزینه بیست و دو":
         table["cell_r1_c13"] = "مطالعه"
-        table["cell_r2_c13"] = "-"
-        table["cell_r3_c13"] = "-"
+        table["cell_r2_c13"] = ""
+        table["cell_r3_c13"] = ""
         table["cell_r4_c13"] = " مطالعه "
         table["cell_r5_c13"] = " مطالعه "
-        table["cell_r6_c13"] = "-"
-        table["cell_r7_c13"] = "-"
+        table["cell_r6_c13"] = ""
+        table["cell_r7_c13"] = ""
 
     elif q6_answer=="گزینه بیست و سه":
         table["cell_r1_c13"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r2_c13"] = "-"
-        table["cell_r3_c13"] = "-"
-        table["cell_r4_c13"] = "-"
+        table["cell_r2_c13"] = ""
+        table["cell_r3_c13"] = ""
+        table["cell_r4_c13"] = ""
         table["cell_r5_c13"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c13"] = "-"
-        table["cell_r7_c13"] = "-"
+        table["cell_r6_c13"] = ""
+        table["cell_r7_c13"] = ""
 
     elif q6_answer=="گزینه بیست و چهار":
         table["cell_r1_c13"] ="مطالعه و 20 تمرین تشریحی"
-        table["cell_r2_c13"] = "-"
-        table["cell_r3_c13"] = "-"
+        table["cell_r2_c13"] = ""
+        table["cell_r3_c13"] = ""
         table["cell_r4_c13"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r5_c13"] ="مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c13"] = "-"
-        table["cell_r7_c13"] = "-"
+        table["cell_r5_c13"] ="طالعه و 20 تمرین تشریحی"
+        table["cell_r6_c13"] = ""
+        table["cell_r7_c13"] = ""
 
 
 
@@ -2315,38 +2315,38 @@ def run_algorithm(answers):
 
     elif q7_answer=="گزینه بیست و یک":
         table["cell_r1_c9"] = "مطالعه"
-        table["cell_r2_c9"] = "-"
-        table["cell_r3_c9"] = "-"
+        table["cell_r2_c9"] = ""
+        table["cell_r3_c9"] = ""
         table["cell_r4_c9"] = " مطالعه "
-        table["cell_r5_c9"] = "-"
-        table["cell_r6_c9"] = "-"
-        table["cell_r7_c9"] = "-"
+        table["cell_r5_c9"] = ""
+        table["cell_r6_c9"] = ""
+        table["cell_r7_c9"] = ""
     elif q7_answer=="گزینه بیست و دو":
         table["cell_r1_c9"] = "مطالعه"
-        table["cell_r2_c9"] = "-"
-        table["cell_r3_c9"] = "-"
+        table["cell_r2_c9"] = ""
+        table["cell_r3_c9"] = ""
         table["cell_r4_c9"] = " مطالعه "
         table["cell_r5_c9"] = " مطالعه "
-        table["cell_r6_c9"] = "-"
-        table["cell_r7_c9"] = "-"
+        table["cell_r6_c9"] = ""
+        table["cell_r7_c9"] = ""
 
     elif q7_answer=="گزینه بیست و سه":
         table["cell_r1_c9"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r2_c9"] = "-"
-        table["cell_r3_c9"] = "-"
-        table["cell_r4_c9"] = "-"
-        table["cell_r5_c9"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c9"] = "-"
-        table["cell_r7_c9"] = "-"
+        table["cell_r2_c9"] = ""
+        table["cell_r3_c9"] = ""
+        table["cell_r4_c9"] = ""
+        table["cell_r5_c9"] = "العه و 20 تمرین تشریحی"
+        table["cell_r6_c9"] = ""
+        table["cell_r7_c9"] = ""
 
     elif q7_answer=="گزینه بیست و چهار":
         table["cell_r1_c9"] ="مطالعه و 20 تمرین تشریحی"
-        table["cell_r2_c9"] = "-"
-        table["cell_r3_c9"] = "-"
+        table["cell_r2_c9"] = ""
+        table["cell_r3_c9"] = ""
         table["cell_r4_c9"] = "مطالعه و 20 تمرین تشریحی"
         table["cell_r5_c9"] ="مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c9"] = "-"
-        table["cell_r7_c9"] = "-"
+        table["cell_r6_c9"] = ""
+        table["cell_r7_c9"] = ""
 
 
 
@@ -2423,7 +2423,7 @@ def run_algorithm(answers):
     elif q8_answer=="گزینه چهاردهم":
         table["cell_r1_c10"] = " "
         table["cell_r2_c10"] = "ازمون"
-        table["cell_r3_c10"] = " "
+        table["cell_r3_c10"] = ""
         table["cell_r4_c10"] = ""
         table["cell_r5_c10"] = ""
         table["cell_r6_c10"] = ""
