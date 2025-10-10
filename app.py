@@ -42,25 +42,23 @@ def grade_result():
 
     user = User.query.get(session["uid"])
     if not user:
-        session.pop("uid", None)
         return redirect(url_for("login"))
 
-    if user.table and getattr(user, "table_generated_at", None):
-        gen_at = user.table_generated_at
-        if gen_at.tzinfo is None:
-            gen_at = gen_at.replace(tzinfo=timezone.utc)
-        if datetime.now(timezone.utc) - gen_at <= timedelta(days=7):
-            table = json.loads(user.table) if isinstance(user.table, str) else user.table
-            return render_template("grade_result.html", user=user, table=table)
+    # اگر هنوز داده‌ای ثبت نکرده بود:
+    if not user.submitted_at:
+        return redirect(url_for("wait"))
 
-    if not user.answers:
-        return redirect(url_for("index"))
-    answers = {ans.question_number: ans.answer for ans in user.answers}
-    table = run_algorithm(answers)
-    user.table = json.dumps(table, ensure_ascii=False)
-    user.table_generated_at = datetime.now(timezone.utc)
-    db.session.commit()
-    return render_template("grade_result.html", user=user, table=table)
+    # بررسی زمان 12 ساعت یا 7 روز
+    time_diff = datetime.now() - user.submitted_at
+    if time_diff.total_seconds() < 12 * 3600:
+        return redirect(url_for("wait"))
+    elif time_diff.days > 7:
+        # مثلاً می‌خوای بعد ۷ روز دوباره اجازه بده فرم پر کنه
+        return redirect(url_for("grade_12_tajrobi"))  # یا مسیر خودت
+
+    # حالا نمایش نتیجه
+    return render_template("grade_result.html", user=user)
+
 
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
