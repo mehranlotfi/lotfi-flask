@@ -269,7 +269,7 @@ def wait():
     # return render_template("grade_result.html", remaining=int(remaining))
 
 
-    # return render_template("wait.html", hours=hours, minutes=minutes, seconds=seconds)
+    return render_template("grade_result.html", hours=hours, minutes=minutes, seconds=seconds)
 
 
 
