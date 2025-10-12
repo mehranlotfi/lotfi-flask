@@ -1,38 +1,27 @@
+
 <!DOCTYPE html>
 <html lang="fa">
 <head>
     <meta charset="UTF-8">
-    <title>منتظر بمانید</title>
-    <style>
-        body {
-            font-family: sans-serif;
-            text-align: center;
-            background-color: #f5f5f5;
-            padding-top: 100px;
-        }
-        .timer {
-            font-size: 2rem;
-            color: #222;
-            margin-top: 30px;
-        }
-    </style>
-    <script>
-        let remaining = {{ remaining }};
-        function updateTimer() {
-            const timerElement = document.getElementById("timer");
-            if (remaining <= 0) {
-                window.location.href = "/grade_result";
-            } else {
-                timerElement.innerText = remaining + " ثانیه تا نمایش نتیجه...";
-                remaining--;
-                setTimeout(updateTimer, 1000);
-            }
-        }
-        window.onload = updateTimer;
-    </script>
+    <title>لطفا صبر کنید</title>
 </head>
 <body>
-    <h1>در حال پردازش نتایج شما...</h1>
-    <div id="timer" class="timer"></div>
+    <h1>لطفا صبر کنید...</h1>
+    <p>زمان باقی‌مانده: <span id="timer">{{ remaining }}</span> ثانیه</p>
+
+    <script>
+        let remaining = parseInt("{{ remaining }}");
+        let timerElem = document.getElementById("timer");
+
+        let countdown = setInterval(() => {
+            remaining--;
+            if (remaining <= 0) {
+                clearInterval(countdown);
+                window.location.href = "{{ url_for('grade_result') }}";
+            } else {
+                timerElem.textContent = remaining;
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
