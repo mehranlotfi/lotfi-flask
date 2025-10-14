@@ -1,26 +1,55 @@
-
 <!DOCTYPE html>
 <html lang="fa">
 <head>
     <meta charset="UTF-8">
-    <title>لطفا صبر کنید</title>
+    <title>لطفاً صبر کنید...</title>
+    <style>
+        body {
+            background: #f3f3f3;
+            font-family: "Vazirmatn", sans-serif;
+            text-align: center;
+            padding-top: 100px;
+        }
+        .timer {
+            font-size: 24px;
+            color: #333;
+            margin-top: 20px;
+            direction: rtl;
+        }
+    </style>
 </head>
 <body>
-    <h1>لطفا صبر کنید...</h1>
-    <p>زمان باقی‌مانده: <span id="timer">{{ remaining }}</span> ثانیه</p>
+    <h2>لطفاً صبر کنید...</h2>
+    <div class="timer">
+        زمان باقی‌مانده: 
+        <span id="time">
+            {{ hours }} ساعت، {{ minutes }} دقیقه، {{ seconds }} ثانیه
+        </span>
+    </div>
 
-<script>
-let totalSeconds = {{ hours*3600 + minutes*60 + seconds }};
-function countdown() {
-    if (totalSeconds <= 0) {
-        window.location.href = "/grade_result";
-    } else {
-        totalSeconds--;
-        setTimeout(countdown, 1000);
-    }
-}
-countdown();
-</script>
+    <script>
+        // محاسبه زمان کل به ثانیه
+        let totalSeconds = {{ hours*3600 + minutes*60 + seconds }};
+        const timeDisplay = document.getElementById("time");
 
+        function updateDisplay() {
+            let h = Math.floor(totalSeconds / 3600);
+            let m = Math.floor((totalSeconds % 3600) / 60);
+            let s = totalSeconds % 60;
+            timeDisplay.textContent = `${h} ساعت، ${m} دقیقه، ${s} ثانیه`;
+        }
+
+        function countdown() {
+            if (totalSeconds <= 0) {
+                window.location.href = "/grade_result";
+            } else {
+                updateDisplay();
+                totalSeconds--;
+                setTimeout(countdown, 1000);
+            }
+        }
+
+        countdown();
+    </script>
 </body>
 </html>
