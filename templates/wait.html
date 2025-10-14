@@ -9,19 +9,18 @@
     <h1>لطفا صبر کنید...</h1>
     <p>زمان باقی‌مانده: <span id="timer">{{ remaining }}</span> ثانیه</p>
 
-    <script>
-        let remaining = parseInt("{{ remaining }}");
-        let timerElem = document.getElementById("timer");
+<script>
+let totalSeconds = {{ hours*3600 + minutes*60 + seconds }};
+function countdown() {
+    if (totalSeconds <= 0) {
+        window.location.href = "/grade_result";
+    } else {
+        totalSeconds--;
+        setTimeout(countdown, 1000);
+    }
+}
+countdown();
+</script>
 
-        let countdown = setInterval(() => {
-            remaining--;
-            if (remaining <= 0) {
-                clearInterval(countdown);
-                window.location.href = "{{ url_for('grade_result') }}";
-            } else {
-                timerElem.textContent = remaining;
-            }
-        }, 1000);
-    </script>
 </body>
 </html>

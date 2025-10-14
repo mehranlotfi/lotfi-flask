@@ -252,25 +252,19 @@ def wait():
         submitted_at = submitted_at.replace(tzinfo=timezone.utc)
 
     now = datetime.now(timezone.utc)
+    # الان تایمر فقط 1 دقیقه‌ست
     ready_time = submitted_at + timedelta(minutes=1)
     remaining_seconds = max(0, int((ready_time - now).total_seconds()))
+
+    # اگر زمان تموم شده → برو نتیجه
+    if remaining_seconds <= 0:
+        return redirect(url_for("grade_result"))
+
     hours = remaining_seconds // 3600
     minutes = (remaining_seconds % 3600) // 60
     seconds = remaining_seconds % 60
-    # now = datetime.utcnow()
-    # diff = now - user.submitted_at
 
-    # # تست: بعد از 60 ثانیه برو به result
-    # if diff > timedelta(seconds=60):
-    #     return redirect(url_for("grade_result"))
-
-    # # اگر هنوز زمان نگذشته:
-    # remaining = 60 - diff.total_seconds()
-    # return render_template("grade_result.html", remaining=int(remaining))
-
-
-    return render_template("grade_result.html", hours=hours, minutes=minutes, seconds=seconds)
-
+    return render_template("wait.html", hours=hours, minutes=minutes, seconds=seconds)
 
 
 @app.route("/submit-answers", methods=["POST"])
