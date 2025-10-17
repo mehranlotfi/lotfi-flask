@@ -3035,7 +3035,7 @@ def run_algorithm(answers):
 
     q121_answer = answers.get("q121", "")
     if q121_answer == "گزینه اول":
-        table["cell_r1_c14"] = "پیش بینی :6 ساعت"
+        table["cell_r1_c14"] = "___6h___"
         table["cell_r1_c1"] = ""
         table["cell_r1_c10"]="" 
         table["cell_r1_c7"]=""
@@ -3043,32 +3043,32 @@ def run_algorithm(answers):
         table["cell_r1_c4"] =""
 
     elif q121_answer == "گزینه دوم":
-        table["cell_r1_c14"] = "پیش بینی :7 ساعت"
+        table["cell_r1_c14"] = "___7h___"
         table["cell_r1_c1"] = ""
         table["cell_r1_c6"] = ""
         table["cell_r1_c3"]=""
         table["cell_r1_c8"] =""
 
     elif q121_answer == "گزینه سوم":
-        table["cell_r1_c14"] = "پیش بینی :8 ساعت"
+        table["cell_r1_c14"] = "___8h___"
         table["cell_r1_c6"] = ""
         table["cell_r1_c7"] = ""
         table["cell_r1_c2"] = ""
        
     elif q121_answer == "گزینه چهارم":
-        table["cell_r1_c14"] = "پیش بینی :9 ساعت"
+        table["cell_r1_c14"] = "___9h___"
         table["cell_r1_c4"] = ""
         table["cell_r1_c6"] = ""
         table["cell_r1_c9"]=""
 
     elif q121_answer == "گزینه پنجم":
-        table["cell_r1_c14"] = "پیش بینی :10 ساعت"
+        table["cell_r1_c14"] = "___10h___"
         table["cell_r1_c3"] = ""
         table["cell_r1_c6"] = ""
 
         table["cell_r1_c6"] =""
     elif q121_answer == "گزینه ششم":
-        table["cell_r1_c14"] = "پیش بینی :11 ساعت"
+        table["cell_r1_c14"] = "___11h___"
         table["cell_r1_c5"] = ""
         table["cell_r1_c3"] = ""
 
