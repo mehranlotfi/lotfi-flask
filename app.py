@@ -3037,7 +3037,7 @@ def run_algorithm(answers):
     if q121_answer == "گزینه اول":
         table["cell_r1_c14"] = "پیش بینی :6 ساعت"
         table["cell_r1_c1"] = ""
-
+        table["cell_r1_c10"]="" 
         table["cell_r1_c7"]=""
         table["cell_r1_c8"] =""
         table["cell_r1_c4"] =""
@@ -3060,8 +3060,7 @@ def run_algorithm(answers):
         table["cell_r1_c4"] = ""
         table["cell_r1_c6"] = ""
         table["cell_r1_c9"]=""
-        table["cell_r1_c1"]=""
-        table["cell_r1_c6"] =""
+
     elif q121_answer == "گزینه پنجم":
         table["cell_r1_c14"] = "پیش بینی :10 ساعت"
         table["cell_r1_c3"] = ""
@@ -3079,7 +3078,7 @@ def run_algorithm(answers):
    
     q122_answer = answers.get("q122", "")
     if q122_answer == "گزینه اول":
-        table["cell_r2_c14"] = "پیش بینی :6 ساعت"
+        table["cell_r2_c14"] = "___6h___"
         table["cell_r2_c10"] = ""
         table["cell_r2_c5"] = ""
         table["cell_r2_c3"]=""
@@ -3087,55 +3086,55 @@ def run_algorithm(answers):
         table["cell_r2_c8"] =""
 
     elif q122_answer == "گزینه دوم":
-        table["cell_r2_c14"] = "پیش بینی :7 ساعت"
+        table["cell_r2_c14"] = "___7h___"
         table["cell_r2_c7"] = ""
         table["cell_r2_c2"] = ""
         table["cell_r2_c3"]=""
         table["cell_r2_c6"] =""
 
     elif q122_answer == "گزینه سوم":
-        table["cell_r2_c14"] = "پیش بینی :8 ساعت"
+        table["cell_r2_c14"] = "___8h___"
         table["cell_r2_c2"] = ""
         table["cell_r2_c5"] = ""
         
         table["cell_r2_c6"] =""
     elif q122_answer == "گزینه چهارم":
-        table["cell_r2_c14"] = "پیش بینی :9 ساعت"
+        table["cell_r2_c14"] = "___9h___"
         table["cell_r2_c4"] = ""
         table["cell_r2_c2"] = ""
        
         table["cell_r2_c6"] =""
     elif q122_answer == "گزینه پنجم":
-        table["cell_r2_c14"] = "پیش بینی :10 ساعت"
+        table["cell_r2_c14"] = "___10h___"
         table["cell_r2_c8"] = ""
         table["cell_r2_c3"] = ""
 
         table["cell_r2_c6"] =""
     elif q122_answer == "گزینه ششم":
-        table["cell_r2_c14"] = "پیش بینی :11 ساعت"
+        table["cell_r2_c14"] = "___11h___"
         table["cell_r2_c2"] = ""
         table["cell_r2_c8"] = ""
 
     elif q122_answer == "گزینه هفتم":
-        table["cell_r2_c14"] = "پیش بینی :12 ساعت"
+        table["cell_r2_c14"] = "___12h___"
         table["cell_r2_c8"] = ""
         table["cell_r2_c6"] = ""
 
     elif q122_answer == "گزینه هشتم":
-        table["cell_r2_c14"] = "پیش بینی :13 ساعت"    
+        table["cell_r2_c14"] = "___13h___"  
         table["cell_r2_c1"] = ""
         table["cell_r2_c3"] = ""
 
     elif q122_answer == "گزینه نهم":
-        table["cell_r2_c14"] = "پیش بینی :14 ساعت"
+        table["cell_r2_c14"] = "___14h___"
         table["cell_r2_c6"] = ""
 
     elif q122_answer == "گزینه دهم":
-        table["cell_r2_c14"] = "پیش بینی :15 ساعت"
+        table["cell_r2_c14"] = "___15h___"
         table["cell_r2_c2"] = ""
 
     elif q122_answer == "گزینه یازدهم":
-        table["cell_r2_c14"] = "پیش بینی :16 ساعت"
+        table["cell_r2_c14"] = "___16h___"
         table["cell_r2_c1"] = ""
 
 
@@ -3231,19 +3230,19 @@ def run_algorithm(answers):
         table["cell_r5_c5"] = ""
         table["cell_r5_c7"]=""
         
-        table["cell_r4_c6"] =""
+        table["cell_r5_c6"] =""
     elif q125_answer == "گزینه چهارم":
         table["cell_r5_c14"] ="___9h___"
         table["cell_r5_c5"] = ""
         table["cell_r5_c2"]=""
        
-        table["cell_r4_c3"] =""
+        table["cell_r5_c3"] =""
     elif q125_answer == "گزینه پنجم":
         table["cell_r5_c14"] = "___10h___"
         table["cell_r5_c6"] = ""
        
 
-        table["cell_r4_c3"] =""
+        table["cell_r5_c3"] =""
     elif q125_answer == "گزینه ششم":
         table["cell_r5_c14"] = "___11h___"
         table["cell_r5_c2"] = ""
@@ -3267,13 +3266,13 @@ def run_algorithm(answers):
     elif q126_answer == "گزینه سوم":
         table["cell_r6_c14"] = "___8h___"
         table["cell_r6_c5"] = ""
-        table["cell_r5_c2"]=""    
+        table["cell_r6_c2"]=""    
         
         table["cell_r6_c6"] =""
     elif q126_answer == "گزینه چهارم":
         table["cell_r6_c14"] = "___9h___"
         table["cell_r6_c5"] = ""
-        table["cell_r5_c2"]=""
+        table["cell_r6_c2"]=""
        
         table["cell_r6_c3"] =""
     elif q126_answer == "گزینه پنجم":

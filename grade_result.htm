@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<!-- saved from url=(0034)http://127.0.0.1:5000/grade_result -->
+<html lang="fa" dir="rtl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head><body><header class="site-header"> <!-- اگر هدر ثابت داری، ارتفاعش رو در CSS محاسبه کن -->
+    <!-- محتویات هدر -->
+  </header>
+<link rel="stylesheet">
+
+
+
+<style>
+
+/* CSS */
+html, body {
+  height: 100%;
+  margin: 0; /* مهم: حذف margin پیش‌فرض برای جلوگیری از اسکرول */
+  overflow-x: hidden;
+}
+
+.hero {
+  height: 199%;           
+  width: 115%;
+  background-image: url("C:/Users/WINDOWS 11/Desktop/my_project/static/images/عکس برنامه.jpg");
+  background-size:contain;      /* تصویر را برای پوشش کامل برش می‌دهد */
+  background-position: center; /* حفظ تمرکز روی مرکز تصویر */
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;         /* مرکز‌چین عمودی محتوا */
+  justify-content: center;     /* مرکز‌چین افقی محتوا */
+  justify-content: center;
+  align-items: center;
+}
+
+/* اگر می‌خواهی لایه تیره/شفاف روش باشه */
+ero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  background: rgba(0,0,0,0.25); /* یا شفاف‌تر/تیره‌تر به دلخواه */
+}
+
+/* در موبایل ممکنه بخوای متن کوچکتر باشه */
+@media (max-width: 600px) {
+  .hero { background-position: center 30%; }
+  .hero-overlay h1 { font-size: 1.4rem; }
+}
+
+
+
+
+/* کل صفحه، عکس کاور */
+.page {
+
+ font-family: 'Vazirmatn', sans-serif;
+  background-size: cover;       /* عکس کاور کل صفحه */
+  background-position: center;  /* وسط چین */
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* باکس جدول داخل بخش سفید */
+.table-box {
+width: 50%;
+font-family: 'Vazirmatn', sans-serif;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 150px;
+}
+
+/* استایل جدول */
+table {
+  table-layout: fixed;   /* سایز سلول‌ها ثابت میشه */
+  width: 150%;           /* یا هر عرضی که خواستی */
+}
+
+td {
+  border: 0px solid #ffffff;
+  text-align: center;
+  font-weight: bold;
+   font-family: 'Vazirmatn', sans-serif;
+   font-size: 12px;
+   width: 30px;
+   height: 10px;
+}
+
+</style>
+
+
+
+<!-- HTML -->
+
+
+
+<section class="hero" style="background-image:url(&#39;/static/images/%D8%B9%DA%A9%D8%B3%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87.jpg&#39;);">
+
+  <div class="table-box">
+  
+      <!-- اینجا جدولت --><div class="page">
+ 
+  <table>
+   
+  <!-- ردیف 1 -->
+  <tbody><tr>
+  <td id="cell_r0_c0" style="color: rgb(255, 75, 75); grid-column: 1 / 2; grid-row: 1 / 2; font-size: 16px;    font-family: &#39;Vazirmatn&#39;, sans-serif ; height: 30px;"> شنبه   </td>
+
+  <td id="cell_r1_c1" style="height: 80px; width: 50px;">مطالعه - (درس یک  دینی)</td>
+  <td id="cell_r1_c2">مطالعه - (اندازه گیری)</td>
+  <td id="cell_r1_c3">مطالعه - (تابع)</td>
+  <td id="cell_r1_c4">مطالعه - (مولکول های اطلاعاتی)</td>
+  <td id="cell_r1_c5">مطالعه - (گوارش و جذب مواد)</td>
+  <td id="cell_r1_c6">مطالعه - (درس یک شیمی 3)</td>
+  <td id="cell_r1_c7">مطالعه - (تابع)</td>
+  <td id="cell_r1_c8">مطالعه - (درس یک عربی)</td>
+  <td id="cell_r1_c9"></td>
+<td id="cell_r1_c12"></td>
+<td id="cell_r1_c13"></td>
+<td id="cell_r1_c14">پیش بینی :10 ساعت</td>
+  <td id="cell_r1_c10"></td>
+  
+  <td id="cell_r1_c11" style="color: rgb(255, 75, 75);  font-size: 14.5px; font-family: &#39;Vazirmatn&#39;, sans-serif; "></td>
+</tr>
+
+
+
+
+  <!-- ردیف 2 -->
+  <tr>
+  <td id="cell_r0_c0" style="color: rgb(255, 75, 75); font-size: 16px;    font-family: &#39;Vazirmatn&#39;, sans-serif ;   height: 50px;">یکشنبه </td>
+  <td id="cell_r2_c1" style="height: 80px;  width: 70px;">مطالعه - (تابع)</td>
+  <td id="cell_r2_c2">مطالعه - (اندازه گیری)</td>
+  <td id="cell_r2_c3">مطالعه - (گوارش و جذب مواد)</td>
+  <td id="cell_r2_c4">مطالعه - (مولکول های اطلاعاتی)</td>
+  <td id="cell_r2_c5">مطالعه - (درس یک شیمی 3)</td>
+  <td id="cell_r2_c6">مطالعه - (درس یک عربی)</td>
+  <td id="cell_r2_c7"></td>
+  <td id="cell_r2_c8"></td>
+  <td id="cell_r2_c9"></td>
+  <td id="cell_r2_c10"></td>
+  <td id="cell_r2_c12"></td>
+  <td id="cell_r2_c13"></td>
+  <td id="cell_r2_c14">پیش بینی :10 ساعت</td>
+  <td id="cell_r2_c11" style="color: rgb(255, 75, 75); font-size: 14.5px;"></td>
+</tr>
+
+
+
+  <!-- ردیف 3 -->
+  <tr>
+  <td style="color: rgb(255, 75, 75);font-size: 16px;    font-family: &#39;Vazirmatn&#39;, sans-serif ;      height: 50px; ">دوشنبه</td>
+  <td id="cell_r3_c1" style="height: 80px;  width: 70px;">مطالعه - (تابع)</td>
+  <td id="cell_r3_c2">مطالعه - (اندازه گیری)</td>
+  <td id="cell_r3_c3">45تست - (مولکول های اطلاعاتی)</td>
+  <td id="cell_r3_c4">مطالعه - (درس یک عربی)</td>
+  <td id="cell_r3_c5">مطالعه - (درس یک فیزیک3)</td>
+  <td id="cell_r3_c6">25تست - (تابع)</td>
+  <td id="cell_r3_c7">مطالعه - (گوارش و جذب مواد)</td>
+  <td id="cell_r3_c8"></td>
+  <td id="cell_r3_c9"></td>
+  <td id="cell_r3_c10"></td>
+  <td id="cell_r3_c12"></td>
+  <td id="cell_r3_c13"></td>
+  <td id="cell_r3_c14">___10h___</td>
+
+  <td id="cell_r3_c11" style="color: rgb(255, 75, 75); font-size: 14.5px;"></td>
+</tr>
+
+  <tr>
+  <td style="color: rgb(255, 75, 75); font-size: 16px;    font-family: &#39;Vazirmatn&#39;, sans-serif ;  height: 50px;">سه شنبه</td>
+  <td id="cell_r4_c1" style="height: 80px;  width: 70px;"> مطالعه  - (درس یک شیمی 3)</td>
+  <td id="cell_r4_c2"> مطالعه  - (اندازه گیری)</td>
+  <td id="cell_r4_c3">مطالعه - (درس یک عربی)</td>
+  <td id="cell_r4_c4"> 25تست  - (تابع)</td>
+  <td id="cell_r4_c5"> مطالعه  - (گوارش و جذب مواد)</td>
+  <td id="cell_r4_c6"> 45تست  - (مولکول های اطلاعاتی)</td>
+  <td id="cell_r4_c7"> مطالعه  - (تابع)</td>
+  <td id="cell_r4_c8"></td>
+  <td id="cell_r4_c9"></td>
+  <td id="cell_r4_c10"></td>
+  <td id="cell_r4_c12"></td>
+  <td id="cell_r4_c13"></td>
+  <td id="cell_r4_c14">___10h___</td>
+  <td id="cell_r4_c11" style="color: rgb(255, 75, 75); font-size: 14.5px;"></td>
+</tr>
+
+  <tr>
+  <td style="color: rgb(255, 75, 75);font-size: 16px;    font-family: &#39;Vazirmatn&#39;, sans-serif ; height: 80px;">چهارشنبه</td>
+  <td id="cell_r5_c1" style="height: 80px;  width: 70px;">55تست  - (مولکول های اطلاعاتی)</td>
+  <td id="cell_r5_c2">30تست  - (اندازه گیری)</td>
+  <td id="cell_r5_c3">مطالعه  - (درس یک شیمی 3)</td>
+  <td id="cell_r5_c4">25تست  - (تابع)</td>
+  <td id="cell_r5_c5">مطالعه  - (تابع)</td>
+  <td id="cell_r5_c6">مطالعه  - (درس یک فیزیک3)</td>
+  <td id="cell_r5_c7">مطالعه  - (گوارش و جذب مواد)</td>
+  <td id="cell_r5_c8"></td>
+  <td id="cell_r5_c9"></td>
+  <td id="cell_r5_c10"></td>
+  <td id="cell_r5_c12"></td>
+  <td id="cell_r5_c13"></td>
+  <td id="cell_r5_c14">___10h___</td>
+  <td id="cell_r5_c11" style="color: rgb(255, 75, 75);  font-size: 14.5px;"></td>
+</tr>
+
+
+
+  <tr>
+  <td style="color: rgb(255, 75, 75);font-size: 16px;    font-family: &#39;Vazirmatn&#39;, sans-serif ; height: 80px;">پنجشنبه</td>
+  <td id="cell_r6_c1" style="height: 80px;  width: 70px;">25تست  - (تابع)</td>
+  <td id="cell_r6_c2">30تست  - (درس یک شیمی 3)</td>
+  <td id="cell_r6_c3">30تست  - (گوارش و جذب مواد)</td>
+  <td id="cell_r6_c4">45تست  - (مولکول های اطلاعاتی)</td>
+  <td id="cell_r6_c5">مطالعه  - (تابع)</td>
+  <td id="cell_r6_c6">30تست  - (اندازه گیری)</td>
+  <td id="cell_r6_c7"></td>
+  <td id="cell_r6_c8"></td>
+  <td id="cell_r6_c9"></td>
+  <td id="cell_r6_c10"></td>
+  <td id="cell_r6_c12"></td>
+  <td id="cell_r6_c13"></td>
+  <td id="cell_r6_c14">___10h___</td>
+  <td id="cell_r6_c11" style="color: rgb(255, 75, 75);  font-size: 16px;"></td>
+</tr>
+
+
+  <tr>
+  <td style="color: rgb(255, 75, 75); font-size: 16px;    font-family: &#39;Vazirmatn&#39;, sans-serif ; height: 80px;">جمعه</td>
+  <td id="cell_r7_c1" style="height: 80px;  width: 70px;">30تست  - (کیهان زادگاه الفبای هستی)</td>
+  <td id="cell_r7_c2">30تست  - (درس یک فیزیک3)</td>
+  <td id="cell_r7_c3">30تست  - (تابع)</td>
+  <td id="cell_r7_c4">30تست  - (اندازه گیری)</td>
+  <td id="cell_r7_c5">25تست  - (تابع)</td>
+  <td id="cell_r7_c6">40تست  - (گوارش و جذب مواد)</td>
+  <td id="cell_r7_c7">30تست  - (درس یک شیمی 3)</td>
+  <td id="cell_r7_c8"></td>
+  <td id="cell_r7_c9"></td>
+  <td id="cell_r7_c10"></td>
+  <td id="cell_r7_c12"></td>
+  <td id="cell_r7_c13"></td>
+  <td id="cell_r7_c14">45تست  - (مولکول های اطلاعاتی)</td>
+  <td id="cell_r7_c11" style="color: rgb(255, 75, 75);  font-size: 14.5px;"></td>
+ </tr>
+
+
+
+  
+
+  </tbody></table>
+  </div>
+</div></section>
+
+  <!-- بقیه محتوا در بخش‌های بعدی -->
+
+
+
+
+
+
+
+
+
+
+<!-- لوگو بالا سمت راست -->
+
+
+
+
+</body></html>
