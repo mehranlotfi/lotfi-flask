@@ -53,7 +53,10 @@ def grade_result():
         user.table_generated_at = datetime.now(timezone.utc)
         db.session.commit()
     else:
-        table = json.loads(user.table)
+        try:
+            table = json.loads(user.table)
+        except Exception:
+            table = user.table
 
     return render_template("grade_result.html", user=user, table=table)
 
@@ -142,9 +145,9 @@ def grade_page(grade_label):
 #     return render_template("login.html")
 
 
-
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    # اگر POST — پردازش لاگین
     if request.method == "POST":
         national_id = request.form.get("national_id", "").strip()
         password = request.form.get("password", "").strip()
@@ -162,46 +165,50 @@ def login():
             flash("رمز عبور اشتباه است.")
             return redirect(url_for("login"))
 
-        # مطمئن شو session سالم ست میشه
+        # ثبت session
         session["uid"] = int(user.id)
-
         now = datetime.now(timezone.utc)
 
-        # اگر قبلاً جدول تولید شده و کمتر از 7 روز گذشته، مستقیم نمایش بده
+        # 1) اگر جدول قبلاً ساخته شده و کمتر از 7 روز از تولیدش گذشته -> مستقیم نمایش دهید
         gen_at = getattr(user, "table_generated_at", None)
         if user.table and gen_at:
             if gen_at.tzinfo is None:
                 gen_at = gen_at.replace(tzinfo=timezone.utc)
             if now - gen_at <= timedelta(days=7):
-                table = json.loads(user.table) if isinstance(user.table, str) else user.table
+                try:
+                    table = json.loads(user.table) if isinstance(user.table, str) else user.table
+                except Exception:
+                    table = user.table or {}
                 return render_template("grade_result.html", user=user, table=table)
 
-        # اگر هنوز پاسخی نداده -> هدایت به صفحهٔ گرید تا پر کنه
-        if not user.submitted_at:
-            return redirect(url_for("grade_page", grade_label=user.grade_label))
+        # 2) اگر پاسخی درج شده ولی هنوز 6 ساعت نگذشته -> نمایش wait با remaining_seconds
+        if user.submitted_at:
+            submitted_at = user.submitted_at
+            if submitted_at.tzinfo is None:
+                submitted_at = submitted_at.replace(tzinfo=timezone.utc)
 
-        # اگر پاسخش فرستاده شده ولی 12 ساعت نگذشته -> صفحهٔ انتظار با شمارش معکوس
-        submitted_at = user.submitted_at
-        if submitted_at.tzinfo is None:
-            submitted_at = submitted_at.replace(tzinfo=timezone.utc)
+            ready_time = submitted_at + timedelta(hours=6)   # <-- 6 ساعت
+            if now < ready_time:
+                remaining = ready_time - now
+                remaining_seconds = int(remaining.total_seconds())
+                hours = remaining_seconds // 3600
+                minutes = (remaining_seconds % 3600) // 60
+                seconds = remaining_seconds % 60
+                return render_template("wait.html",
+                                       hours=hours, minutes=minutes, seconds=seconds,
+                                       remaining_seconds=remaining_seconds)
 
-        ready_time = submitted_at + timedelta(minutes=1)
-        if now < ready_time:
-            remaining = ready_time - now
-            hours = remaining.seconds // 3600
-            minutes = (remaining.seconds % 3600) // 60
-            seconds = remaining.seconds % 60
-            return render_template("wait.html", hours=hours, minutes=minutes, seconds=seconds)
-
-        # در غیر این صورت: جدول رو بساز، ذخیره کن و نمایش بده
+        # 3) در غیر این صورت (اگر 6 ساعت گذشته یا پاسخی نبود) -> تولید جدول و نمایش result
         answers = {ans.question_number: ans.answer for ans in user.answers}
         table = run_algorithm(answers)
-        user.table = json.dumps(table, ensure_ascii=False)
+        user.table = json.dumps(table, ensure_ascii=False, default=str)
         user.table_generated_at = now
         db.session.commit()
         return render_template("grade_result.html", user=user, table=table)
 
+    # اگر GET — فقط صفحه لاگین را نمایش بده (بدون دسترسی به user)
     return render_template("login.html")
+
 
 
 def map_grade_to_label(grade_fa):
@@ -249,19 +256,22 @@ def wait():
         submitted_at = submitted_at.replace(tzinfo=timezone.utc)
 
     now = datetime.now(timezone.utc)
-    # الان تایمر فقط 1 دقیقه‌ست
-    ready_time = submitted_at + timedelta(minutes=1)
-    remaining_seconds = max(0, int((ready_time - now).total_seconds()))
+    ready_time = submitted_at + timedelta(hours=6)   # ← 6 ساعت
+    remaining_seconds = int(max(0, (ready_time - now).total_seconds()))
 
-    # اگر زمان تموم شده → برو نتیجه
     if remaining_seconds <= 0:
+        # اگر زمان گذشته، مستقیم بفرست grade_result
         return redirect(url_for("grade_result"))
 
+    # محاسبه برای نمایش اولیه (اختیاری)
     hours = remaining_seconds // 3600
     minutes = (remaining_seconds % 3600) // 60
     seconds = remaining_seconds % 60
 
-    return render_template("wait.html", hours=hours, minutes=minutes, seconds=seconds)
+    # پاس دادن total ثانیه به قالب تا جاوااسکریپت استفاده کنه
+    return render_template("wait.html",
+                           hours=hours, minutes=minutes, seconds=seconds,
+                           remaining_seconds=remaining_seconds)
 
 
 @app.route("/submit-answers", methods=["POST"])
@@ -288,7 +298,7 @@ def submit_answers():
     user.table_generated_at = None
     db.session.commit()
 
-    return redirect(url_for("grade_result"))
+    return redirect(url_for("wait"))
 
 
 

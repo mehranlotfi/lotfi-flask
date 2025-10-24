@@ -220,6 +220,96 @@
     }
   </style>
 </head>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  try {
+    // پیدا کردن همه‌ی لینک‌هایی که به لاگین اشاره می‌کنند
+    const loginAnchors = Array.from(document.querySelectorAll('a[href*="/login"], a[href$="/login"]'));
+
+    // اگر هیچ لینکی پیدا نشد، تابع کمکی برای فورس رفتن می‌سازیم
+    if (loginAnchors.length === 0) {
+      console.warn("[fix-login] no login anchors found on page");
+    }
+
+    // helper: امن‌سازی ظاهر/کلیک‌پذیری لینک
+    function makeClickable(a) {
+      // فقط در صورتی اعمال شود که قبلاً تغییر نشده
+      if (!a.dataset.fixLoginApplied) {
+        // مطمئن شدن از قرارگیری در بالاترین لایه و فعال بودن pointer events
+        a.style.position = a.style.position || 'relative';
+        a.style.zIndex = a.style.zIndex || '9999';
+        a.style.pointerEvents = 'auto';
+        a.dataset.fixLoginApplied = "1";
+      }
+    }
+
+    loginAnchors.forEach(function(a) {
+      makeClickable(a);
+
+      // وقتی نشانگر وارد لینک می‌شود، اگر عنصری لینک را پوشانده باشد موقتاً pointer-events آن را خاموش کن
+      a.addEventListener('mouseenter', function () {
+        try {
+          const rect = a.getBoundingClientRect();
+          const cx = rect.left + rect.width/2;
+          const cy = rect.top + rect.height/2;
+          const topEl = document.elementFromPoint(cx, cy);
+          if (topEl && topEl !== a && !a.contains(topEl)) {
+            // به‌طور موقت کلیک‌پذیری عنصر بالایی را غیر فعال می‌کنیم تا کلیک از طریق خود لینک رخ دهد
+            topEl.__prevPointerEvents = topEl.style.pointerEvents || '';
+            topEl.style.pointerEvents = 'none';
+            // بعد از 300ms مقدار قبلی را برمی‌گردانیم
+            setTimeout(function () {
+              try { topEl.style.pointerEvents = topEl.__prevPointerEvents || ''; } catch(e) {}
+            }, 300);
+          }
+        } catch (er) { /* ignore */ }
+      });
+
+      // listener کلیک: اجازه میده دلیل native navigation اجرا بشه، اما اگر بعد از کوتاهی مسیر عوض نشد، اجباری می‌کنه
+      a.addEventListener('click', function (ev) {
+        try {
+          console.log('[fix-login] login anchor clicked, href=', a.href);
+        } catch (e) {}
+        // after short delay, if navigation didn't happen, force it
+        setTimeout(function () {
+          try {
+            const targetPath = new URL(a.href, location.href).pathname;
+            if (location.pathname !== targetPath) {
+              // Force navigation
+              window.location.href = a.href;
+            }
+          } catch (e) {
+            // fallback to /login
+            if (location.pathname !== '/login') location.href = '/login';
+          }
+        }, 120);
+        // do NOT call preventDefault(); let normal navigation proceed where possible
+      }, { passive: true });
+
+      // make keyboard-accessible (Enter key)
+      a.addEventListener('keydown', function (ev) {
+        if (ev.key === 'Enter' || ev.keyCode === 13) {
+          setTimeout(function () { if (location.pathname !== new URL(a.href, location.href).pathname) location.href = a.href; }, 80);
+        }
+      });
+    });
+
+    // Expose a forced function for debugging/testing: call window.forceGoLogin()
+    window.forceGoLogin = function () {
+      if (loginAnchors.length > 0) {
+        window.location.href = loginAnchors[0].href;
+      } else {
+        window.location.href = '/login';
+      }
+    };
+
+    console.log("[fix-login] script initialized, anchors:", loginAnchors.length);
+  } catch (err) {
+    console.error("[fix-login] error initializing:", err);
+  }
+});
+</script>
+
 <body>
   <!-- Grid -->
   <div class="grid-bg"></div>

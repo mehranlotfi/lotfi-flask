@@ -1,55 +1,170 @@
 <!DOCTYPE html>
 <html lang="fa">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>لطفاً صبر کنید...</title>
     <style>
-        body {
-            background: #f3f3f3;
-            font-family: "Vazirmatn", sans-serif;
+        :root {
+            --bg: #0f172a;
+            --card: #0b1220;
+            --text: #e6eef8;
+            --muted: #9fb0cf;
+            --accent: #4f9ef8;
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: "Vazirmatn", "Tahoma", sans-serif;
+            background: linear-gradient(180deg, #081029 0%, #0b1220 100%);
+            color: var(--text);
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+            direction: rtl;
+        }
+        .wrap {
+            min-height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 36px;
+            box-sizing: border-box;
+        }
+        .card {
+            width: 100%;
+            max-width: 720px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 14px;
+            padding: 28px;
+            box-shadow: 0 8px 30px rgba(2,6,23,0.6);
             text-align: center;
-            padding-top: 100px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 22px;
+            color: var(--text);
+        }
+        p.lead {
+            margin: 10px 0 22px 0;
+            color: var(--muted);
+            font-size: 15px;
         }
         .timer {
-            font-size: 24px;
-            color: #333;
-            margin-top: 20px;
-            direction: rtl;
+            display: inline-block;
+            background: rgba(255,255,255,0.02);
+            padding: 14px 22px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 20px;
+            letter-spacing: 0.4px;
+            min-width: 260px;
+        }
+        .small {
+            display: block;
+            margin-top: 10px;
+            color: var(--muted);
+            font-size: 13px;
+        }
+        .spinner {
+            margin: 18px auto 0;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 4px solid rgba(255,255,255,0.08);
+            border-top-color: var(--accent);
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* responsive */
+        @media (max-width: 480px) {
+            .card { padding: 18px; }
+            .timer { font-size: 18px; min-width: 200px; }
         }
     </style>
 </head>
 <body>
-    <h2>لطفاً صبر کنید...</h2>
-    <div class="timer">
-        زمان باقی‌مانده: 
-        <span id="time">
-            {{ hours }} ساعت، {{ minutes }} دقیقه، {{ seconds }} ثانیه
-        </span>
+    <div class="wrap">
+        <div class="card" role="main" aria-live="polite">
+            <h1>لطفاً صبر کنید...</h1>
+            <p class="lead">در حال پردازش پاسخ‌های شما. بعد از پایان زمان نمایش نتایج به‌طور خودکار صورت می‌گیرد.</p>
+
+            <div class="timer" aria-label="زمان باقی‌مانده">
+                <span id="time">
+                    {# مقدار اولیهٔ نمایش (فقط برای رندر اولیه قبل از اجرای JS) #}
+                    {{ hours if hours is not none else 0 }} ساعت،
+                    {{ minutes if minutes is not none else 0 }} دقیقه،
+                    {{ seconds if seconds is not none else 0 }} ثانیه
+                </span>
+                <span class="small" id="smallnote">پس از پایان زمان به صفحهٔ نتایج منتقل خواهید شد.</span>
+            </div>
+
+            <div class="spinner" aria-hidden="true"></div>
+
+            <p style="margin-top:18px;color:var(--muted);font-size:13px;">
+                اگر پس از پایان زمان منتقل نشدید، <a href="/grade_result" style="color:var(--accent);text-decoration:none;">اینجا کلیک کنید</a>.
+            </p>
+        </div>
     </div>
 
     <script>
-        // محاسبه زمان کل به ثانیه
-        let totalSeconds = {{ hours*3600 + minutes*60 + seconds }};
-        const timeDisplay = document.getElementById("time");
+        // اگر remaining_seconds از سرور نیامده، از hours/minutes/seconds استفاده کن
+        (function() {
+            // مقداردهی امن از Jinja
+            let remaining = typeof {{ remaining_seconds if remaining_seconds is not none else "null" }} !== 'undefined' ? {{ remaining_seconds if remaining_seconds is not none else "null" }} : null;
 
-        function updateDisplay() {
-            let h = Math.floor(totalSeconds / 3600);
-            let m = Math.floor((totalSeconds % 3600) / 60);
-            let s = totalSeconds % 60;
-            timeDisplay.textContent = `${h} ساعت، ${m} دقیقه، ${s} ثانیه`;
-        }
-
-        function countdown() {
-            if (totalSeconds <= 0) {
-                window.location.href = "/grade_result";
-            } else {
-                updateDisplay();
-                totalSeconds--;
-                setTimeout(countdown, 1000);
+            if (remaining === null) {
+                // fallback: محاسبه از hours/minutes/seconds
+                try {
+                    let h = parseInt({{ hours if hours is not none else 0 }});
+                    let m = parseInt({{ minutes if minutes is not none else 0 }});
+                    let s = parseInt({{ seconds if seconds is not none else 0 }});
+                    remaining = h*3600 + m*60 + s;
+                } catch(e) {
+                    remaining = 0;
+                }
             }
-        }
 
-        countdown();
+            // اجتناب از مقدار منفی
+            if (isNaN(remaining) || remaining < 0) remaining = 0;
+
+            const timeEl = document.getElementById("time");
+            let totalSeconds = parseInt(remaining, 10);
+
+            function formatTime(ts) {
+                let h = Math.floor(ts / 3600);
+                let m = Math.floor((ts % 3600) / 60);
+                let s = ts % 60;
+                // قالب‌بندی با صفر در صورت نیاز
+                const pad = (v) => v.toString().padStart(2, '0');
+                return `${h} ساعت، ${pad(m)} دقیقه، ${pad(s)} ثانیه`;
+            }
+
+            function update() {
+                // اگر به صفر رسید، ریدایرکت کن
+                if (totalSeconds <= 0) {
+                    // قبل از redirect مطمئن شو یک بار table ساخته شده یا درخواست grade_result قابل پردازشه
+                    window.location.href = "/grade_result";
+                    return;
+                }
+                timeEl.textContent = formatTime(totalSeconds);
+                totalSeconds--;
+                // استفاده از setTimeout تا دقیق‌تر باشه نسبت به setInterval (اجازه میده callback اجرا کامل شه)
+                setTimeout(update, 1000);
+            }
+
+            // نمایش مقدار اولیه سریع
+            timeEl.textContent = formatTime(totalSeconds);
+            // شروع شمارش
+            update();
+        })();
     </script>
+
+    <!-- اگر کاربر جاوااسکریپت رو غیرفعال کرده: -->
+    <noscript>
+        <div style="position:fixed;left:0;right:0;bottom:10px;text-align:center;color:#ffd;">
+            جاوااسکریپت غیرفعال است — لطفاً صفحه را مجدداً بارگذاری کنید یا <a href="/grade_result" style="color: #fff; text-decoration: underline;">اینجا</a> کلیک کنید.
+        </div>
+    </noscript>
 </body>
 </html>
