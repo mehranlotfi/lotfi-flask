@@ -64,32 +64,47 @@ def grade_result():
 def signup():
     if request.method == "GET":
         return render_template("signup.html")
+
     # گرفتن اطلاعات فرم
     name = request.form.get("name", "").strip()
     national_id = request.form.get("national_id", "").strip()
     password = request.form.get("password", "")
-    grade_label = request.form.get("grade_label")  # دقیقا همون name از select
+    grade_label = request.form.get("grade_label", "").strip()  # name از select
 
+    # بررسی کامل فیلدها
     if not name or not national_id or not password or not grade_label:
-        return "همه فیلدها الزامی است.", 400
+        flash("همه فیلدها الزامی هستند.")
+        return redirect(url_for("signup"))
 
-    # چک کردن کاربر تکراری
+    # چک کردن تکراری بودن national_id
     if User.query.filter_by(national_id=national_id).first():
-        return "این کد ملی قبلاً ثبت‌نام کرده است.", 400
+        flash("این کد ملی قبلاً ثبت‌نام کرده است.")
+        return redirect(url_for("signup"))
 
     # ساخت یوزر جدید
     user = User(
         name=name,
         national_id=national_id,
         password_hash=generate_password_hash(password),
-        grade_label=grade_label,   # همون چیزی که از فرم اومده مثل grade_12_tajrobi
+        grade_label=grade_label,
+        table=json.dumps({}, ensure_ascii=False),          # جدول اولیه خالی
+        table_generated_at=None,                            # هنوز جدول تولید نشده
+        submitted_at=None                                   # هنوز پاسخی ثبت نشده
     )
-    db.session.add(user)
-    db.session.commit()
+
+    # اضافه کردن به DB و commit
+    try:
+        db.session.add(user)
+        db.session.commit()
+    except Exception as e:
+        db.session.rollback()
+        flash(f"خطا در ثبت‌نام: {str(e)}")
+        return redirect(url_for("signup"))
 
     # ذخیره session
-    session["uid"] = user.id 
-
+    session["uid"] = user.id
+    flash("ثبت‌نام با موفقیت انجام شد ✅")
+    return redirect(url_for("login"))
     
     # اگر جدول آماده بود، مستقیم grade_result
     if user.table:
@@ -147,7 +162,6 @@ def grade_page(grade_label):
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
-    # اگر POST — پردازش لاگین
     if request.method == "POST":
         national_id = request.form.get("national_id", "").strip()
         password = request.form.get("password", "").strip()
@@ -169,47 +183,55 @@ def login():
         session["uid"] = int(user.id)
         now = datetime.now(timezone.utc)
 
-        # 1) اگر جدول قبلاً ساخته شده و کمتر از 7 روز از تولیدش گذشته -> مستقیم نمایش دهید
+        # ----- 1) جدول قبلی معتبر کمتر از 7 روز -----
+        table = {}
         gen_at = getattr(user, "table_generated_at", None)
         if user.table and gen_at:
             if gen_at.tzinfo is None:
                 gen_at = gen_at.replace(tzinfo=timezone.utc)
+            try:
+                table = json.loads(user.table) if isinstance(user.table, str) else user.table
+            except Exception:
+                table = user.table or {}
             if now - gen_at <= timedelta(days=7):
-                try:
-                    table = json.loads(user.table) if isinstance(user.table, str) else user.table
-                except Exception:
-                    table = user.table or {}
                 return render_template("grade_result.html", user=user, table=table)
 
-        # 2) اگر پاسخی درج شده ولی هنوز 6 ساعت نگذشته -> نمایش wait با remaining_seconds
-        if user.submitted_at:
-            submitted_at = user.submitted_at
+        # ----- 2) اگر پاسخی ثبت شده و هنوز 6 ساعت نگذشته -----
+        submitted_at = getattr(user, "submitted_at", None)
+        if submitted_at:
             if submitted_at.tzinfo is None:
                 submitted_at = submitted_at.replace(tzinfo=timezone.utc)
-
-            ready_time = submitted_at + timedelta(hours=6)   # <-- 6 ساعت
+            ready_time = submitted_at + timedelta(hours=6)
             if now < ready_time:
                 remaining = ready_time - now
                 remaining_seconds = int(remaining.total_seconds())
                 hours = remaining_seconds // 3600
                 minutes = (remaining_seconds % 3600) // 60
                 seconds = remaining_seconds % 60
-                return render_template("wait.html",
-                                       hours=hours, minutes=minutes, seconds=seconds,
-                                       remaining_seconds=remaining_seconds)
+                return render_template(
+                    "wait.html",
+                    hours=hours,
+                    minutes=minutes,
+                    seconds=seconds,
+                    remaining_seconds=remaining_seconds
+                )
 
-        # 3) در غیر این صورت (اگر 6 ساعت گذشته یا پاسخی نبود) -> تولید جدول و نمایش result
-        answers = {ans.question_number: ans.answer for ans in user.answers}
-        table = run_algorithm(answers)
+        # ----- 3) تولید جدول جدید و ذخیره -----
+        answers = {}
+        try:
+            answers = {ans.question_number: ans.answer for ans in getattr(user, 'answers', [])}
+        except Exception:
+            answers = {}
+
+        table = run_algorithm(answers)  # فرض بر اینکه تابع شما وجود دارد
         user.table = json.dumps(table, ensure_ascii=False, default=str)
         user.table_generated_at = now
         db.session.commit()
+
         return render_template("grade_result.html", user=user, table=table)
 
-    # اگر GET — فقط صفحه لاگین را نمایش بده (بدون دسترسی به user)
-    return render_template("grade_result.html")
-
-
+    # اگر GET باشد → صفحه login
+    return render_template("login.html")
 
 def map_grade_to_label(grade_fa):
     """
