@@ -147,6 +147,7 @@ def grade_page(grade_label):
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    # اگر POST — پردازش لاگین
     if request.method == "POST":
         national_id = request.form.get("national_id", "").strip()
         password = request.form.get("password", "").strip()
@@ -168,55 +169,47 @@ def login():
         session["uid"] = int(user.id)
         now = datetime.now(timezone.utc)
 
-        # ----- 1) جدول قبلی معتبر کمتر از 7 روز -----
-        table = {}
+        # 1) اگر جدول قبلاً ساخته شده و کمتر از 7 روز از تولیدش گذشته -> مستقیم نمایش دهید
         gen_at = getattr(user, "table_generated_at", None)
         if user.table and gen_at:
             if gen_at.tzinfo is None:
                 gen_at = gen_at.replace(tzinfo=timezone.utc)
-            try:
-                table = json.loads(user.table) if isinstance(user.table, str) else user.table
-            except Exception:
-                table = user.table or {}
             if now - gen_at <= timedelta(days=7):
+                try:
+                    table = json.loads(user.table) if isinstance(user.table, str) else user.table
+                except Exception:
+                    table = user.table or {}
                 return render_template("grade_result.html", user=user, table=table)
 
-        # ----- 2) اگر پاسخی ثبت شده و هنوز 6 ساعت نگذشته -----
-        submitted_at = getattr(user, "submitted_at", None)
-        if submitted_at:
+        # 2) اگر پاسخی درج شده ولی هنوز 6 ساعت نگذشته -> نمایش wait با remaining_seconds
+        if user.submitted_at:
+            submitted_at = user.submitted_at
             if submitted_at.tzinfo is None:
                 submitted_at = submitted_at.replace(tzinfo=timezone.utc)
-            ready_time = submitted_at + timedelta(hours=6)
+
+            ready_time = submitted_at + timedelta(hours=6)   # <-- 6 ساعت
             if now < ready_time:
                 remaining = ready_time - now
                 remaining_seconds = int(remaining.total_seconds())
                 hours = remaining_seconds // 3600
                 minutes = (remaining_seconds % 3600) // 60
                 seconds = remaining_seconds % 60
-                return render_template(
-                    "wait.html",
-                    hours=hours,
-                    minutes=minutes,
-                    seconds=seconds,
-                    remaining_seconds=remaining_seconds
-                )
+                return render_template("wait.html",
+                                       hours=hours, minutes=minutes, seconds=seconds,
+                                       remaining_seconds=remaining_seconds)
 
-        # ----- 3) تولید جدول جدید و ذخیره -----
-        answers = {}
-        try:
-            answers = {ans.question_number: ans.answer for ans in getattr(user, 'answers', [])}
-        except Exception:
-            answers = {}
-
-        table = run_algorithm(answers)  # فرض بر اینکه تابع شما وجود دارد
+        # 3) در غیر این صورت (اگر 6 ساعت گذشته یا پاسخی نبود) -> تولید جدول و نمایش result
+        answers = {ans.question_number: ans.answer for ans in user.answers}
+        table = run_algorithm(answers)
         user.table = json.dumps(table, ensure_ascii=False, default=str)
         user.table_generated_at = now
         db.session.commit()
-
         return render_template("grade_result.html", user=user, table=table)
 
-    # اگر GET باشد → صفحه login
+    # اگر GET — فقط صفحه لاگین را نمایش بده (بدون دسترسی به user)
     return render_template("login.html")
+
+
 
 def map_grade_to_label(grade_fa):
     """
