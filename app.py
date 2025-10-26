@@ -16,7 +16,8 @@ from models import db
 
 
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///site.db"
+basedir = os.path.abspath(os.path.dirname(__file__))
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + os.path.join(basedir, "instance", "site.db")
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.secret_key = "secret_key"
 db.init_app(app)
