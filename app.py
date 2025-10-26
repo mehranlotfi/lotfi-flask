@@ -207,7 +207,7 @@ def login():
         return render_template("grade_result.html", user=user, table=table)
 
     # اگر GET — فقط صفحه لاگین را نمایش بده (بدون دسترسی به user)
-    return render_template("login.html")
+    return render_template("grade_result.html")
 
 
 
