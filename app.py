@@ -64,47 +64,32 @@ def grade_result():
 def signup():
     if request.method == "GET":
         return render_template("signup.html")
-
     # گرفتن اطلاعات فرم
     name = request.form.get("name", "").strip()
     national_id = request.form.get("national_id", "").strip()
     password = request.form.get("password", "")
-    grade_label = request.form.get("grade_label", "").strip()  # name از select
+    grade_label = request.form.get("grade_label")  # دقیقا همون name از select
 
-    # بررسی کامل فیلدها
     if not name or not national_id or not password or not grade_label:
-        flash("همه فیلدها الزامی هستند.")
-        return redirect(url_for("signup"))
+        return "همه فیلدها الزامی است.", 400
 
-    # چک کردن تکراری بودن national_id
+    # چک کردن کاربر تکراری
     if User.query.filter_by(national_id=national_id).first():
-        flash("این کد ملی قبلاً ثبت‌نام کرده است.")
-        return redirect(url_for("signup"))
+        return "این کد ملی قبلاً ثبت‌نام کرده است.", 400
 
     # ساخت یوزر جدید
     user = User(
         name=name,
         national_id=national_id,
         password_hash=generate_password_hash(password),
-        grade_label=grade_label,
-        table=json.dumps({}, ensure_ascii=False),          # جدول اولیه خالی
-        table_generated_at=None,                            # هنوز جدول تولید نشده
-        submitted_at=None                                   # هنوز پاسخی ثبت نشده
+        grade_label=grade_label,   # همون چیزی که از فرم اومده مثل grade_12_tajrobi
     )
-
-    # اضافه کردن به DB و commit
-    try:
-        db.session.add(user)
-        db.session.commit()
-    except Exception as e:
-        db.session.rollback()
-        flash(f"خطا در ثبت‌نام: {str(e)}")
-        return redirect(url_for("signup"))
+    db.session.add(user)
+    db.session.commit()
 
     # ذخیره session
-    session["uid"] = user.id
-    flash("ثبت‌نام با موفقیت انجام شد ✅")
-    return redirect(url_for("login"))
+    session["uid"] = user.id 
+
     
     # اگر جدول آماده بود، مستقیم grade_result
     if user.table:
