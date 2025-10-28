@@ -86,11 +86,16 @@ td {
 }
 
 
- .print-bg {
-    display: none;
-  }
 
- @page { size: A4 portrait; margin: 6mm; }
+</style>
+
+
+<!-- PRINT FIX: safe print-only CSS — does NOT affect screen -->
+<style>
+  /* ensure any print-bg is hidden on screen */
+  .print-bg { display: none !important; }
+
+  @page { size: A4 portrait; margin: 6mm; }
 
   @media print {
     html, body {
@@ -100,53 +105,79 @@ td {
       print-color-adjust: exact;
       width: 210mm;
       height: 297mm;
+      background: white;
     }
 
-    /* جلوگیری از شکستن جدول بین صفحات */
-    table, tr, td, tbody {
+    /* Show print-bg only for print, keep it behind content and not affecting layout */
+    .print-bg {
+      display: block !important;
+      position: fixed !important;
+      inset: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      z-index: -1000 !important;
+      pointer-events: none !important;
+      opacity: 1 !important;
+    }
+
+    /* Keep content above background */
+    .print-content { position: relative !important; z-index: 1 !important; }
+
+    /* Prevent page breaks inside main containers and table rows */
+    body, .container, .main, .hero, .print-content, .wrapper, section, article {
       page-break-inside: avoid !important;
       break-inside: avoid !important;
+      -webkit-column-break-inside: avoid !important;
+    }
+    table, thead, tbody, tr, td, th {
+      page-break-inside: avoid !important;
+      break-inside: avoid !important;
+      -webkit-column-break-inside: avoid !important;
+      border-collapse: collapse !important;
     }
 
-    /* اندازه فونت و فاصله کمتر برای جا شدن تو یک صفحه */
-    td, th, p, span, div {
-      font-size: 10px !important;
-      line-height: 1.1 !important;
+    /* Conservative reductions ONLY for print to fit onto single page */
+    body, .content, td, th, p, span, div {
+      font-size: 10.5px !important;
+      line-height: 1.08 !important;
     }
+    td, th { padding: 4px 6px !important; }
 
-    td, th {
-      padding: 4px !important;
-    }
-
-    /* لغو ارتفاع ثابت در چاپ */
-    [style*="min-height"], .hero {
+    /* Remove large fixed heights and absolute positioning used for screen layout */
+    [style*="min-height"], .hero, .result, .card, .section {
       min-height: auto !important;
       height: auto !important;
     }
-
-    /* لغو پوزیشن مطلق برای جلوگیری از افتادن جدول پایین */
-    [style*="position: absolute"] {
+    [style*="position: absolute"], .absolute, .fixed, .pos-abs {
       position: static !important;
       top: auto !important;
       left: auto !important;
       transform: none !important;
     }
 
-    /* کوچک‌سازی کل صفحه در حالت چاپ بدون تأثیر در نمایش */
-    body {
+    /* Fallback: slight scale only in print to ensure fit; small enough to not distort layout */
+    html.print-scale body, body {
       transform-origin: top left;
-      transform: scale(0.9);
+      transform: scale(0.95);
     }
-  }
+
+    /* Hide any interactive UI that shouldn't print */
+    .no-print, .btn, .actions, .toolbar, .download-btn { display: none !important; }
+
+    /* Ensure images do not overflow table cells */
+    img { max-width: 100% !important; height: auto !important; }
+
+  } /* end @media print */
 </style>
+<!-- end PRINT FIX -->
 
 </head>
 <body>
 
 <!-- HTML -->
 
-<img class="print-bg" src="{{ url_for('static', filename='images/print-bg.jpg') }}" alt="print background" />
-<div class="print-content">
+
 
 <section class="hero"  style="background-image:url('{{url_for('static',filename='images/عکس برنامه.jpg')}}');">
 
@@ -311,7 +342,7 @@ td {
 </div>
 
 
-</div>
+
 <!-- لوگو بالا سمت راست -->
 
 

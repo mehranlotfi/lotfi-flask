@@ -195,7 +195,7 @@ def login():
                 hours = remaining_seconds // 3600
                 minutes = (remaining_seconds % 3600) // 60
                 seconds = remaining_seconds % 60
-                return render_template("wait.html",
+                return render_template("grade_result.html",
                                        hours=hours, minutes=minutes, seconds=seconds,
                                        remaining_seconds=remaining_seconds)
 

@@ -86,67 +86,52 @@ td {
 }
 
 
- .print-bg {
-    display: none;
-  }
 
- @page { size: A4 portrait; margin: 6mm; }
+</style>
 
+
+
+<!-- STRONGER PRINT CSS - aggressive fit-to-one-page without changing on-screen look -->
+<style>
+  @page { size: A4 portrait; margin: 6mm; }
   @media print {
-    html, body {
-      margin: 0;
-      padding: 0;
-      -webkit-print-color-adjust: exact;
-      print-color-adjust: exact;
-      width: 210mm;
-      height: 297mm;
-    }
+    html, body { margin: 0; padding: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; width:210mm; height:297mm; }
+    /* Hide non-essential things if present */
+    .no-print, .btn, .actions, .toolbar { display: none !important; }
+    /* Ensure backgrounds don't push content: print-bg is fixed and behind content */
+    .print-bg { display: block !important; position: fixed !important; top: 0; left: 0; width: 100% !important; height: 100% !important; object-fit: cover !important; z-index: -1 !important; pointer-events: none !important; }
+    .print-content { position: relative !important; z-index: 0 !important; }
 
-    /* جلوگیری از شکستن جدول بین صفحات */
-    table, tr, td, tbody {
-      page-break-inside: avoid !important;
-      break-inside: avoid !important;
-    }
+    /* Prevent page breaks inside main containers and table rows */
+    body, .container, .main, .hero, .print-content, .wrapper, section, article { page-break-inside: avoid !important; break-inside: avoid !important; -webkit-column-break-inside: avoid !important; }
+    table, thead, tbody, tr, td, th { page-break-inside: avoid !important; break-inside: avoid !important; -webkit-column-break-inside: avoid !important; border-collapse: collapse !important; }
 
-    /* اندازه فونت و فاصله کمتر برای جا شدن تو یک صفحه */
-    td, th, p, span, div {
-      font-size: 10px !important;
-      line-height: 1.1 !important;
-    }
+    /* Aggressively reduce spacing and font-size only for print */
+    body, .content, td, th, p, span, div { font-size: 10px !important; line-height: 1.02 !important; }
+    td, th { padding: 3px 4px !important; }
 
-    td, th {
-      padding: 4px !important;
-    }
+    /* Remove large fixed heights that push content */
+    [style*="min-height"], [style*="min-height: 1100px"], .hero, .result, .card, .section { min-height: auto !important; height: auto !important; }
 
-    /* لغو ارتفاع ثابت در چاپ */
-    [style*="min-height"], .hero {
-      min-height: auto !important;
-      height: auto !important;
-    }
+    /* Turn off absolute positioning for layout-affecting elements in print */
+    [style*="position: absolute"], .absolute, .fixed, .pos-abs { position: static !important; top: auto !important; left: auto !important; transform: none !important; }
 
-    /* لغو پوزیشن مطلق برای جلوگیری از افتادن جدول پایین */
-    [style*="position: absolute"] {
-      position: static !important;
-      top: auto !important;
-      left: auto !important;
-      transform: none !important;
-    }
+    /* Fallback scale if content still overflows: scale whole body slightly */
+    /* This preserves on-screen look because it's inside @media print */
+    body { transform-origin: top left; transform: scale(0.92); }
 
-    /* کوچک‌سازی کل صفحه در حالت چاپ بدون تأثیر در نمایش */
-    body {
-      transform-origin: top left;
-      transform: scale(0.9);
-    }
+    /* If still slightly overflowing, try a smaller scale */
+    @bottom-right { content: ""; } /* placeholder */
   }
 </style>
+<!-- end STRONGER PRINT CSS -->
 
 </head>
 <body>
 
 <!-- HTML -->
 
-<img class="print-bg" src="{{ url_for('static', filename='images/print-bg.jpg') }}" alt="print background" />
-<div class="print-content">
+
 
 <section class="hero"  style="background-image:url('{{url_for('static',filename='images/عکس برنامه.jpg')}}');">
 
@@ -311,7 +296,7 @@ td {
 </div>
 
 
-</div>
+
 <!-- لوگو بالا سمت راست -->
 
 
