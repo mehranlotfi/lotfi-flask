@@ -3050,43 +3050,57 @@ def run_algorithm(answers):
         table["cell_r1_c1"] = ""
         table["cell_r1_c10"]="" 
         table["cell_r1_c7"]=""
-        table["cell_r1_c8"] =""
+        table["cell_r1_c2"] =""
         table["cell_r1_c4"] =""
-
+        table["cell_r1_c12"] =""
+        table["cell_r1_c6"] =""
+        
     elif q121_answer == "گزینه دوم":
         table["cell_r1_c14"] = "___7h___"
         table["cell_r1_c1"] = ""
         table["cell_r1_c6"] = ""
         table["cell_r1_c3"]=""
-        table["cell_r1_c8"] =""
-
+        table["cell_r1_c8"] ="" 
+        table["cell_r1_c10"] =""
+        table["cell_r1_c12"] =""
+        table["cell_r1_c5"] =""
+        
     elif q121_answer == "گزینه سوم":
         table["cell_r1_c14"] = "___8h___"
         table["cell_r1_c6"] = ""
         table["cell_r1_c7"] = ""
         table["cell_r1_c2"] = ""
+        table["cell_r1_c4"] =""
+        table["cell_r1_c1"] =""
+        table["cell_r1_c5"] =""
        
     elif q121_answer == "گزینه چهارم":
         table["cell_r1_c14"] = "___9h___"
         table["cell_r1_c4"] = ""
         table["cell_r1_c6"] = ""
-        table["cell_r1_c9"]=""
+        table["cell_r1_c1"]=""
+        table["cell_r1_c7"] =""
+        table["cell_r1_c13"] =""
+        
 
     elif q121_answer == "گزینه پنجم":
         table["cell_r1_c14"] = "___10h___"
         table["cell_r1_c3"] = ""
         table["cell_r1_c6"] = ""
+        table["cell_r1_c4"] =""
 
-        table["cell_r1_c6"] =""
+        table["cell_r1_c13"] =""
     elif q121_answer == "گزینه ششم":
         table["cell_r1_c14"] = "___11h___"
         table["cell_r1_c5"] = ""
-        table["cell_r1_c3"] = ""
+        table["cell_r1_c1"] = ""
+        table["cell_r1_c7"] =""
+        
 
     elif q121_answer == "گزینه هفتم":
         table["cell_r1_c14"] = "___12h___"
         table["cell_r1_c2"] = ""
-       
+        table["cell_r1_c4"] =""
 
 
     elif q121_answer == "گزینه هشتم":
@@ -3124,36 +3138,49 @@ def run_algorithm(answers):
         table["cell_r2_c3"]=""
         table["cell_r2_c6"] =""
         table["cell_r2_c8"] =""
+        table["cell_r2_c2"] =""
+        table["cell_r2_c4"] =""
+
 
     elif q122_answer == "گزینه دوم":
         table["cell_r2_c14"] = "___7h___"
         table["cell_r2_c7"] = ""
         table["cell_r2_c2"] = ""
-        table["cell_r2_c3"]=""
+        table["cell_r2_c14"]=""
         table["cell_r2_c6"] =""
+        table["cell_r2_c1"] =""
+        table["cell_r2_c4"] =""
+
 
     elif q122_answer == "گزینه سوم":
         table["cell_r2_c14"] = "___8h___"
-        table["cell_r2_c2"] = ""
+        table["cell_r2_c7"] = ""
         table["cell_r2_c5"] = ""
-        
-        table["cell_r2_c6"] =""
+        table["cell_r2_c2"] =""
+        table["cell_r2_c4"] =""
+        table["cell_r2_c12"] =""
+
     elif q122_answer == "گزینه چهارم":
         table["cell_r2_c14"] = "___9h___"
         table["cell_r2_c4"] = ""
         table["cell_r2_c2"] = ""
        
         table["cell_r2_c6"] =""
+        table["cell_r2_c1"]=""
+        table["cell_r2_c7"] =""
+
+        
     elif q122_answer == "گزینه پنجم":
         table["cell_r2_c14"] = "___10h___"
         table["cell_r2_c8"] = ""
         table["cell_r2_c3"] = ""
-
         table["cell_r2_c6"] =""
+        table["cell_r2_c9"] =""
     elif q122_answer == "گزینه ششم":
         table["cell_r2_c14"] = "___11h___"
         table["cell_r2_c2"] = ""
         table["cell_r2_c8"] = ""
+        table["cell_r2_c6"] =""
 
     elif q122_answer == "گزینه هفتم":
         table["cell_r2_c14"] = "___12h___"
@@ -3182,9 +3209,12 @@ def run_algorithm(answers):
     if q123_answer == "گزینه اول":
         table["cell_r3_c14"] = "___6h___"
         table["cell_r3_c3"] = ""
-        table["cell_r3_c4"] = ""
+        table["cell_r3_c5"] = ""
         table["cell_r3_c7"]=""
         table["cell_r3_c2"] =""
+        table["cell_r3_c9"] =""
+        table["cell_r3_c12"] =""
+        
       
 
     elif q123_answer == "گزینه دوم":
@@ -3193,32 +3223,40 @@ def run_algorithm(answers):
         table["cell_r3_c8"] = ""
         table["cell_r3_c2"]=""
         table["cell_r3_c3"] =""
+        table["cell_r3_c9"] =""
+        table["cell_r3_c13"] =""
 
     elif q123_answer == "گزینه سوم":
         table["cell_r3_c14"] ="___8h___"
         table["cell_r3_c2"] = ""
         table["cell_r3_c4"] = ""
-        
-        table["cell_r3_c6"] =""
+        table["cell_r3_c9"] =""
+        table["cell_r3_c12"] =""
+        table["cell_r3_c8"] =""
     elif q123_answer == "گزینه چهارم":
         table["cell_r3_c14"] = "___9h___"
         table["cell_r3_c7"] = ""
         table["cell_r3_c3"] = ""
-       
-        table["cell_r3_c2"] =""
+        table["cell_r3_c6"] =""
+        table["cell_r3_c10"] =""
+        table["cell_r3_c14"] =""
     elif q123_answer == "گزینه پنجم":
         table["cell_r3_c14"] = "___10h___"
         table["cell_r3_c6"] = ""
         table["cell_r3_c5"] =""
-
+        table["cell_r3_c8"] =""
+        table["cell_r3_c10"] =""
     elif q123_answer == "گزینه ششم":
         table["cell_r3_c14"] = "___11h___"
         table["cell_r3_c2"] = ""
+        table["cell_r3_c8"] =""
+        table["cell_r3_c5"] =""
        
 
     elif q123_answer == "گزینه هفتم":
         table["cell_r3_c14"] = "___12h___"
         table["cell_r3_c2"] = ""
+        table["cell_r3_c10"] =""
        
 
 
@@ -3249,8 +3287,9 @@ def run_algorithm(answers):
     if q124_answer == "گزینه اول":
         table["cell_r4_c14"] = "___6h___"
         table["cell_r4_c2"] = ""
-       
-        table["cell_r4_c7"]=""
+        table["cell_r4_c7"] = ""
+        table["cell_r4_c10"] = ""
+        table["cell_r4_c5"]=""
         table["cell_r4_c6"] =""
         table["cell_r4_c4"] =""
 
@@ -3260,32 +3299,41 @@ def run_algorithm(answers):
         table["cell_r5_c2"]=""
         table["cell_r4_c9"]=""
         table["cell_r4_c4"] =""
+        table["cell_r4_c10"] = ""
+        table["cell_r4_c13"] = ""
 
     elif q124_answer == "گزینه سوم":
         table["cell_r4_c14"] ="___8h___"
         table["cell_r4_c5"] = ""
-      
-        table["cell_r5_c2"]=""
-        table["cell_r4_c6"] =""
+        table["cell_r4_c2"] = ""
+        table["cell_r5_c8"]=""
+        table["cell_r4_c12"] =""
+        table["cell_r4_c4"] = ""
+
     elif q124_answer == "گزینه چهارم":
         table["cell_r4_c14"] = "___9h___"
         table["cell_r4_c5"] = ""
         table["cell_r5_c2"]=""
-       
-        table["cell_r4_c3"] =""
+        table["cell_r4_c6"] = ""
+        table["cell_r4_c10"] =""
+        table["cell_r4_c13"] = ""
     elif q124_answer == "گزینه پنجم":
         table["cell_r4_c14"] = "___10h___"
         table["cell_r4_c6"] = ""
-       
+        table["cell_r4_c2"] = ""
 
         table["cell_r4_c3"] =""
     elif q124_answer == "گزینه ششم":
         table["cell_r4_c14"] = "___11h___"
         table["cell_r4_c2"] = ""
+        table["cell_r4_c7"] = ""
+        table["cell_r4_c11"] = ""
 
     elif q124_answer == "گزینه هفتم":
         table["cell_r4_c14"] = "___12h___"
         table["cell_r4_c2"] = ""
+        table["cell_r4_c11"] = ""
+        table["cell_r4_c7"] = ""
        
 
 
@@ -3316,10 +3364,11 @@ def run_algorithm(answers):
     if q125_answer == "گزینه اول":
         table["cell_r5_c14"] = "___6h___"
         table["cell_r5_c2"] = ""
-       
-        table["cell_r5_c7"]=""
-        table["cell_r5_c6"] =""
+        table["cell_r5_c6"] = ""
+        table["cell_r5_c9"]=""
+        table["cell_r5_c11"] =""
         table["cell_r5_c4"] =""
+        table["cell_r5_c5"] = ""
 
     elif q125_answer == "گزینه دوم":
         table["cell_r5_c14"] = "___7h___"
@@ -3327,33 +3376,43 @@ def run_algorithm(answers):
         table["cell_r5_c1"]=""
         table["cell_r5_c2"]=""
         table["cell_r5_c4"] =""
+        table["cell_r5_c9"] = ""
+        table["cell_r5_c10"] = ""
 
     elif q125_answer == "گزینه سوم":
         table["cell_r5_c14"] = "___8h___"
         table["cell_r5_c5"] = ""
         table["cell_r5_c7"]=""
-        
+        table["cell_r5_c2"] = ""
         table["cell_r5_c6"] =""
+        table["cell_r5_c10"] = ""
+
     elif q125_answer == "گزینه چهارم":
         table["cell_r5_c14"] ="___9h___"
         table["cell_r5_c5"] = ""
         table["cell_r5_c2"]=""
-       
-        table["cell_r5_c3"] =""
+        table["cell_r5_c8"] = ""
+        table["cell_r5_c6"] =""
+        table["cell_r5_c12"] = ""
     elif q125_answer == "گزینه پنجم":
         table["cell_r5_c14"] = "___10h___"
         table["cell_r5_c6"] = ""
-       
-
-        table["cell_r5_c3"] =""
+        table["cell_r5_c2"] = ""
+        table["cell_r5_c7"] = ""
+        table["cell_r5_c4"] =""
     elif q125_answer == "گزینه ششم":
         table["cell_r5_c14"] = "___11h___"
         table["cell_r5_c2"] = ""
+        table["cell_r5_c8"] = ""
+        table["cell_r5_c6"] = ""
+        table["cell_r5_c4"] = ""
        
 
     elif q125_answer == "گزینه هفتم":
         table["cell_r5_c14"] = "___12h___"
         table["cell_r5_c2"] = ""
+        table["cell_r5_c9"] = ""
+        table["cell_r5_c7"] = ""
        
 
 
@@ -3384,43 +3443,56 @@ def run_algorithm(answers):
     if q126_answer == "گزینه اول":
         table["cell_r6_c14"] = "___6h___"
         table["cell_r6_c2"] = ""
-       
+        table["cell_r6_c10"] = ""
         table["cell_r6_c7"]=""
         table["cell_r6_c6"] =""
         table["cell_r6_c4"] =""
+        table["cell_r6_c5"] = ""
+        table["cell_r6_c1"] = ""
 
     elif q126_answer == "گزینه دوم":
         table["cell_r6_c14"] = "___7h___"
         table["cell_r6_c6"] = ""
-       
-        table["cell_r6_c2"]=""
-        table["cell_r6_c4"] =""
+        table["cell_r5_c2"] = ""
+        table["cell_r6_c8"]=""
+        table["cell_r6_c10"] =""
+        table["cell_r6_c13"] =""
+        table["cell_r6_c7"] =""
+        
 
     elif q126_answer == "گزینه سوم":
         table["cell_r6_c14"] = "___8h___"
         table["cell_r6_c5"] = ""
-        table["cell_r6_c2"]=""    
-        
-        table["cell_r6_c6"] =""
+        table["cell_r6_c2"]=""
+        table["cell_r6_c4"] =""    
+        table["cell_r6_c10"] =""
+        table["cell_r6_c7"] =""
+
     elif q126_answer == "گزینه چهارم":
         table["cell_r6_c14"] = "___9h___"
         table["cell_r6_c5"] = ""
         table["cell_r6_c2"]=""
-       
-        table["cell_r6_c3"] =""
+        table["cell_r6_c4"] =""
+        table["cell_r6_c9"] =""
+        table["cell_r6_c13"] =""
     elif q126_answer == "گزینه پنجم":
         table["cell_r6_c14"] = "___10h___"
         table["cell_r6_c6"] = ""
-       
+        table["cell_r6_c4"] =""
+        table["cell_r6_c9"] =""
 
         table["cell_r6_c3"] =""
     elif q126_answer == "گزینه ششم":
         table["cell_r6_c14"] = "___11h___"
         table["cell_r6_c2"] = ""
+        table["cell_r6_c4"] =""
+        table["cell_r6_c9"] =""
        
     elif q126_answer == "گزینه هفتم":
         table["cell_r6_c14"] = "___12h___"
         table["cell_r6_c2"] = ""
+        table["cell_r6_c4"] =""
+        
        
 
 
@@ -3452,27 +3524,38 @@ def run_algorithm(answers):
     if q127_answer == "گزینه اول":
         table["cell_r7_c14"] = "___6h___"
         table["cell_r7_c7"] = ""
-
+        table["cell_r7_c2"] =""
         table["cell_r7_c5"]=""
         table["cell_r7_c6"] =""
-        table["cell_r7_c2"] =""
+        table["cell_r7_c8"] =""
+        table["cell_r7_c12"] =""
+        table["cell_r7_c10"] =""
+
 
     elif q127_answer == "گزینه دوم":
         table["cell_r7_c14"] = "___7h___"
         table["cell_r7_c8"] = ""
+        table["cell_r7_c2"] =""
+        table["cell_r7_c9"] =""
+        table["cell_r7_c10"] =""
 
-        table["cell_r7_c4"]=""
-        table["cell_r7_c1"] =""
+        table["cell_r7_c13"]=""
+        table["cell_r7_c5"] =""
 
     elif q127_answer == "گزینه سوم":
         table["cell_r7_c14"] ="___8h___"
         table["cell_r7_c1"] = ""
-
-        
+        table["cell_r7_c2"] =""
+        table["cell_r7_c10"] =""
         table["cell_r7_c5"] =""
+        table["cell_r7_c6"] =""
+        table["cell_r7_c8"] =""
     elif q127_answer == "گزینه چهارم":
         table["cell_r7_c14"] = "___9h___"
         table["cell_r7_c6"] = ""
+        table["cell_r7_c2"] =""
+        table["cell_r7_c8"] =""
+        table["cell_r7_c12"] =""
 
        
         table["cell_r7_c7"] =""
@@ -3480,16 +3563,22 @@ def run_algorithm(answers):
     elif q127_answer == "گزینه پنجم":
         table["cell_r7_c14"] = "___10h___"
         table["cell_r7_c6"] = ""
-       
+        table["cell_r7_c2"] =""
+        table["cell_r7_c7"] =""
+        table["cell_r7_c5"] =""
 
-        table["cell_r7_c3"] =""
+        
     elif q127_answer == "گزینه ششم":
         table["cell_r7_c14"] = "___11h___"
-        table["cell_r7_c2"] 
+        table["cell_r7_c2"]="" 
+        table["cell_r7_c9"] =""
+        table["cell_r7_c13"] =""
 
     elif q127_answer == "گزینه هفتم":
         table["cell_r7_c14"] = "___12h___"
-        table["cell_r7_c2"] = ""
+        table["cell_r7_c11"] = ""
+        table["cell_r7_c2"] =""
+        table["cell_r7_c9"] =""
        
 
 
@@ -3556,25 +3645,6 @@ def run_algorithm(answers):
 
 
 
-config = pdfkit.configuration(
-    wkhtmltopdf=r"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe"
-)
-
-@app.route("/download-pdf")
-def download_pdf():
-    path = os.path.join(os.getcwd(), "templates", "grade_result.html")
-
-    # مسیر wkhtmltopdf را درست بده
-    config = pdfkit.configuration(
-        wkhtmltopdf=r"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe"  # مسیر خودت
-    )
-
-    pdf = pdfkit.from_file(path, False, configuration=config)
-
-    response = make_response(pdf)
-    response.headers["Content-Type"] = "application/pdf"
-    response.headers["Content-Disposition"] = "attachment; filename=grades.pdf"
-    return response
 
 
 
