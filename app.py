@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, session, flash, url_for
+from flask import Flask, render_template, request, redirect, session, flash, url_for,make_response
 from models import db, User, Answer, ProgramRequest, Question
 from flask_sqlalchemy import SQLAlchemy
 from flask import render_template, request, redirect, url_for, flash
@@ -12,7 +12,7 @@ import os
 import random 
 from flask_migrate import Migrate
 from models import db
-
+import pdfkit
 
 
 app = Flask(__name__)
@@ -3556,9 +3556,30 @@ def run_algorithm(answers):
 
 
 
+config = pdfkit.configuration(
+    wkhtmltopdf=r"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe"
+)
+
+@app.route("/download-pdf")
+def download_pdf():
+    path = os.path.join(os.getcwd(), "templates", "grade_result.html")
+
+    # مسیر wkhtmltopdf را درست بده
+    config = pdfkit.configuration(
+        wkhtmltopdf=r"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe"  # مسیر خودت
+    )
+
+    pdf = pdfkit.from_file(path, False, configuration=config)
+
+    response = make_response(pdf)
+    response.headers["Content-Type"] = "application/pdf"
+    response.headers["Content-Disposition"] = "attachment; filename=grades.pdf"
+    return response
+
 
 
 if __name__ == "__main__":
+    app.run(debug=True)
     with app.app_context():
         db.create_all()
 

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
 <style>
 /* ===== پایه ===== */
@@ -141,12 +141,17 @@ td {
 </style>
 
 </head>
-<body>
+
+
+<body style="padding: 10px;">
 
 <!-- HTML -->
 
-<img class="print-bg" src="{{ url_for('static', filename='images/print-bg.jpg') }}" alt="print background" />
-<div class="print-content">
+<button id="download-btn" 
+style="padding: 10px 25px;background-color: aqua;border-radius: 24px;border: none;margin: 12px auto;cursor: pointer;">دانلود PDF</button>
+<img class="print-bg"  src="{{ url_for('static', filename='images/print-bg.jpg') }}" alt="print background" />
+<div class="print-content" id="grade-table">
+
 
 <section class="hero"  style="background-image:url('{{url_for('static',filename='images/عکس برنامه.jpg')}}');">
 
@@ -314,6 +319,21 @@ td {
 </div>
 <!-- لوگو بالا سمت راست -->
 
+
+<script>
+  document.getElementById("download-btn").addEventListener("click", () => {
+    console.log("ok")
+    const element = document.getElementById("grade-table"); 
+    const opt = {
+      margin:       0,
+      filename:     'grade_result.pdf',
+      image:        { type: 'jpeg', quality: 0.98 },
+      html2canvas:  { scale: 2 },
+      jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
+    };
+    html2pdf().set(opt).from(element).save();
+  });
+  </script>
 
 </body>
 </html>
