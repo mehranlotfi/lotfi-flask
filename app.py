@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, session, flash, url_for
+from flask import Flask, render_template, request, redirect, session, flash, url_for,make_response
 from models import db, User, Answer, ProgramRequest, Question
 from flask_sqlalchemy import SQLAlchemy
 from flask import render_template, request, redirect, url_for, flash
@@ -12,7 +12,7 @@ import os
 import random 
 from flask_migrate import Migrate
 from models import db
-
+import pdfkit
 
 
 app = Flask(__name__)
@@ -3046,729 +3046,564 @@ def run_algorithm(answers):
 
     q121_answer = answers.get("q121", "")
     if q121_answer == "گزینه اول":
-        total_columns = 13
-        empty_per_row = 7
-        for row in range(1, 8): 
-            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
-
+        table["cell_r1_c14"] = "___6h___"
+        table["cell_r1_c1"] = ""
+        table["cell_r1_c10"]="" 
+        table["cell_r1_c7"]=""
+        table["cell_r1_c2"] =""
+        table["cell_r1_c4"] =""
+        table["cell_r1_c12"] =""
+        table["cell_r1_c6"] =""
+        
     elif q121_answer == "گزینه دوم":
-        total_columns = 13
-        empty_per_row = 7
-        for row in range(1, 8): 
-            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
-
+        table["cell_r1_c14"] = "___7h___"
+        table["cell_r1_c1"] = ""
+        table["cell_r1_c6"] = ""
+        table["cell_r1_c3"]=""
+        table["cell_r1_c8"] ="" 
+        table["cell_r1_c10"] =""
+        table["cell_r1_c12"] =""
+        table["cell_r1_c5"] =""
+        
     elif q121_answer == "گزینه سوم":
-        total_columns = 13
-        empty_per_row = 6
-        for row in range(1, 8): 
-            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
-
+        table["cell_r1_c14"] = "___8h___"
+        table["cell_r1_c6"] = ""
+        table["cell_r1_c7"] = ""
+        table["cell_r1_c2"] = ""
+        table["cell_r1_c4"] =""
+        table["cell_r1_c1"] =""
+        table["cell_r1_c5"] =""
+       
     elif q121_answer == "گزینه چهارم":
-        total_columns = 13
-        empty_per_row = 5
-        for row in range(1, 8): 
-            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
+        table["cell_r1_c14"] = "___9h___"
+        table["cell_r1_c4"] = ""
+        table["cell_r1_c6"] = ""
+        table["cell_r1_c1"]=""
+        table["cell_r1_c7"] =""
+        table["cell_r1_c13"] =""
+        
 
-    elif q121_answer == "گزینه پنچم":
-        total_columns = 13
-        empty_per_row = 5
-        for row in range(1, 8): 
-            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
+    elif q121_answer == "گزینه پنجم":
+        table["cell_r1_c14"] = "___10h___"
+        table["cell_r1_c3"] = ""
+        table["cell_r1_c6"] = ""
+        table["cell_r1_c4"] =""
 
+        table["cell_r1_c13"] =""
     elif q121_answer == "گزینه ششم":
-        total_columns = 13
-        empty_per_row = 4
-        for row in range(1, 8): 
-            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
+        table["cell_r1_c14"] = "___11h___"
+        table["cell_r1_c5"] = ""
+        table["cell_r1_c1"] = ""
+        table["cell_r1_c7"] =""
+        
 
     elif q121_answer == "گزینه هفتم":
-        total_columns = 13
-        empty_per_row = 3
-        for row in range(1, 8): 
-            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = "" 
+        table["cell_r1_c14"] = "___12h___"
+        table["cell_r1_c2"] = ""
+        table["cell_r1_c4"] =""
+
 
     elif q121_answer == "گزینه هشتم":
-        total_columns = 13
-        empty_per_row = 3
-        for row in range(1, 8): 
-            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
-    
+        table["cell_r1_c14"] = "___13h___"
+        table["cell_r1_c2"] = ""
+       
+
+
     elif q121_answer == "گزینه نهم":
-        total_columns = 13
-        empty_per_row = 3
-        for row in range(1, 8): 
-            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = "" 
+        table["cell_r1_c14"] = "___14h___"
+        table["cell_r1_c2"] = ""
+       
+
 
     elif q121_answer == "گزینه دهم":
-        total_columns = 13
-        empty_per_row = 2
-        for row in range(1, 8): 
-            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
-    
-    elif q121_answer == "گزینه یازدهم":
-        total_columns = 13
-        empty_per_row = 1
-        for row in range(1, 8): 
-            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""
+        table["cell_r1_c14"] = "___15h___"
+        table["cell_r1_c2"] = ""
+       
 
-      
+
+    elif q121_answer == "گزینه یازدهم":
+        table["cell_r1_c14"] = "___16h___"
+        table["cell_r1_c2"] = ""
+          
+
+
+
+   
+   
     q122_answer = answers.get("q122", "")
     if q122_answer == "گزینه اول":
-        total_columns = 13
-        empty_per_row = 7
-        for row in range(2, 8): 
-            empty_cols = random.sample(range(2, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
+        table["cell_r2_c14"] = "___6h___"
+        table["cell_r2_c10"] = ""
+        table["cell_r2_c5"] = ""
+        table["cell_r2_c3"]=""
+        table["cell_r2_c6"] =""
+        table["cell_r2_c8"] =""
+        table["cell_r2_c2"] =""
+        table["cell_r2_c4"] =""
+
 
     elif q122_answer == "گزینه دوم":
-        total_columns = 13
-        empty_per_row = 7
-        for row in range(2, 8): 
-            empty_cols = random.sample(range(2, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
+        table["cell_r2_c14"] = "___7h___"
+        table["cell_r2_c7"] = ""
+        table["cell_r2_c2"] = ""
+        table["cell_r2_c14"]=""
+        table["cell_r2_c6"] =""
+        table["cell_r2_c1"] =""
+        table["cell_r2_c4"] =""
+
 
     elif q122_answer == "گزینه سوم":
-        total_columns = 13
-        empty_per_row = 6
-        for row in range(2, 8): 
-            empty_cols = random.sample(range(2, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
+        table["cell_r2_c14"] = "___8h___"
+        table["cell_r2_c7"] = ""
+        table["cell_r2_c5"] = ""
+        table["cell_r2_c2"] =""
+        table["cell_r2_c4"] =""
+        table["cell_r2_c12"] =""
 
     elif q122_answer == "گزینه چهارم":
-        total_columns = 13
-        empty_per_row = 5
-        for row in range(2, 8): 
-            empty_cols = random.sample(range(2, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
+        table["cell_r2_c14"] = "___9h___"
+        table["cell_r2_c4"] = ""
+        table["cell_r2_c2"] = ""
+       
+        table["cell_r2_c6"] =""
+        table["cell_r2_c1"]=""
+        table["cell_r2_c7"] =""
 
-    elif q122_answer == "گزینه پنچم":
-        total_columns = 13
-        empty_per_row = 5
-        for row in range(2, 8): 
-            empty_cols = random.sample(range(2, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
-
+        
+    elif q122_answer == "گزینه پنجم":
+        table["cell_r2_c14"] = "___10h___"
+        table["cell_r2_c8"] = ""
+        table["cell_r2_c3"] = ""
+        table["cell_r2_c6"] =""
+        table["cell_r2_c9"] =""
     elif q122_answer == "گزینه ششم":
-        total_columns = 13
-        empty_per_row = 4
-        for row in range(2, 8): 
-            empty_cols = random.sample(range(2, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
+        table["cell_r2_c14"] = "___11h___"
+        table["cell_r2_c2"] = ""
+        table["cell_r2_c8"] = ""
+        table["cell_r2_c6"] =""
 
     elif q122_answer == "گزینه هفتم":
-        total_columns = 13
-        empty_per_row = 3
-        for row in range(2, 8): 
-            empty_cols = random.sample(range(2, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = "" 
+        table["cell_r2_c14"] = "___12h___"
+        table["cell_r2_c8"] = ""
+        table["cell_r2_c6"] = ""
 
     elif q122_answer == "گزینه هشتم":
-        total_columns = 13
-        empty_per_row = 3
-        for row in range(2, 8): 
-            empty_cols = random.sample(range(2, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
-    
+        table["cell_r2_c14"] = "___13h___"  
+        table["cell_r2_c1"] = ""
+        table["cell_r2_c3"] = ""
+
     elif q122_answer == "گزینه نهم":
-        total_columns = 13
-        empty_per_row = 3
-        for row in range(2, 8): 
-            empty_cols = random.sample(range(2, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = "" 
+        table["cell_r2_c14"] = "___14h___"
+        table["cell_r2_c6"] = ""
 
     elif q122_answer == "گزینه دهم":
-        total_columns = 13
-        empty_per_row = 2
-        for row in range(2, 8): 
-            empty_cols = random.sample(range(2, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
-    
+        table["cell_r2_c14"] = "___15h___"
+        table["cell_r2_c2"] = ""
+
     elif q122_answer == "گزینه یازدهم":
-        total_columns = 13
-        empty_per_row = 1
-        for row in range(2, 8): 
-            empty_cols = random.sample(range(2, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""
+        table["cell_r2_c14"] = "___16h___"
+        table["cell_r2_c1"] = ""
 
 
     q123_answer = answers.get("q123", "")
     if q123_answer == "گزینه اول":
-        total_columns = 13
-        empty_per_row = 7
-        for row in range(3, 8): 
-            empty_cols = random.sample(range(3, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
+        table["cell_r3_c14"] = "___6h___"
+        table["cell_r3_c3"] = ""
+        table["cell_r3_c5"] = ""
+        table["cell_r3_c7"]=""
+        table["cell_r3_c2"] =""
+        table["cell_r3_c9"] =""
+        table["cell_r3_c12"] =""
+        
+      
 
     elif q123_answer == "گزینه دوم":
-        total_columns = 13
-        empty_per_row = 7
-        for row in range(3, 8): 
-            empty_cols = random.sample(range(3, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
+        table["cell_r3_c14"] = "___7h___"
+        table["cell_r3_c5"] = ""
+        table["cell_r3_c8"] = ""
+        table["cell_r3_c2"]=""
+        table["cell_r3_c3"] =""
+        table["cell_r3_c9"] =""
+        table["cell_r3_c13"] =""
 
     elif q123_answer == "گزینه سوم":
-        total_columns = 13
-        empty_per_row = 6
-        for row in range(3, 8): 
-            empty_cols = random.sample(range(3, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
-
+        table["cell_r3_c14"] ="___8h___"
+        table["cell_r3_c2"] = ""
+        table["cell_r3_c4"] = ""
+        table["cell_r3_c9"] =""
+        table["cell_r3_c12"] =""
+        table["cell_r3_c8"] =""
     elif q123_answer == "گزینه چهارم":
-        total_columns = 13
-        empty_per_row = 5
-        for row in range(3, 8): 
-            empty_cols = random.sample(range(3, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
-
-    elif q123_answer == "گزینه پنچم":
-        total_columns = 13
-        empty_per_row = 5
-        for row in range(3, 8): 
-            empty_cols = random.sample(range(3, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
-
+        table["cell_r3_c14"] = "___9h___"
+        table["cell_r3_c7"] = ""
+        table["cell_r3_c3"] = ""
+        table["cell_r3_c6"] =""
+        table["cell_r3_c10"] =""
+        table["cell_r3_c14"] =""
+    elif q123_answer == "گزینه پنجم":
+        table["cell_r3_c14"] = "___10h___"
+        table["cell_r3_c6"] = ""
+        table["cell_r3_c5"] =""
+        table["cell_r3_c8"] =""
+        table["cell_r3_c10"] =""
     elif q123_answer == "گزینه ششم":
-        total_columns = 13
-        empty_per_row = 4
-        for row in range(3, 8): 
-            empty_cols = random.sample(range(3, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
+        table["cell_r3_c14"] = "___11h___"
+        table["cell_r3_c2"] = ""
+        table["cell_r3_c8"] =""
+        table["cell_r3_c5"] =""
+       
 
     elif q123_answer == "گزینه هفتم":
-        total_columns = 13
-        empty_per_row = 3
-        for row in range(2, 8): 
-            empty_cols = random.sample(range(3, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = "" 
+        table["cell_r3_c14"] = "___12h___"
+        table["cell_r3_c2"] = ""
+        table["cell_r3_c10"] =""
+       
+
 
     elif q123_answer == "گزینه هشتم":
-        total_columns = 13
-        empty_per_row = 3
-        for row in range(3, 8): 
-            empty_cols = random.sample(range(3, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
-    
+        table["cell_r3_c14"] = "___13h___"
+        table["cell_r3_c2"] = ""
+       
+
+
     elif q123_answer == "گزینه نهم":
-        total_columns = 13
-        empty_per_row = 3
-        for row in range(3, 8): 
-            empty_cols = random.sample(range(3, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = "" 
+        table["cell_r3_c14"] = "___14h___"
+        table["cell_r3_c2"] = ""
+       
+
 
     elif q123_answer == "گزینه دهم":
-        total_columns = 13
-        empty_per_row = 2
-        for row in range(3, 8): 
-            empty_cols = random.sample(range(3, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
-    
+        table["cell_r3_c14"] = "___15h___"
+        table["cell_r3_c2"] = ""
+       
+
+
     elif q123_answer == "گزینه یازدهم":
-        total_columns = 13
-        empty_per_row = 1
-        for row in range(3, 8): 
-            empty_cols = random.sample(range(3, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""
-
-      
- 
-
-      
- 
-
-   
-
-
+        table["cell_r3_c14"] = "___16h___"
+        table["cell_r3_c2"] = ""
+       
 
     q124_answer = answers.get("q124", "")
     if q124_answer == "گزینه اول":
-        total_columns = 13
-        empty_per_row = 7
-        for row in range(4, 8): 
-            empty_cols = random.sample(range(4, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
+        table["cell_r4_c14"] = "___6h___"
+        table["cell_r4_c2"] = ""
+        table["cell_r4_c7"] = ""
+        table["cell_r4_c10"] = ""
+        table["cell_r4_c5"]=""
+        table["cell_r4_c6"] =""
+        table["cell_r4_c4"] =""
 
     elif q124_answer == "گزینه دوم":
-        total_columns = 13
-        empty_per_row = 7
-        for row in range(4, 8): 
-            empty_cols = random.sample(range(4, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
+        table["cell_r4_c14"] = "___7h___"
+        table["cell_r4_c6"] = ""
+        table["cell_r5_c2"]=""
+        table["cell_r4_c9"]=""
+        table["cell_r4_c4"] =""
+        table["cell_r4_c10"] = ""
+        table["cell_r4_c13"] = ""
 
     elif q124_answer == "گزینه سوم":
-        total_columns = 13
-        empty_per_row = 6
-        for row in range(4, 8): 
-            empty_cols = random.sample(range(2, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
+        table["cell_r4_c14"] ="___8h___"
+        table["cell_r4_c5"] = ""
+        table["cell_r4_c2"] = ""
+        table["cell_r5_c8"]=""
+        table["cell_r4_c12"] =""
+        table["cell_r4_c4"] = ""
 
     elif q124_answer == "گزینه چهارم":
-        total_columns = 13
-        empty_per_row = 5
-        for row in range(4, 8): 
-            empty_cols = random.sample(range(4, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
+        table["cell_r4_c14"] = "___9h___"
+        table["cell_r4_c5"] = ""
+        table["cell_r5_c2"]=""
+        table["cell_r4_c6"] = ""
+        table["cell_r4_c10"] =""
+        table["cell_r4_c13"] = ""
+    elif q124_answer == "گزینه پنجم":
+        table["cell_r4_c14"] = "___10h___"
+        table["cell_r4_c6"] = ""
+        table["cell_r4_c2"] = ""
 
-    elif q124_answer == "گزینه پنچم":
-        total_columns = 13
-        empty_per_row = 5
-        for row in range(4, 8): 
-            empty_cols = random.sample(range(4, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
-
+        table["cell_r4_c3"] =""
     elif q124_answer == "گزینه ششم":
-        total_columns = 13
-        empty_per_row = 4
-        for row in range(4, 8): 
-            empty_cols = random.sample(range(4, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
+        table["cell_r4_c14"] = "___11h___"
+        table["cell_r4_c2"] = ""
+        table["cell_r4_c7"] = ""
+        table["cell_r4_c11"] = ""
 
     elif q124_answer == "گزینه هفتم":
-        total_columns = 13
-        empty_per_row = 3
-        for row in range(4, 8): 
-            empty_cols = random.sample(range(4, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = "" 
+        table["cell_r4_c14"] = "___12h___"
+        table["cell_r4_c2"] = ""
+        table["cell_r4_c11"] = ""
+        table["cell_r4_c7"] = ""
+       
+
 
     elif q124_answer == "گزینه هشتم":
-        total_columns = 13
-        empty_per_row = 3
-        for row in range(4, 8): 
-            empty_cols = random.sample(range(4, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
-    
+        table["cell_r4_c14"] = "___13h___"
+        table["cell_r4_c2"] = ""
+       
+
+
     elif q124_answer == "گزینه نهم":
-        total_columns = 13
-        empty_per_row = 3
-        for row in range(4, 8): 
-            empty_cols = random.sample(range(4, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = "" 
+        table["cell_r4_c14"] = "___14h___"
+        table["cell_r4_c2"] = ""
+       
+
 
     elif q124_answer == "گزینه دهم":
-        total_columns = 13
-        empty_per_row = 2
-        for row in range(4, 8): 
-            empty_cols = random.sample(range(4, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
-    
+        table["cell_r4_c14"] = "___15h___"
+        table["cell_r4_c2"] = ""
+       
+
+
     elif q124_answer == "گزینه یازدهم":
-        total_columns = 13
-        empty_per_row = 1
-        for row in range(4, 8): 
-            empty_cols = random.sample(range(4, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""
-
-      
- 
-
+        table["cell_r4_c14"] = "___16h___"
+        table["cell_r4_c2"] = ""
+       
        
     q125_answer = answers.get("q125", "")
     if q125_answer == "گزینه اول":
-        total_columns = 13
-        empty_per_row = 7
-        for row in range(5, 8): 
-            empty_cols = random.sample(range(5, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
+        table["cell_r5_c14"] = "___6h___"
+        table["cell_r5_c2"] = ""
+        table["cell_r5_c6"] = ""
+        table["cell_r5_c9"]=""
+        table["cell_r5_c11"] =""
+        table["cell_r5_c4"] =""
+        table["cell_r5_c5"] = ""
 
     elif q125_answer == "گزینه دوم":
-        total_columns = 13
-        empty_per_row = 7
-        for row in range(5, 8): 
-            empty_cols = random.sample(range(5, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
+        table["cell_r5_c14"] = "___7h___"
+        table["cell_r5_c6"] = ""
+        table["cell_r5_c1"]=""
+        table["cell_r5_c2"]=""
+        table["cell_r5_c4"] =""
+        table["cell_r5_c9"] = ""
+        table["cell_r5_c10"] = ""
 
     elif q125_answer == "گزینه سوم":
-        total_columns = 13
-        empty_per_row = 6
-        for row in range(5, 8): 
-            empty_cols = random.sample(range(5, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
+        table["cell_r5_c14"] = "___8h___"
+        table["cell_r5_c5"] = ""
+        table["cell_r5_c7"]=""
+        table["cell_r5_c2"] = ""
+        table["cell_r5_c6"] =""
+        table["cell_r5_c10"] = ""
 
     elif q125_answer == "گزینه چهارم":
-        total_columns = 13
-        empty_per_row = 5
-        for row in range(5, 8): 
-            empty_cols = random.sample(range(5, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
-
-    elif q125_answer == "گزینه پنچم":
-        total_columns = 13
-        empty_per_row = 5
-        for row in range(5, 8): 
-            empty_cols = random.sample(range(5, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
-
+        table["cell_r5_c14"] ="___9h___"
+        table["cell_r5_c5"] = ""
+        table["cell_r5_c2"]=""
+        table["cell_r5_c8"] = ""
+        table["cell_r5_c6"] =""
+        table["cell_r5_c12"] = ""
+    elif q125_answer == "گزینه پنجم":
+        table["cell_r5_c14"] = "___10h___"
+        table["cell_r5_c6"] = ""
+        table["cell_r5_c2"] = ""
+        table["cell_r5_c7"] = ""
+        table["cell_r5_c4"] =""
     elif q125_answer == "گزینه ششم":
-        total_columns = 13
-        empty_per_row = 4
-        for row in range(5, 8): 
-            empty_cols = random.sample(range(5, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
+        table["cell_r5_c14"] = "___11h___"
+        table["cell_r5_c2"] = ""
+        table["cell_r5_c8"] = ""
+        table["cell_r5_c6"] = ""
+        table["cell_r5_c4"] = ""
+       
 
     elif q125_answer == "گزینه هفتم":
-        total_columns = 13
-        empty_per_row = 3
-        for row in range(5, 8): 
-            empty_cols = random.sample(range(5, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = "" 
+        table["cell_r5_c14"] = "___12h___"
+        table["cell_r5_c2"] = ""
+        table["cell_r5_c9"] = ""
+        table["cell_r5_c7"] = ""
+       
+
 
     elif q125_answer == "گزینه هشتم":
-        total_columns = 13
-        empty_per_row = 3
-        for row in range(5, 8): 
-            empty_cols = random.sample(range(5, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
-    
+        table["cell_r5_c14"] = "___13h___"
+        table["cell_r5_c2"] = ""
+       
+
+
     elif q125_answer == "گزینه نهم":
-        total_columns = 13
-        empty_per_row = 3
-        for row in range(5, 8): 
-            empty_cols = random.sample(range(5, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = "" 
+        table["cell_r5_c14"] = "___14h___"
+        table["cell_r5_c2"] = ""
+       
+
 
     elif q125_answer == "گزینه دهم":
-        total_columns = 13
-        empty_per_row = 2
-        for row in range(5, 8): 
-            empty_cols = random.sample(range(5, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
-    
+        table["cell_r5_c14"] = "___15h___"
+        table["cell_r5_c2"] = ""
+       
+
+
     elif q125_answer == "گزینه یازدهم":
-        total_columns = 13
-        empty_per_row = 1
-        for row in range(5, 8): 
-            empty_cols = random.sample(range(5, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""
-
-      
- 
-
+        table["cell_r5_c14"] = "___16h___"
+        table["cell_r5_c2"] = ""
+       
        
     q126_answer = answers.get("q126", "")
     if q126_answer == "گزینه اول":
-        total_columns = 13
-        empty_per_row = 7
-        for row in range(6, 8): 
-            empty_cols = random.sample(range(6, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
+        table["cell_r6_c14"] = "___6h___"
+        table["cell_r6_c2"] = ""
+        table["cell_r6_c10"] = ""
+        table["cell_r6_c7"]=""
+        table["cell_r6_c6"] =""
+        table["cell_r6_c4"] =""
+        table["cell_r6_c5"] = ""
+        table["cell_r6_c1"] = ""
 
     elif q126_answer == "گزینه دوم":
-        total_columns = 13
-        empty_per_row = 7
-        for row in range(6, 8): 
-            empty_cols = random.sample(range(6, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
+        table["cell_r6_c14"] = "___7h___"
+        table["cell_r6_c6"] = ""
+        table["cell_r5_c2"] = ""
+        table["cell_r6_c8"]=""
+        table["cell_r6_c10"] =""
+        table["cell_r6_c13"] =""
+        table["cell_r6_c7"] =""
+        
 
     elif q126_answer == "گزینه سوم":
-        total_columns = 13
-        empty_per_row = 6
-        for row in range(6, 8): 
-            empty_cols = random.sample(range(6, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
+        table["cell_r6_c14"] = "___8h___"
+        table["cell_r6_c5"] = ""
+        table["cell_r6_c2"]=""
+        table["cell_r6_c4"] =""    
+        table["cell_r6_c10"] =""
+        table["cell_r6_c7"] =""
 
     elif q126_answer == "گزینه چهارم":
-        total_columns = 13
-        empty_per_row = 5
-        for row in range(6, 8): 
-            empty_cols = random.sample(range(6, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
+        table["cell_r6_c14"] = "___9h___"
+        table["cell_r6_c5"] = ""
+        table["cell_r6_c2"]=""
+        table["cell_r6_c4"] =""
+        table["cell_r6_c9"] =""
+        table["cell_r6_c13"] =""
+    elif q126_answer == "گزینه پنجم":
+        table["cell_r6_c14"] = "___10h___"
+        table["cell_r6_c6"] = ""
+        table["cell_r6_c4"] =""
+        table["cell_r6_c9"] =""
 
-    elif q126_answer == "گزینه پنچم":
-        total_columns = 13
-        empty_per_row = 5
-        for row in range(6, 8): 
-            empty_cols = random.sample(range(6, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
-
+        table["cell_r6_c3"] =""
     elif q126_answer == "گزینه ششم":
-        total_columns = 13
-        empty_per_row = 4
-        for row in range(6, 8): 
-            empty_cols = random.sample(range(6, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
-
+        table["cell_r6_c14"] = "___11h___"
+        table["cell_r6_c2"] = ""
+        table["cell_r6_c4"] =""
+        table["cell_r6_c9"] =""
+       
     elif q126_answer == "گزینه هفتم":
-        total_columns = 13
-        empty_per_row = 3
-        for row in range(6, 8): 
-            empty_cols = random.sample(range(6, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = "" 
+        table["cell_r6_c14"] = "___12h___"
+        table["cell_r6_c2"] = ""
+        table["cell_r6_c4"] =""
+        
+       
+
 
     elif q126_answer == "گزینه هشتم":
-        total_columns = 13
-        empty_per_row = 3
-        for row in range(6, 8): 
-            empty_cols = random.sample(range(6, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
-    
+        table["cell_r6_c14"] = "___13h___"
+        table["cell_r6_c2"] = ""
+       
+
+
     elif q126_answer == "گزینه نهم":
-        total_columns = 13
-        empty_per_row = 3
-        for row in range(6, 8): 
-            empty_cols = random.sample(range(6, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = "" 
+        table["cell_r6_c14"] = "___14h___"
+        table["cell_r6_c2"] = ""
+       
+
 
     elif q126_answer == "گزینه دهم":
-        total_columns = 13
-        empty_per_row = 2
-        for row in range(6, 8): 
-            empty_cols = random.sample(range(6, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
-    
-    elif q126_answer == "گزینه یازدهم":
-        total_columns = 13
-        empty_per_row = 1
-        for row in range(6, 8): 
-            empty_cols = random.sample(range(6, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""
+        table["cell_r6_c14"] = "___15h___"
+        table["cell_r6_c2"] = ""
+       
 
-      
- 
+
+    elif q126_answer == "گزینه یازدهم":
+        table["cell_r6_c14"] = "___16h___"
+        table["cell_r6_c2"] = ""
+       
+
 
     q127_answer = answers.get("q127", "")
     if q127_answer == "گزینه اول":
-        total_columns = 13
-        empty_per_row = 7
-        for row in range(7, 8): 
-            empty_cols = random.sample(range(7, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
+        table["cell_r7_c14"] = "___6h___"
+        table["cell_r7_c7"] = ""
+        table["cell_r7_c2"] =""
+        table["cell_r7_c5"]=""
+        table["cell_r7_c6"] =""
+        table["cell_r7_c8"] =""
+        table["cell_r7_c12"] =""
+        table["cell_r7_c10"] =""
+
 
     elif q127_answer == "گزینه دوم":
-        total_columns = 13
-        empty_per_row = 7
-        for row in range(7, 8): 
-            empty_cols = random.sample(range(7, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
+        table["cell_r7_c14"] = "___7h___"
+        table["cell_r7_c8"] = ""
+        table["cell_r7_c2"] =""
+        table["cell_r7_c9"] =""
+        table["cell_r7_c10"] =""
+
+        table["cell_r7_c13"]=""
+        table["cell_r7_c5"] =""
 
     elif q127_answer == "گزینه سوم":
-        total_columns = 13
-        empty_per_row = 6
-        for row in range(7, 8): 
-            empty_cols = random.sample(range(7, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
-
+        table["cell_r7_c14"] ="___8h___"
+        table["cell_r7_c1"] = ""
+        table["cell_r7_c2"] =""
+        table["cell_r7_c10"] =""
+        table["cell_r7_c5"] =""
+        table["cell_r7_c6"] =""
+        table["cell_r7_c8"] =""
     elif q127_answer == "گزینه چهارم":
-        total_columns = 13
-        empty_per_row = 5
-        for row in range(7, 8): 
-            empty_cols = random.sample(range(7, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
+        table["cell_r7_c14"] = "___9h___"
+        table["cell_r7_c6"] = ""
+        table["cell_r7_c2"] =""
+        table["cell_r7_c8"] =""
+        table["cell_r7_c12"] =""
 
-    elif q127_answer == "گزینه پنچم":
-        total_columns = 13
-        empty_per_row = 5
-        for row in range(7, 8): 
-            empty_cols = random.sample(range(7, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
+       
+        table["cell_r7_c7"] =""
 
+    elif q127_answer == "گزینه پنجم":
+        table["cell_r7_c14"] = "___10h___"
+        table["cell_r7_c6"] = ""
+        table["cell_r7_c2"] =""
+        table["cell_r7_c7"] =""
+        table["cell_r7_c5"] =""
+
+        
     elif q127_answer == "گزینه ششم":
-        total_columns = 13
-        empty_per_row = 4
-        for row in range(7, 8): 
-            empty_cols = random.sample(range(7, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
+        table["cell_r7_c14"] = "___11h___"
+        table["cell_r7_c2"]="" 
+        table["cell_r7_c9"] =""
+        table["cell_r7_c13"] =""
 
     elif q127_answer == "گزینه هفتم":
-        total_columns = 13
-        empty_per_row = 3
-        for row in range(7, 8): 
-            empty_cols = random.sample(range(7, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = "" 
+        table["cell_r7_c14"] = "___12h___"
+        table["cell_r7_c11"] = ""
+        table["cell_r7_c2"] =""
+        table["cell_r7_c9"] =""
+       
+
 
     elif q127_answer == "گزینه هشتم":
-        total_columns = 13
-        empty_per_row = 3
-        for row in range(7, 8): 
-            empty_cols = random.sample(range(7, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
-    
+        table["cell_r7_c14"] = "___13h___"
+        table["cell_r7_c2"] = ""
+       
+
+
     elif q127_answer == "گزینه نهم":
-        total_columns = 13
-        empty_per_row = 3
-        for row in range(7, 8): 
-            empty_cols = random.sample(range(7, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = "" 
+        table["cell_r7_c14"] = "___14h___"
+        table["cell_r7_c2"] = ""
+       
+
 
     elif q127_answer == "گزینه دهم":
-        total_columns = 13
-        empty_per_row = 2
-        for row in range(7, 8): 
-            empty_cols = random.sample(range(7, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
-    
-    elif q127_answer == "گزینه یازدهم":
-        total_columns = 13
-        empty_per_row = 1
-        for row in range(7, 8): 
-            empty_cols = random.sample(range(7, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""
+        table["cell_r7_c14"] = "___15h___"
+        table["cell_r7_c2"] = ""
+       
 
-      
- 
+
+    elif q127_answer == "گزینه یازدهم":
+        table["cell_r7_c14"] = "___16h___"
+        table["cell_r7_c2"] = ""
+       
 
 
     # rows = 7   # تعداد ردیف
@@ -3812,7 +3647,9 @@ def run_algorithm(answers):
 
 
 
+
 if __name__ == "__main__":
+    app.run(debug=True)
     with app.app_context():
         db.create_all()
 
