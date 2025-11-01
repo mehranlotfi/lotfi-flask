@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
 <style>
 /* ===== پایه ===== */
@@ -64,7 +64,7 @@ td {
   text-align: center;
   vertical-align: middle;
   padding: 6px;
-  font-size: 6px;
+  font-size: 7px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 
   height: 12px;
@@ -78,7 +78,7 @@ td {
   }
 
   td {
-    font-size: 13px;
+    font-size: 23px;
     padding: 5px;
   }
 }
@@ -106,43 +106,23 @@ td {
     }
 
    
-    td, th, p, span, div {
-      font-size: 10px !important;
-      line-height: 1.1 !important;
-    }
-
-    td, th {
-      padding: 4px !important;
-    }
 
 
-    [style*="min-height"], .hero {
-      min-height: auto !important;
-      height: auto !important;
-    }
-
-
-    [style*="position: absolute"] {
-      position: static !important;
-      top: auto !important;
-      left: auto !important;
-      transform: none !important;
-    }
-
-    body {
-      transform-origin: top left;
-      transform: scale(0.9);
-    }
   }
 </style>
 
 </head>
-<body>
+
+
+<body style="padding: 10px;">
 
 <!-- HTML -->
 
-<img class="print-bg" src="{{ url_for('static', filename='images/print-bg.jpg') }}" alt="print background" />
-<div class="print-content">
+<button id="download-btn" 
+style="padding: 10px 25px;background-color: aqua;border-radius: 24px;border: none;margin: 12px auto;cursor: pointer;">دانلود PDF</button>
+<img class="print-bg"  src="{{ url_for('static', filename='images/print-bg.jpg') }}" alt="print background" />
+<div class="print-content" id="grade-table">
+
 
 <section class="hero"  style="background-image:url('{{url_for('static',filename='images/عکس برنامه.jpg')}}');">
 
@@ -153,7 +133,7 @@ td {
   <table>
    
   <!-- ردیف 1 -->
-  <tr>
+<tr>
   <td id="cell_r0_c0" style="color: rgb(255, 75, 75); grid-column: 1 / 2; grid-row: 1 / 2; font-size: 16px;    font-family: 'Vazirmatn', sans-serif ; ">فردا(روز اول )  </td>
 
   <td id="cell_r1_c1">{{ table.get('cell_r1_c1', 'سطر1 ستون1') }}</td>
@@ -169,10 +149,10 @@ td {
   <td id="cell_r1_c11">{{table.get('cell_r1_c11', 'سطر 1 ستون 11')}}</td>
   <td id="cell_r1_c12">{{ table.get('cell_r1_c12', 'سطر1 ستون3') }}</td>
   <td id="cell_r1_c13">{{ table.get('cell_r1_c13', 'سطر1 ستون3') }}</td>  
-  <td id="cell_r1_c14" style="color: rgb(255, 75, 75);  font-size: 14.5px; font-family: 'Vazirmatn', sans-serif; "> {{ table.get('cell_r1_c14', 'سطر1 ستون1') }} </td>
+  <td id="cell_r1_c14" style="color: rgb(255, 75, 75);  font-size: 14.5px; font-family: 'Vazirmatn', sans-serif; "> {{ table.get('cell_r1_c14','') }} </td>
 </tr>
 
-  <tr>
+<tr>
   <td id="cell_r0_c0" style="color: rgb(255, 75, 75); font-size: 16px;    font-family: 'Vazirmatn', sans-serif ;  ">روز دوم</td>
   <td id="cell_r2_c1" style="height: 80px;  width: 70px;">{{ table.get('cell_r2_c1', 'سطر1 ستون1') }}</td>
   <td id="cell_r2_c2">{{ table.get('cell_r2_c2', 'سطر1 ستون2') }}</td>
@@ -187,13 +167,13 @@ td {
   <td id="cell_r2_c12">{{ table.get('cell_r2_c12', 'سطر1 ستون3') }}</td>
   <td id="cell_r2_c13">{{ table.get('cell_r2_c13', 'سطر1 ستون3') }}</td>
   <td id="cell_r2_c11">{{ table.get('cell_r2_c11', 'سطر1 ستون3') }}</td>
-  <td id="cell_r2_c14" style="color: rgb(255, 75, 75); font-size: 14.5px;">{{ table.get('cell_r2_c14', 'سطر1 ستون3') }}</td>
+  <td id="cell_r2_c14" style="color: rgb(255, 75, 75); font-size: 14.5px;">{{ table.get('cell_r2_c14', '') }}</td>
 </tr>
 
 
 
   <!-- ردیف 3 -->
-  <tr>
+<tr>
   <td  style="color: rgb(255, 75, 75);font-size: 16px;    font-family: 'Vazirmatn', sans-serif ;   ">روز سوم</td>
   <td id="cell_r3_c1" style="height: 80px;  width: 70px;" >{{ table.get('cell_r3_c1', 'سطر1 ستون1') }}</td>
   <td id="cell_r3_c2">{{ table.get('cell_r3_c2', 'سطر1 ستون2') }}</td>
@@ -209,10 +189,10 @@ td {
   <td id="cell_r3_c13">{{ table.get('cell_r3_c13', 'سطر1 ستون3') }}</td>
   <td id="cell_r3_c11">{{ table.get('cell_r3_c11', 'سطر1 ستون3') }}</td>
 
-  <td id="cell_r3_c14" style="color: rgb(255, 75, 75); font-size: 14.5px;">{{ table.get('cell_r3_c14', 'سطر1 ستون3') }}</td>
+  <td id="cell_r3_c14" style="color: rgb(255, 75, 75); font-size: 14.5px;">{{ table.get('cell_r3_c14', '') }}</td>
 </tr>
 
-  <tr>
+<tr>
   <td  style="color: rgb(255, 75, 75); font-size: 16px;    font-family: 'Vazirmatn', sans-serif ; "> روز چهارم</td>
   <td id="cell_r4_c1" style="height: 80px;  width: 70px;">{{ table.get('cell_r4_c1', 'سطر1 ستون1') }}</td>
   <td id="cell_r4_c2">{{ table.get('cell_r4_c2', 'سطر1 ستون2') }}</td>
@@ -228,10 +208,10 @@ td {
   <td id="cell_r4_c12">{{ table.get('cell_r4_c12', 'سطر1 ستون3') }}</td>
   <td id="cell_r4_c13">{{ table.get('cell_r4_c13', 'سطر1 ستون3') }}</td>
   
-  <td id="cell_r4_c14" style="color: rgb(255, 75, 75); font-size: 14.5px;">{{ table.get('cell_r4_c14', 'سطر1 ستون3') }}</td>
+  <td id="cell_r4_c14" style="color: rgb(255, 75, 75); font-size: 14.5px;">{{ table.get('cell_r4_c14', '') }}</td>
 </tr>
 
-  <tr>
+<tr>
   <td style="color: rgb(255, 75, 75);font-size: 16px;    font-family: 'Vazirmatn', sans-serif ; " >روز پنجم</td>
   <td id="cell_r5_c1" style="height: 80px;  width: 70px;">{{ table.get('cell_r5_c1', 'سطر1 ستون1') }}</td>
   <td id="cell_r5_c2">{{ table.get('cell_r5_c2', 'سطر1 ستون2') }}</td>
@@ -247,12 +227,12 @@ td {
   <td id="cell_r5_c12">{{ table.get('cell_r5_c12', 'سطر1 ستون3') }}</td>
   <td id="cell_r5_c13">{{ table.get('cell_r5_c13', 'سطر1 ستون3') }}</td>
   
-  <td id="cell_r5_c14" style="color: rgb(255, 75, 75);  font-size: 14.5px;">{{ table.get('cell_r5_c14', 'سطر1 ستون3') }}</td>
+  <td id="cell_r5_c14" style="color: rgb(255, 75, 75);  font-size: 14.5px;">{{ table.get('cell_r5_c14', '') }}</td>
 </tr>
 
 
 
-  <tr>
+<tr>
   <td  style="color: rgb(255, 75, 75);font-size: 16px;    font-family: 'Vazirmatn', sans-serif ; ">روز ششم</td>
   <td id="cell_r6_c1" style="height: 80px;  width: 70px;">{{ table.get('cell_r6_c1', 'سطر1 ستون1') }}</td>
   <td id="cell_r6_c2">{{ table.get('cell_r6_c2', 'سطر1 ستون2') }}</td>
@@ -267,11 +247,11 @@ td {
   <td id="cell_r6_c12">{{ table.get('cell_r6_c12', 'سطر1 ستون3') }}</td>
   <td id="cell_r6_c13">{{ table.get('cell_r6_c13', 'سطر1 ستون3') }}</td>
   <td id="cell_r6_c11">{{ table.get('cell_r6_c11', 'سطر1 ستون3') }}</td>
-  <td id="cell_r6_c14" style="color: rgb(255, 75, 75);  font-size: 16px;">{{ table.get('cell_r6_c14', 'سطر1 ستون3') }}</td>
+  <td id="cell_r6_c14" style="color: rgb(255, 75, 75);  font-size: 16px;">{{ table.get('cell_r6_c14', '') }}</td>
 </tr>
 
 
-  <tr>
+<tr>
   <td  style="color: rgb(255, 75, 75); font-size: 16px;    font-family: 'Vazirmatn', sans-serif ; height: 80px;">روز هفتم</td>
   <td id="cell_r7_c1" style="height: 80px;  width: 70px;">{{ table.get('cell_r7_c1', 'سطر1 ستون1') }}</td>
   <td id="cell_r7_c2">{{ table.get('cell_r7_c2', 'سطر1 ستون2') }}</td>
@@ -282,12 +262,13 @@ td {
   <td id="cell_r7_c7">{{ table.get('cell_r7_c7', 'سطر1 ستون3') }}</td>
   <td id="cell_r7_c8">{{ table.get('cell_r7_c8', 'سطر1 ستون3') }}</td>
   <td id="cell_r7_c9">{{ table.get('cell_r7_c9', 'سطر1 ستون3') }}</td>
-  <td id="cell_r7_c10">{{ table.get('cell_r7_c10', 'سطر1 ستون3') }}</td>
+  <td id="cell_r7_c10">{{ table.get('cell_r7_c10', 'سطر1 ستون3') }}</td> 
+   <td id="cell_r7_c11">{{ table.get('cell_r7_c11', 'سطر1 ستون3') }}</td>
   <td id="cell_r7_c12">{{ table.get('cell_r7_c12', 'سطر1 ستون3') }}</td>
   <td id="cell_r7_c13">{{ table.get('cell_r7_c13', 'سطر1 ستون3') }}</td>
-  <td id="cell_r7_c11">{{ table.get('cell_r7_c11', 'سطر1 ستون3') }}</td>
-  <td id="cell_r7_c14" style="color: rgb(255, 75, 75);  font-size: 14.5px;">{{ table.get('cell_r7_c14', 'سطر1 ستون3') }}</td>
- </tr>
+
+  <td id="cell_r7_c14" style="color: rgb(255, 75, 75);  font-size: 14.5px;">{{ table.get('cell_r7_c14', '') }}</td>
+</tr>
 
 
 
@@ -310,6 +291,21 @@ td {
 </div>
 <!-- لوگو بالا سمت راست -->
 
+
+<script>
+  document.getElementById("download-btn").addEventListener("click", () => {
+    console.log("ok")
+    const element = document.getElementById("grade-table"); 
+    const opt = {
+      margin:       0,
+      filename:     'grade_result.pdf',
+      image:        { type: 'jpeg', quality: 0.98 },
+      html2canvas:  { scale: 2 },
+      jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
+    };
+    html2pdf().set(opt).from(element).save();
+  });
+  </script>
 
 </body>
 </html>
