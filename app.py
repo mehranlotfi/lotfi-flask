@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, session, flash, url_for,make_response
+from flask import Flask, render_template, request, redirect, session, flash, url_for
 from models import db, User, Answer, ProgramRequest, Question
 from flask_sqlalchemy import SQLAlchemy
 from flask import render_template, request, redirect, url_for, flash
@@ -633,25 +633,25 @@ def run_algorithm(answers):
         table["cell_r3_c2"] = " مرور"
         table["cell_r4_c2"] = "  15 تست "
         table["cell_r5_c2"] = " مرور "
-        table["cell_r6_c2"] = "15 تست "
-        table["cell_r7_c2"] = "15 تست "
+        table["cell_r6_c2"] = ""
+        table["cell_r7_c2"] = ""
 
     elif q12_answer=="گزینه چهاردهم":
         table["cell_r1_c2"] = " ازمون"
-        table["cell_r2_c2"] = "15 تست "
-        table["cell_r3_c2"] = "15 تست "
-        table["cell_r4_c2"] = "مرور"
+        table["cell_r2_c2"] = ""
+        table["cell_r3_c2"] = ""
+        table["cell_r4_c2"] = ""
         table["cell_r5_c2"] = " ازمون "
-        table["cell_r6_c2"] = "مرور"
-        table["cell_r7_c2"] = "15 تست "
+        table["cell_r6_c2"] = ""
+        table["cell_r7_c2"] = ""
     elif q12_answer=="گزینه پانزدهم":
         table["cell_r1_c2"] = " مطالعه و 20تمرین تشریحی"
         table["cell_r2_c2"] = " مطالعه و 20تمرین تشریحی"
         table["cell_r3_c2"] = " مطالعه و 20تمرین تشریحی"
         table["cell_r4_c2"] = " مطالعه و 20تمرین تشریحی"
-        table["cell_r5_c2"] = "15 تست "
-        table["cell_r6_c2"] = "مرور"
-        table["cell_r7_c2"] = "15 تست "
+        table["cell_r5_c2"] = ""
+        table["cell_r6_c2"] = ""
+        table["cell_r7_c2"] = ""
     elif q12_answer=="گزینه شانزدهم":
         table["cell_r1_c2"] = "ویدیو"
         table["cell_r2_c2"] = "ویدیو"
@@ -807,25 +807,25 @@ def run_algorithm(answers):
         table["cell_r3_c3"] = " مرور"
         table["cell_r4_c3"] = "  15 تست "
         table["cell_r5_c3"] = " مرور "
-        table["cell_r6_c3"] = "15 تست "
-        table["cell_r7_c3"] = "ازمون"
+        table["cell_r6_c3"] = ""
+        table["cell_r7_c3"] = ""
 
     elif q2_answer=="گزینه چهاردهم":
         table["cell_r1_c3"] = " ازمون"
-        table["cell_r2_c3"] = "15 تست "
-        table["cell_r3_c3"] = "مرور"
-        table["cell_r4_c3"] = "15 تست "
+        table["cell_r2_c3"] = ""
+        table["cell_r3_c3"] = ""
+        table["cell_r4_c3"] = ""
         table["cell_r5_c3"] = " ازمون "
-        table["cell_r6_c3"] = " ازمون "
-        table["cell_r7_c3"] = " مرور "
+        table["cell_r6_c3"] = "  "
+        table["cell_r7_c3"] = "  "
     elif q2_answer=="گزینه پانزدهم":
         table["cell_r1_c3"] = " مطالعه و 20تمرین تشریحی"
         table["cell_r2_c3"] = " مطالعه و 20تمرین تشریحی"
         table["cell_r3_c3"] = " مطالعه و 20تمرین تشریحی"
         table["cell_r4_c3"] = " مطالعه و 20تمرین تشریحی"
-        table["cell_r5_c3"] = "مرور"
-        table["cell_r6_c3"] = "ازمون"
-        table["cell_r7_c3"] = "15 تست "
+        table["cell_r5_c3"] = ""
+        table["cell_r6_c3"] = ""
+        table["cell_r7_c3"] = ""
     elif q2_answer=="گزینه شانزدهم":
         table["cell_r1_c3"] = "ویدیو"
         table["cell_r2_c3"] = "ویدیو"
@@ -833,7 +833,7 @@ def run_algorithm(answers):
         table["cell_r4_c3"] = "30تست "
         table["cell_r5_c3"] = "30تست "
         table["cell_r6_c3"] = "30تست "
-    elif q2_answer=="گزینه هفدهم":
+    elif q2_answer=="گزینه هفدهتم":
         table["cell_r1_c3"] = "ویدیو"
         table["cell_r2_c3"] = "ویدیو"
         table["cell_r3_c3"] = "ویدیو"
@@ -983,25 +983,25 @@ def run_algorithm(answers):
         table["cell_r3_c4"] = " مرور"
         table["cell_r4_c4"] = "  15 تست "
         table["cell_r5_c4"] = " مرور "
-        table["cell_r6_c4"] = "15 تست "
-        table["cell_r7_c4"] = "ازمون"
+        table["cell_r6_c4"] = ""
+        table["cell_r7_c4"] = ""
 
     elif q22_answer=="گزینه چهاردهم":
         table["cell_r1_c4"] = " ازمون"
-        table["cell_r2_c4"] = "15 تست "
-        table["cell_r3_c4"] = "15 تست "
-        table["cell_r4_c4"] = "مرور"
+        table["cell_r2_c4"] = ""
+        table["cell_r3_c4"] = ""
+        table["cell_r4_c4"] = ""
         table["cell_r5_c4"] = " ازمون "
-        table["cell_r6_c4"] = "15 تست "
-        table["cell_r7_c4"] = "ازمون"
+        table["cell_r6_c4"] = ""
+        table["cell_r7_c4"] = ""
     elif q22_answer=="گزینه پانزدهم":
         table["cell_r1_c4"] = " مطالعه و 20تمرین تشریحی"
         table["cell_r2_c4"] = " مطالعه و 20تمرین تشریحی"
         table["cell_r3_c4"] = " مطالعه و 20تمرین تشریحی"
         table["cell_r4_c4"] = " مطالعه و 20تمرین تشریحی"
-        table["cell_r5_c4"] = "15 تست "
-        table["cell_r6_c4"] = "15 تست "
-        table["cell_r7_c4"] = "مرور"
+        table["cell_r5_c4"] = ""
+        table["cell_r6_c4"] = ""
+        table["cell_r7_c4"] = ""
     elif q22_answer=="گزینه شانزدهم":
         table["cell_r1_c4"] = "ویدیو"
         table["cell_r2_c4"] = "ویدیو"
@@ -1155,25 +1155,25 @@ def run_algorithm(answers):
         table["cell_r3_c5"] = " مرور"
         table["cell_r4_c5"] = "  15 تست "
         table["cell_r5_c5"] = " مرور "
-        table["cell_r6_c5"] = "10 تست سخت"
-        table["cell_r7_c5"] = "ازمون"
+        table["cell_r6_c5"] = ""
+        table["cell_r7_c5"] = ""
 
     elif q3_answer=="گزینه چهاردهم":
         table["cell_r1_c5"] = " ازمون"
-        table["cell_r2_c5"] = "10 تست سخت "
-        table["cell_r3_c5"] = "مرور"
-        table["cell_r4_c5"] = "10 تست سخت"
+        table["cell_r2_c5"] = ""
+        table["cell_r3_c5"] = ""
+        table["cell_r4_c5"] = ""
         table["cell_r5_c5"] = " ازمون "
-        table["cell_r6_c5"] = "ازمون"
-        table["cell_r7_c5"] = "مرور"
+        table["cell_r6_c5"] = ""
+        table["cell_r7_c5"] = ""
     elif q3_answer=="گزینه پانزدهم":
         table["cell_r1_c5"] = " مطالعه و 20تمرین تشریحی"
         table["cell_r2_c5"] = " مطالعه و 20تمرین تشریحی"
         table["cell_r3_c5"] = " مطالعه و 20تمرین تشریحی"
         table["cell_r4_c5"] = " مطالعه و 20تمرین تشریحی"
-        table["cell_r5_c5"] = "15 تست "
-        table["cell_r6_c5"] = "15 تست "
-        table["cell_r7_c5"] = "مرور"
+        table["cell_r5_c5"] = ""
+        table["cell_r6_c5"] = ""
+        table["cell_r7_c5"] = ""
     elif q3_answer=="گزینه شانزدهم":
         table["cell_r1_c5"] = "ویدیو"
         table["cell_r2_c5"] = "ویدیو"
@@ -1328,25 +1328,25 @@ def run_algorithm(answers):
         table["cell_r3_c6"] = " مرور"
         table["cell_r4_c6"] = "  15 تست "
         table["cell_r5_c6"] = " مرور "
-        table["cell_r6_c6"] = "15 تست "
-        table["cell_r7_c6"] = "15 تست "
+        table["cell_r6_c6"] = ""
+        table["cell_r7_c6"] = ""
 
     elif q32_answer=="گزینه چهاردهم":
         table["cell_r1_c6"] = " ازمون"
-        table["cell_r2_c6"] = "15 تست "
-        table["cell_r3_c6"] = "10 تست سخت"
-        table["cell_r4_c6"] = "مرور"
+        table["cell_r2_c6"] = ""
+        table["cell_r3_c6"] = ""
+        table["cell_r4_c6"] = ""
         table["cell_r5_c6"] = " ازمون "
-        table["cell_r6_c6"] = "15 تست "
-        table["cell_r7_c6"] = "15 تست "
+        table["cell_r6_c6"] = ""
+        table["cell_r7_c6"] = ""
     elif q32_answer=="گزینه پانزدهم":
         table["cell_r1_c6"] = " مطالعه و 20تمرین تشریحی"
         table["cell_r2_c6"] = " مطالعه و 20تمرین تشریحی"
         table["cell_r3_c6"] = " مطالعه و 20تمرین تشریحی"
         table["cell_r4_c6"] = " مطالعه و 20تمرین تشریحی"
-        table["cell_r5_c6"] = "15 تست "
-        table["cell_r6_c6"] = "مرور"
-        table["cell_r7_c6"] = "ازمون"
+        table["cell_r5_c6"] = ""
+        table["cell_r6_c6"] = ""
+        table["cell_r7_c6"] = ""
     elif q32_answer=="گزینه شانزدهم":
         table["cell_r1_c6"] = "ویدیو"
         table["cell_r2_c6"] = "ویدیو"
@@ -1499,25 +1499,25 @@ def run_algorithm(answers):
         table["cell_r3_c7"] = " مرور"
         table["cell_r4_c7"] = "  15 تست "
         table["cell_r5_c7"] = " مرور "
-        table["cell_r6_c7"] = "ازمون"
-        table["cell_r7_c7"] = "10تست سخت"
+        table["cell_r6_c7"] = ""
+        table["cell_r7_c7"] = ""
 
     elif q4_answer=="گزینه چهاردهم":
         table["cell_r1_c7"] = " ازمون"
-        table["cell_r2_c7"] = "مرور"
-        table["cell_r3_c7"] = "15 تست "
-        table["cell_r4_c7"] = "15 تست "
+        table["cell_r2_c7"] = ""
+        table["cell_r3_c7"] = ""
+        table["cell_r4_c7"] = ""
         table["cell_r5_c7"] = " ازمون "
-        table["cell_r6_c7"] = "  ازمون"
-        table["cell_r7_c7"] = "  10 تست سخت"
+        table["cell_r6_c7"] = "  "
+        table["cell_r7_c7"] = "  "
     elif q4_answer=="گزینه پانزدهم":
         table["cell_r1_c7"] = " مطالعه و 20تمرین تشریحی"
         table["cell_r2_c7"] = " مطالعه و 20تمرین تشریحی"
         table["cell_r3_c7"] = " مطالعه و 20تمرین تشریحی"
         table["cell_r4_c7"] = " مطالعه و 20تمرین تشریحی"
-        table["cell_r5_c7"] = "10 تست سخت "
-        table["cell_r6_c7"] = "15 تست "
-        table["cell_r7_c7"] = "15 تست "
+        table["cell_r5_c7"] = ""
+        table["cell_r6_c7"] = ""
+        table["cell_r7_c7"] = ""
     elif q4_answer=="گزینه شانزدهم":
         table["cell_r1_c7"] = "ویدیو"
         table["cell_r2_c7"] = "ویدیو"
@@ -1672,25 +1672,25 @@ def run_algorithm(answers):
         table["cell_r3_c8"] = " مرور"
         table["cell_r4_c8"] = "  15 تست "
         table["cell_r5_c8"] = " مرور "
-        table["cell_r6_c8"] = "ازمون"
-        table["cell_r7_c8"] = "مرور"
+        table["cell_r6_c8"] = ""
+        table["cell_r7_c8"] = ""
 
     elif q42_answer=="گزینه چهاردهم":
         table["cell_r1_c8"] = " ازمون"
-        table["cell_r2_c8"] = "15 تست "
-        table["cell_r3_c8"] = "15 تست "
-        table["cell_r4_c8"] = "10 تست سخت"
+        table["cell_r2_c8"] = ""
+        table["cell_r3_c8"] = ""
+        table["cell_r4_c8"] = ""
         table["cell_r5_c8"] = " ازمون "
-        table["cell_r6_c8"] = "مرور"
-        table["cell_r7_c8"] = "مرور"
+        table["cell_r6_c8"] = ""
+        table["cell_r7_c8"] = ""
     elif q42_answer=="گزینه پانزدهم":
         table["cell_r1_c8"] = " مطالعه و 20تمرین تشریحی"
         table["cell_r2_c8"] = " مطالعه و 20تمرین تشریحی"
         table["cell_r3_c8"] = " مطالعه و 20تمرین تشریحی"
         table["cell_r4_c8"] = " مطالعه و 20تمرین تشریحی"
-        table["cell_r5_c8"] = "10 تست سخت"
-        table["cell_r6_c8"] = "مرور"
-        table["cell_r7_c8"] = "ازمون"
+        table["cell_r5_c8"] = ""
+        table["cell_r6_c8"] = ""
+        table["cell_r7_c8"] = ""
     elif q42_answer=="گزینه شانزدهم":
         table["cell_r1_c8"] = "ویدیو"
         table["cell_r2_c8"] = "ویدیو"
@@ -1905,51 +1905,51 @@ def run_algorithm(answers):
     topic5 = answers.get("topic_q5", "")
     if q5_answer == "گزینه اول":
         table["cell_r1_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r2_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r3_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r4_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r5_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r6_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r7_c10"] = " مطالعه +10 تشریحی"
+        table["cell_r2_c10"] = ""
+        table["cell_r3_c10"] = ""
+        table["cell_r4_c10"] = ""
+        table["cell_r5_c10"] = ""
+        table["cell_r6_c10"] = ""
+        table["cell_r7_c10"] = ""
     elif q5_answer == "گزینه دوم":
         table["cell_r1_c10"] = " مطالعه +10 تشریحی"
         table["cell_r4_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r3_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r4_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r5_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r6_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r7_c10"] = " مطالعه +10 تشریحی"
+        table["cell_r3_c10"] = ""
+        table["cell_r4_c10"] = ""
+        table["cell_r5_c10"] = ""
+        table["cell_r6_c10"] = ""
+        table["cell_r7_c10"] = ""
     elif q5_answer=="گزینه سوم":
         table["cell_r1_c10"] = " مطالعه +10 تشریحی"
         table["cell_r4_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r3_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r4_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r5_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r6_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r7_c10"] = " مطالعه +10 تشریحی"
+        table["cell_r3_c10"] = ""
+        table["cell_r4_c10"] = ""
+        table["cell_r5_c10"] = ""
+        table["cell_r6_c10"] = ""
+        table["cell_r7_c10"] = ""
 
     elif q5_answer=="گزینه چهارم":
         table["cell_r1_c10"] = " مطالعه +10 تشریحی"
         table["cell_r4_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r3_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r4_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r5_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r6_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r7_c10"] = " مطالعه +10 تشریحی"
+        table["cell_r3_c10"] = ""
+        table["cell_r4_c10"] = ""
+        table["cell_r5_c10"] = ""
+        table["cell_r6_c10"] = ""
+        table["cell_r7_c10"] = ""
         
     elif q5_answer=="گزینه پنجم":
         table["cell_r1_c10"] = " مطالعه +10 تشریحی"
         table["cell_r2_c10"] = " مطالعه +10 تشریحی"
         table["cell_r3_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r4_c10"] =" مطالعه +10 تشریحی"
-        table["cell_r5_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r6_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r7_c10"] = " مطالعه +10 تشریحی"
+        table["cell_r4_c10"] = ""
+        table["cell_r5_c10"] = ""
+        table["cell_r6_c10"] = ""
+        table["cell_r7_c10"] = ""
     elif q5_answer=="گزینه ششم":
         table["cell_r1_c10"] = "مطالعه"
-        table["cell_r2_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r3_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r5_c10"] = "مطالعه"
+        table["cell_r2_c10"] = ""
+        table["cell_r3_c10"] = ""
+        table["cell_r5_c10"] = ""
         table["cell_r4_c10"] = "20 تمرین تشریحی "
         table["cell_r5_c10"] = "20 تمرین تشریحی "
         table["cell_r6_c10"] = "20 تمرین تشریحی "
@@ -1959,113 +1959,114 @@ def run_algorithm(answers):
     
     elif q5_answer=="گزینه سیزدهم":
         table["cell_r1_c10"] = " مرور"
-        table["cell_r2_c10"] = "مطالعه"
+        table["cell_r2_c10"] = ""
         table["cell_r4_c10"] = " مرور"
-        table["cell_r3_c10"] = "10 تشریحی"
-        table["cell_r5_c10"] = "10 تشریحی"
-        table["cell_r6_c10"] = "10 تشریحی"
-        table["cell_r7_c10"] = "10 تشریحی"
+        table["cell_r3_c10"] = ""
+        table["cell_r5_c10"] = ""
+        table["cell_r6_c10"] = ""
+        table["cell_r7_c10"] = ""
 
     elif q5_answer=="گزینه چهاردهم":
         table["cell_r1_c10"] = " ازمون"
-        table["cell_r2_c10"] = "10 تشریحی"
-        table["cell_r3_c10"] = "10 تشریحی"
-        table["cell_r4_c10"] = "مرور"
-        table["cell_r5_c10"] = "10 تشریحی"
-        table["cell_r6_c10"] = "ازمون"
-        table["cell_r7_c10"] = "10 تشریحی"
+        table["cell_r2_c10"] = ""
+        table["cell_r3_c10"] = ""
+        table["cell_r4_c10"] = ""
+        table["cell_r5_c10"] = ""
+        table["cell_r6_c10"] = ""
+        table["cell_r7_c10"] = ""
     elif q5_answer=="گزینه پانزدهم":
         table["cell_r1_c10"] = " مطالعه و 20تمرین تشریحی"
-        table["cell_r2_c10"] = "10 تشریحی"
-        table["cell_r3_c10"] = "10 تشریحی"
+        table["cell_r2_c10"] = ""
+        table["cell_r3_c10"] = ""
         table["cell_r4_c10"] = " مطالعه و 20تمرین تشریحی"
-        table["cell_r5_c10"] = "ازمون"
-        table["cell_r6_c10"] = "مرور"
-        table["cell_r7_c10"] = "10 تست سخت"
+        table["cell_r5_c10"] = ""
+        table["cell_r6_c10"] = ""
+        table["cell_r7_c10"] = ""
     elif q5_answer=="گزینه شانزدهم":
         table["cell_r1_c10"] = "ویدیو"
-        table["cell_r2_c10"] = "مرور"
-        table["cell_r3_c10"] = "10 تشریحی"
-        table["cell_r4_c10"] = "مرور"
-        table["cell_r5_c10"] = "ازمون"
-        table["cell_r6_c10"] = "ویدیو"
-        table["cell_r7_c10"] = "ویدیو"
+        table["cell_r2_c10"] = ""
+        table["cell_r3_c10"] = ""
+        table["cell_r4_c10"] = ""
+        table["cell_r5_c10"] = ""
+        table["cell_r6_c10"] = ""
+        table["cell_r7_c10"] = ""
     elif q5_answer=="گزینه هفدهتم":
         table["cell_r1_c10"] = "ویدیو"
-        table["cell_r2_c10"] = "10 تشریحی"
-        table["cell_r3_c10"] = "ازمون"
-        table["cell_r4_c10"] = "مرور"
-        table["cell_r5_c10"] = "10 تست سخت "
-        table["cell_r6_c10"] = "ازمون"
-        table["cell_r7_c10"] = "مرور"
+        table["cell_r2_c10"] = ""
+        table["cell_r3_c10"] = ""
+        table["cell_r4_c10"] = ""
+        table["cell_r5_c10"] = ""
+        table["cell_r6_c10"] = ""
+        table["cell_r7_c10"] = ""
     elif q5_answer=="گزینه هیجدهم":
         table["cell_r1_c10"] = "ویدیو"
-        table["cell_r2_c10"] = "10 تشریحی"
-        table["cell_r3_c10"] = "مرور"
+        table["cell_r2_c10"] = ""
+        table["cell_r3_c10"] = ""
         table["cell_r4_c10"] = " ویدیو "
-        table["cell_r5_c10"] = "مطالعه"
-        table["cell_r6_c10"] = "10 تشریحی"
-        table["cell_r7_c10"] = "10 تست سخت "
+        table["cell_r5_c10"] = ""
+        table["cell_r6_c10"] = ""
+        table["cell_r7_c10"] = ""
     elif q5_answer=="گزینه نوزدهم":
         table["cell_r1_c10"] = "ویدیو"
-        table["cell_r2_c10"] = "10 تشریحی"
-        table["cell_r3_c10"] = "ویدیو"
+        table["cell_r2_c10"] = ""
+        table["cell_r3_c10"] = ""
         table["cell_r4_c10"] = " ویدیو "
-        table["cell_r5_c10"] = "10 تشریحی"
-        table["cell_r6_c10"] = "10 تست سخت "
-        table["cell_r7_c10"] = "ازمون"
+        table["cell_r5_c10"] = ""
+        table["cell_r6_c10"] = ""
+        table["cell_r7_c10"] = ""
     elif q5_answer=="گزینه بیست و یک":
         table["cell_r1_c10"] = "مطالعه"
-        table["cell_r2_c10"] = "10 تشریحی"
-        table["cell_r3_c10"] = "10 تشریحی "
+        table["cell_r2_c10"] = ""
+        table["cell_r3_c10"] = ""
         table["cell_r4_c10"] = " مطالعه "
-        table["cell_r5_c10"] = "مرور"
-        table["cell_r6_c10"] = "مرور"
-        table["cell_r7_c10"] = "ازمون"
+        table["cell_r5_c10"] = ""
+        table["cell_r6_c10"] = ""
+        table["cell_r7_c10"] = ""
     elif q5_answer=="گزینه بیست و دو":
         table["cell_r1_c10"] = "مطالعه"
-        table["cell_r2_c10"] = "10 تشریحی"
-        table["cell_r3_c10"] = "ازمون"
+        table["cell_r2_c10"] = ""
+        table["cell_r3_c10"] = ""
         table["cell_r4_c10"] = " مطالعه "
         table["cell_r5_c10"] = " مطالعه "
-        table["cell_r6_c10"] = "10 تست سخت"
-        table["cell_r7_c10"] = "مرور"
+        table["cell_r6_c10"] = ""
+        table["cell_r7_c10"] = ""
 
     elif q5_answer=="گزینه بیست و سه":
         table["cell_r1_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r2_c10"] = "10 تست سخت "
-        table["cell_r3_c10"] = "مرور "
-        table["cell_r4_c10"] = "ازمون"
+        table["cell_r2_c10"] = ""
+        table["cell_r3_c10"] = ""
+        table["cell_r4_c10"] = ""
         table["cell_r5_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c10"] = "10 تشریحی"
-        table["cell_r7_c10"] = "ازمون"
+        table["cell_r6_c10"] = ""
+        table["cell_r7_c10"] = ""
 
     elif q5_answer=="گزینه بیستم":
         table["cell_r1_c10"] ="مطالعه و 20 تمرین تشریحی"
-        table["cell_r2_c10"] = "مرور"
-        table["cell_r3_c10"] = "ازمون"
+        table["cell_r2_c10"] = ""
+        table["cell_r3_c10"] = ""
         table["cell_r4_c10"] = "مطالعه و 20 تمرین تشریحی"
         table["cell_r5_c10"] ="مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r7_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r6_c10"] = ""
+        table["cell_r7_c10"] = ""
 
     elif q5_answer=="گزینه بیستم":
         table["cell_r1_c10"] = "ویدیو"
-        table["cell_r2_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r3_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r2_c10"] = ""
+        table["cell_r3_c10"] = ""
         table["cell_r4_c10"] = " ویدیو "
         table["cell_r5_c10"] = " ویدیو "
-        table["cell_r6_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r7_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r6_c10"] = ""
+        table["cell_r7_c10"] = ""
 
     elif q5_answer=="گزینه بیستم":
         table["cell_r1_c10"] = "ویدیو"
-        table["cell_r2_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r3_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r2_c10"] = ""
+        table["cell_r3_c10"] = ""
         table["cell_r4_c10"] = " ویدیو "
         table["cell_r5_c10"] = " ویدیو "
-        table["cell_r6_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r7_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r6_c10"] = ""
+        table["cell_r7_c10"] = ""
+
 
 
     if topic5:
@@ -2078,51 +2079,51 @@ def run_algorithm(answers):
     topic6 = answers.get("topic_q6", "")
     if q6_answer == "گزینه اول":
         table["cell_r1_c13"] = " مطالعه +10 تشریحی"
-        table["cell_r2_c13"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r3_c13"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r4_c13"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r5_c13"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c13"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r7_c13"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r2_c13"] = ""
+        table["cell_r3_c13"] = ""
+        table["cell_r4_c13"] = ""
+        table["cell_r5_c13"] = ""
+        table["cell_r6_c13"] = ""
+        table["cell_r7_c13"] = ""
     elif q6_answer == "گزینه دوم":
         table["cell_r1_c13"] = " مطالعه +10 تشریحی"
-        table["cell_r2_c13"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r2_c13"] = ""
         table["cell_r3_c13"] = " مطالعه +10 تشریحی"
-        table["cell_r4_c13"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r5_c13"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c13"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r7_c13"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r4_c13"] = ""
+        table["cell_r5_c13"] = ""
+        table["cell_r6_c13"] = ""
+        table["cell_r7_c13"] = ""
     elif q6_answer=="گزینه سوم":
         table["cell_r1_c13"] = " مطالعه +10 تشریحی"
-        table["cell_r2_c13"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r2_c13"] = ""
         table["cell_r3_c13"] = " مطالعه +10 تشریحی"
-        table["cell_r4_c13"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r4_c13"] = ""
         table["cell_r5_c13"] = " مطالعه +10 تشریحی"
-        table["cell_r6_c13"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r7_c13"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r6_c13"] = ""
+        table["cell_r7_c13"] = ""
 
     elif q6_answer=="گزینه چهارم":
         table["cell_r1_c13"] = " مطالعه +10 تشریحی"
-        table["cell_r2_c13"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r2_c13"] = ""
         table["cell_r3_c13"] = " مطالعه +10 تشریحی"
-        table["cell_r4_c13"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r4_c13"] = ""
         table["cell_r5_c13"] =" مطالعه +10 تشریحی"
-        table["cell_r6_c13"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r7_c13"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r6_c13"] = ""
+        table["cell_r7_c13"] = ""
         
     elif q6_answer=="گزینه پنجم":
         table["cell_r1_c13"] = " مطالعه +10 تشریحی"
-        table["cell_r2_c13"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r2_c13"] = ""
         table["cell_r3_c13"] = " مطالعه +10 تشریحی"
-        table["cell_r4_c13"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r4_c13"] = ""
         table["cell_r5_c13"] = " مطالعه +10 تشریحی"
-        table["cell_r6_c13"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r6_c13"] = ""
         table["cell_r7_c13"] = " مطالعه +10 تشریحی"
     elif q6_answer=="گزینه ششم":
         table["cell_r1_c13"] = "مطالعه"
-        table["cell_r2_c13"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r2_c13"] = ""
         table["cell_r3_c13"] = "20 تمرین تشریحی "
-        table["cell_r5_c13"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r5_c13"] = ""
         table["cell_r4_c13"] = "20 تمرین تشریحی "
         table["cell_r5_c13"] = "20 تمرین تشریحی "
         table["cell_r7_c13"] = "20 تمرین تشریحی "
@@ -2130,72 +2131,72 @@ def run_algorithm(answers):
     
     elif q6_answer=="گزینه سیزدهم":
         table["cell_r1_c13"] = " مرور"
-        table["cell_r2_c13"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r2_c13"] = ""
         table["cell_r4_c13"] = " مرور"
-        table["cell_r3_c13"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r5_c13"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c13"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r3_c13"] = ""
+        table["cell_r5_c13"] = ""
+        table["cell_r6_c13"] = ""
         table["cell_r7_c13"] = "مرور"
 
     elif q6_answer=="گزینه چهاردهم":
         table["cell_r1_c13"] = " ازمون"
-        table["cell_r2_c13"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r3_c13"] = "10 تست سخت"
-        table["cell_r4_c13"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r5_c13"] = "مرور"
-        table["cell_r6_c13"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r2_c13"] = ""
+        table["cell_r3_c13"] = ""
+        table["cell_r4_c13"] = ""
+        table["cell_r5_c13"] = ""
+        table["cell_r6_c13"] = ""
         table["cell_r7_c13"] = "ازمون"
     elif q6_answer=="گزینه پانزدهم":
         table["cell_r1_c13"] = " مطالعه و 20تمرین تشریحی"
-        table["cell_r2_c13"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r3_c13"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r2_c13"] = ""
+        table["cell_r3_c13"] = ""
         table["cell_r4_c13"] = " مطالعه و 20تمرین تشریحی"
-        table["cell_r5_c13"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c13"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r5_c13"] = ""
+        table["cell_r6_c13"] = ""
         table["cell_r7_c13"] =" مطالعه و 20تمرین تشریحی"
     elif q6_answer=="گزینه شانزدهم":
         table["cell_r1_c13"] = "ویدیو"
-        table["cell_r2_c13"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r3_c13"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r4_c13"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r5_c13"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c13"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r2_c13"] = ""
+        table["cell_r3_c13"] = ""
+        table["cell_r4_c13"] = ""
+        table["cell_r5_c13"] = ""
+        table["cell_r6_c13"] = ""
     elif q6_answer=="گزینه هفدهتم":
         table["cell_r1_c13"] = "ویدیو"
-        table["cell_r2_c13"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r2_c13"] = ""
         table["cell_r3_c13"] = "ویدیو"
-        table["cell_r4_c13"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r5_c13"] = "ویدیو"
-        table["cell_r6_c13"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r7_c13"] = "ویدیو"
+        table["cell_r4_c13"] = ""
+        table["cell_r5_c13"] = ""
+        table["cell_r6_c13"] = ""
+        table["cell_r7_c13"] = ""
     elif q6_answer=="گزینه هیجدهم":
         table["cell_r1_c13"] = "ویدیو"
-        table["cell_r2_c13"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r3_c13"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r4_c13"] = " ویدیو "
-        table["cell_r5_c13"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c13"] = "ویدیو"
-        table["cell_r7_c13"] = "مطالعه و 20 تمرین تشریحی"
-    elif q6_answer=="گزینه نوزدهم":
-        table["cell_r1_c13"] = "ویدیو"
-        table["cell_r2_c13"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r3_c13"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r2_c13"] = ""
+        table["cell_r3_c13"] = ""
         table["cell_r4_c13"] = " ویدیو "
         table["cell_r5_c13"] = ""
         table["cell_r6_c13"] = "ویدیو"
-        table["cell_r7_c13"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r7_c13"] = ""
+    elif q6_answer=="گزینه نوزدهم":
+        table["cell_r1_c13"] = "ویدیو"
+        table["cell_r2_c13"] = ""
+        table["cell_r3_c13"] = ""
+        table["cell_r4_c13"] = " ویدیو "
+        table["cell_r5_c13"] = ""
+        table["cell_r6_c13"] = "ویدیو"
+        table["cell_r7_c13"] = ""
     elif q6_answer=="گزینه بیستم":
         table["cell_r1_c13"] = "ویدیو"
-        table["cell_r2_c13"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r3_c13"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r2_c13"] = ""
+        table["cell_r3_c13"] = ""
         table["cell_r4_c13"] = " ویدیو "
-        table["cell_r5_c13"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r5_c13"] = ""
         table["cell_r6_c13"] = "ویدیو"
-        table["cell_r7_c13"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r7_c13"] = ""
 
     elif q6_answer=="گزینه بیست و یک":
         table["cell_r1_c13"] = "مطالعه"
-        table["cell_r2_c13"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r2_c13"] = ""
         table["cell_r3_c13"] = ""
         table["cell_r4_c13"] = " مطالعه "
         table["cell_r5_c13"] = ""
@@ -2241,119 +2242,119 @@ def run_algorithm(answers):
     if q7_answer == "گزینه اول":
         table["cell_r1_c9"] = " مطالعه +10 تشریحی"
         table["cell_r2_c9"] = " مطالعه +10 تشریحی"
-        table["cell_r3_c9"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r4_c9"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r5_c9"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c9"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r7_c9"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r3_c9"] = ""
+        table["cell_r4_c9"] = ""
+        table["cell_r5_c9"] = ""
+        table["cell_r6_c9"] = ""
+        table["cell_r7_c9"] = ""
     elif q7_answer == "گزینه دوم":
         table["cell_r1_c9"] = " مطالعه +10 تشریحی"
         table["cell_r2_c9"] = " مطالعه +10 تشریحی"
         table["cell_r3_c9"] = " مطالعه +10 تشریحی"
-        table["cell_r4_c9"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r5_c9"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c9"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r7_c9"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r4_c9"] = ""
+        table["cell_r5_c9"] = ""
+        table["cell_r6_c9"] = ""
+        table["cell_r7_c9"] = ""
     elif q7_answer=="گزینه سوم":
         table["cell_r1_c9"] = " مطالعه +10 تشریحی"
         table["cell_r2_c9"] = " مطالعه +10 تشریحی"
         table["cell_r3_c9"] = " مطالعه +10 تشریحی"
-        table["cell_r4_c9"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r5_c9"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c9"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r7_c9"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r4_c9"] = ""
+        table["cell_r5_c9"] = ""
+        table["cell_r6_c9"] = ""
+        table["cell_r7_c9"] = ""
 
     elif q7_answer=="گزینه چهارم":
-        table["cell_r1_c9"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r1_c9"] = ""
         table["cell_r2_c9"] = " مطالعه +15 تشریحی"
         table["cell_r3_c9"] = " مطالعه +10 تشریحی"
         table["cell_r4_c9"] = " مطالعه +20 تشریحی"
-        table["cell_r5_c9"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c9"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r7_c9"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r5_c9"] = ""
+        table["cell_r6_c9"] = ""
+        table["cell_r7_c9"] = ""
         
     elif q7_answer=="گزینه پنجم":
         table["cell_r1_c9"] = " مطالعه +10 تشریحی"
         table["cell_r2_c9"] = " مطالعه +15 تشریحی"
         table["cell_r3_c9"] = " مطالعه +15 تشریحی"
         table["cell_r4_c9"] = " مطالعه +20 تشریحی"
-        table["cell_r5_c9"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c9"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r7_c9"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r5_c9"] = ""
+        table["cell_r6_c9"] = ""
+        table["cell_r7_c9"] = ""
     elif q7_answer=="گزینه ششم":
         table["cell_r1_c9"] = "مطالعه"
         table["cell_r2_c9"] = "مطالعه"
         table["cell_r3_c9"] = "20 تمرین تشریحی "
         table["cell_r5_c9"] = "20 تمرین تشریحی "
         table["cell_r4_c9"] = "20 تمرین تشریحی "
-        table["cell_r5_c9"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r7_c9"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r5_c9"] = ""
+        table["cell_r7_c9"] = ""
 
     
     elif q7_answer=="گزینه سیزدهم":
         table["cell_r1_c9"] = "مرور"
-        table["cell_r2_c9"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r2_c9"] = ""
         table["cell_r4_c9"] = " مرور"
-        table["cell_r3_c9"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r3_c9"] = ""
         table["cell_r5_c9"] = "مرور"
-        table["cell_r6_c9"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r6_c9"] = ""
         table["cell_r7_c9"] = "مرور"
 
     elif q7_answer=="گزینه چهاردهم":
-        table["cell_r1_c9"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r1_c9"] = " "
         table["cell_r2_c9"] = "ازمون"
-        table["cell_r3_c9"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r4_c9"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r5_c9"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r3_c9"] = " "
+        table["cell_r4_c9"] = ""
+        table["cell_r5_c9"] = ""
         table["cell_r6_c9"] = "ازمون"
-        table["cell_r7_c9"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r7_c9"] = ""
     elif q7_answer=="گزینه پانزدهم":
-        table["cell_r1_c9"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r1_c9"] = ""
         table["cell_r2_c9"] = " مطالعه و 20تمرین تشریحی"
-        table["cell_r3_c9"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r3_c9"] = ""
         table["cell_r4_c9"] = " مطالعه و 20تمرین تشریحی"
-        table["cell_r5_c9"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r5_c9"] = ""
         table["cell_r6_c9"] = " مطالعه و 20تمرین تشریحی"
-        table["cell_r7_c9"] ="مطالعه و 20 تمرین تشریحی"
+        table["cell_r7_c9"] =""
     elif q7_answer=="گزینه شانزدهم":
         table["cell_r1_c9"] = "ویدیو"
         table["cell_r2_c9"] = "ویدیو"
-        table["cell_r3_c9"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r4_c9"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r5_c9"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c9"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r3_c9"] = ""
+        table["cell_r4_c9"] = ""
+        table["cell_r5_c9"] = ""
+        table["cell_r6_c9"] = ""
     elif q7_answer=="گزینه هفدهتم":
-        table["cell_r1_c9"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r1_c9"] = ""
         table["cell_r2_c9"] = "ویدیو"
-        table["cell_r3_c9"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r3_c9"] = ""
         table["cell_r4_c9"] = "ویدیو"
-        table["cell_r5_c9"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r5_c9"] = ""
         table["cell_r6_c9"] = "ویدیو"
-        table["cell_r7_c9"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r7_c9"] = ""
     elif q7_answer=="گزینه هیجدهم":
-        table["cell_r1_c9"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r1_c9"] = ""
         table["cell_r2_c9"] = "ویدیو"
-        table["cell_r3_c9"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r3_c9"] = ""
         table["cell_r4_c9"] = " ویدیو "
-        table["cell_r5_c9"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r5_c9"] = ""
         table["cell_r6_c9"] = "ویدیو"
-        table["cell_r7_c9"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r7_c9"] = ""
     elif q7_answer=="گزینه نوزدهم":
-        table["cell_r1_c9"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r1_c9"] = ""
         table["cell_r2_c9"] = "ویدیو"
-        table["cell_r3_c9"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r3_c9"] = ""
         table["cell_r4_c9"] = " ویدیو "
-        table["cell_r5_c9"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r5_c9"] = ""
         table["cell_r6_c9"] = "ویدیو"
-        table["cell_r7_c9"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r7_c9"] = ""
     elif q7_answer=="گزینه بیستم":
         table["cell_r1_c9"] = "ویدیو"
-        table["cell_r2_c9"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r3_c9"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r2_c9"] = ""
+        table["cell_r3_c9"] = ""
         table["cell_r4_c9"] = " ویدیو "
-        table["cell_r5_c9"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r5_c9"] = ""
         table["cell_r6_c9"] = "ویدیو"
-        table["cell_r7_c9"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r7_c9"] = ""
 
     elif q7_answer=="گزینه بیست و یک":
         table["cell_r1_c9"] =" مطالعه +10 تشریحی"
@@ -2402,121 +2403,121 @@ def run_algorithm(answers):
     q8_answer = answers.get("q8", "")
     topic8= answers.get("topic_q8", "")
     if q8_answer == "گزینه اول":
-        table["cell_r1_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r1_c10"] = ""
         table["cell_r2_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r3_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r4_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r5_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r7_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r3_c10"] = ""
+        table["cell_r4_c10"] = ""
+        table["cell_r5_c10"] = ""
+        table["cell_r6_c10"] = ""
+        table["cell_r7_c10"] = ""
     elif q8_answer == "گزینه دوم":
-        table["cell_r1_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r1_c10"] = ""
         table["cell_r2_c10"] = " مطالعه +10 تشریحی"
         table["cell_r3_c10"] =" مطالعه +10 تشریحی"
-        table["cell_r4_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r5_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r4_c10"] = ""
+        table["cell_r5_c10"] = ""
         table["cell_r6_c10"] = " مطالعه +15 تشریحی"
-        table["cell_r7_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r7_c10"] = ""
     elif q8_answer=="گزینه سوم":
-        table["cell_r1_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r1_c10"] = ""
         table["cell_r2_c10"] = " مطالعه +10 تشریحی"
         table["cell_r3_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r4_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r5_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r7_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r4_c10"] = ""
+        table["cell_r5_c10"] = ""
+        table["cell_r6_c10"] = ""
+        table["cell_r7_c10"] = ""
 
     elif q8_answer=="گزینه چهارم":
-        table["cell_r1_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r1_c10"] = ""
         table["cell_r2_c10"] = " مطالعه +10 تشریحی"
         table["cell_r3_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r4_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r5_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r7_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r4_c10"] = ""
+        table["cell_r5_c10"] = ""
+        table["cell_r6_c10"] = ""
+        table["cell_r7_c10"] = ""
         
     elif q8_answer=="گزینه پنجم":
-        table["cell_r1_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r1_c10"] = ""
         table["cell_r2_c10"] = " مطالعه +10 تشریحی"
         table["cell_r3_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r4_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r4_c10"] = ""
         table["cell_r5_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r6_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r7_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r6_c10"] = ""
+        table["cell_r7_c10"] = ""
     elif q8_answer=="گزینه ششم":
-        table["cell_r1_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r1_c10"] = ""
         table["cell_r2_c10"] = " مطالعه +10 تشریحی"
         table["cell_r3_c10"] = "20 تمرین تشریحی "
-        table["cell_r5_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r4_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r5_c10"] = ""
+        table["cell_r4_c10"] = ""
         table["cell_r6_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r7_c10"] ="مطالعه و 20 تمرین تشریحی"
+        table["cell_r7_c10"] = ""
 
     
     elif q8_answer=="گزینه سیزدهم":
-        table["cell_r1_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r1_c10"] = ""
         table["cell_r2_c10"] = "مرور"
-        table["cell_r4_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r3_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r5_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r4_c10"] = ""
+        table["cell_r3_c10"] = ""
+        table["cell_r5_c10"] = ""
+        table["cell_r6_c10"] = ""
         table["cell_r7_c10"] = "مرور"
 
     elif q8_answer=="گزینه چهاردهم":
-        table["cell_r1_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r1_c10"] = " "
         table["cell_r2_c10"] = "ازمون"
-        table["cell_r3_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r4_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r5_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r3_c10"] = ""
+        table["cell_r4_c10"] = ""
+        table["cell_r5_c10"] = ""
+        table["cell_r6_c10"] = ""
         table["cell_r7_c10"] = "ازمون"
     elif q8_answer=="گزینه پانزدهم":
-        table["cell_r1_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r1_c10"] = ""
         table["cell_r2_c10"] = " مطالعه و 20تمرین تشریحی"
         table["cell_r3_c10"] = " مطالعه و 10تمرین تشریحی"
-        table["cell_r4_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r5_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r4_c10"] = ""
+        table["cell_r5_c10"] = ""
         table["cell_r6_c10"] = " مطالعه +15 تشریحی"
-        table["cell_r7_c10"] ="مطالعه و 20 تمرین تشریحی"
+        table["cell_r7_c10"] =""
     elif q8_answer=="گزینه شانزدهم":
-        table["cell_r1_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r1_c10"] = ""
         table["cell_r2_c10"] = "ویدیو"
-        table["cell_r3_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r4_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r3_c10"] = ""
+        table["cell_r4_c10"] = ""
         table["cell_r5_c10"] =" مطالعه +10 تشریحی"
-        table["cell_r6_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r7_c10"] ="مطالعه و 20 تمرین تشریحی"
+        table["cell_r6_c10"] = ""
+        table["cell_r7_c10"] = ""
     elif q8_answer=="گزینه هفدهتم":
-        table["cell_r1_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r1_c10"] = ""
         table["cell_r2_c10"] = "ویدیو"
         table["cell_r3_c10"] = "ویدیو"
-        table["cell_r4_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r4_c10"] = ""
         table["cell_r5_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r6_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r6_c10"] = ""
         table["cell_r7_c10"] = " مطالعه +10 تشریحی"
     elif q8_answer=="گزینه هیجدهم":
-        table["cell_r1_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r1_c10"] = ""
         table["cell_r2_c10"] = "ویدیو"
         table["cell_r3_c10"] = "ویدیو"
-        table["cell_r4_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r5_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r7_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r4_c10"] = ""
+        table["cell_r5_c10"] = ""
+        table["cell_r6_c10"] = ""
+        table["cell_r7_c10"] = ""
     elif q8_answer=="گزینه نوزدهم":
-        table["cell_r1_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r1_c10"] = ""
         table["cell_r2_c10"] = "ویدیو"
         table["cell_r3_c10"] = "ویدیو"
-        table["cell_r4_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r4_c10"] = ""
         table["cell_r5_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r6_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r7_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r6_c10"] = ""
+        table["cell_r7_c10"] = ""
     elif q8_answer=="گزینه بیستم":
-        table["cell_r1_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r1_c10"] = ""
         table["cell_r2_c10"] = "ویدیو"
         table["cell_r3_c10"] = "ویدیو"
         table["cell_r4_c10"] =" مطالعه +10 تشریحی"
-        table["cell_r5_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r5_c10"] = ""
+        table["cell_r6_c10"] = ""
         table["cell_r7_c10"] = "ویدیو"
 
     if topic8:
@@ -2529,53 +2530,53 @@ def run_algorithm(answers):
     topic9 = answers.get("topic_q9", "")
     if q9_answer == "گزینه اول":
         table["cell_r1_c12"] = " مطالعه +10 تشریحی"
-        table["cell_r2_c12"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r2_c12"] = ""
         table["cell_r3_c12"] = " مطالعه +15 تشریحی"
-        table["cell_r4_c12"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r5_c12"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c12"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r7_c12"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r4_c12"] = ""
+        table["cell_r5_c12"] = ""
+        table["cell_r6_c12"] = ""
+        table["cell_r7_c12"] = ""
         
     elif q9_answer == "گزینه دوم":
         table["cell_r1_c12"] = "مطالعه"
         table["cell_r2_c12"] = "مطالعه"
         table["cell_r3_c12"] = "مطالعه"
-        table["cell_r4_c12"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r5_c12"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c12"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r7_c12"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r4_c12"] = ""
+        table["cell_r5_c12"] = ""
+        table["cell_r6_c12"] = ""
+        table["cell_r7_c12"] = ""
     elif q9_answer=="گزینه سوم":
         table["cell_r1_c12"] = "مطالعه"
         table["cell_r2_c12"] = "مطالعه"
         table["cell_r3_c12"] = "مطالعه"
         table["cell_r4_c12"] = " مطالعه "
-        table["cell_r5_c12"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c12"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r7_c12"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r5_c12"] = ""
+        table["cell_r6_c12"] = ""
+        table["cell_r7_c12"] = ""
     elif q9_answer=="گزینه چهارم":
         table["cell_r1_c12"] = "مطالعه"
         table["cell_r2_c12"] = "مطالعه"
         table["cell_r3_c12"] = "مطالعه"
         table["cell_r4_c12"] = " مطالعه "
-        table["cell_r5_c12"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c12"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r7_c12"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r5_c12"] = ""
+        table["cell_r6_c12"] = ""
+        table["cell_r7_c12"] = ""
     elif q9_answer=="گزینه پنجم":
         table["cell_r1_c12"] = "مطالعه"
         table["cell_r2_c12"] = "مطالعه"
         table["cell_r3_c12"] = "مطالعه"
         table["cell_r4_c12"] = " مطالعه "
-        table["cell_r5_c12"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c12"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r7_c12"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r5_c12"] = ""
+        table["cell_r6_c12"] = ""
+        table["cell_r7_c12"] = ""
     elif q9_answer=="گزینه ششم":
         table["cell_r1_c12"] = "مطالعه"
         table["cell_r2_c12"] = "20 تمرین تشریحی "
         table["cell_r3_c12"] = "مطالعه"
         table["cell_r4_c12"] = " 20تمرین تشریحی "
-        table["cell_r5_c12"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c12"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r7_c12"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r5_c12"] = ""
+        table["cell_r6_c12"] = ""
+        table["cell_r7_c12"] = ""
    
     elif q9_answer=="گزینه سیزدهم":
         table["cell_r1_c12"] = " مرور"
@@ -2583,25 +2584,25 @@ def run_algorithm(answers):
         table["cell_r3_c12"] = " مرور"
         table["cell_r4_c12"] = "  20 تمرین تشریحی "
         table["cell_r5_c12"] = " مرور "
-        table["cell_r6_c12"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r7_c12"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r6_c12"] = ""
+        table["cell_r7_c12"] = ""
 
     elif q9_answer=="گزینه چهاردهم":
         table["cell_r1_c12"] = " ازمون"
-        table["cell_r2_c12"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r3_c12"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r4_c12"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r2_c12"] = ""
+        table["cell_r3_c12"] = ""
+        table["cell_r4_c12"] = ""
         table["cell_r5_c12"] = " ازمون "
-        table["cell_r6_c12"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r7_c12"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r6_c12"] = "  "
+        table["cell_r7_c12"] = "  "
     elif q9_answer=="گزینه پانزدهم":
         table["cell_r1_c12"] = " مطالعه و 20تمرین تشریحی"
         table["cell_r2_c12"] = " مطالعه و 10تمرین تشریحی"
         table["cell_r3_c12"] = " مطالعه و 20تمرین تشریحی"
         table["cell_r4_c12"] = " مطالعه و 15تمرین تشریحی"
-        table["cell_r5_c12"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c12"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r7_c12"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r5_c12"] = ""
+        table["cell_r6_c12"] = ""
+        table["cell_r7_c12"] = ""
     elif q9_answer=="گزینه شانزدهم":
         table["cell_r1_c12"] = "ویدیو"
         table["cell_r2_c12"] = "ویدیو"
@@ -2667,120 +2668,120 @@ def run_algorithm(answers):
     q10_answer = answers.get("q10", "")
     topic10= answers.get("topic_q10", "")
     if q10_answer == "گزینه اول":
-        table["cell_r1_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r1_c10"] = ""
         table["cell_r2_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r3_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r4_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r5_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r3_c10"] = ""
+        table["cell_r4_c10"] = ""
+        table["cell_r5_c10"] = ""
         table["cell_r6_c10"] = " مطالعه +15 تشریحی"
-        table["cell_r7_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r7_c10"] = ""
     elif q10_answer == "گزینه دوم":
-        table["cell_r1_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r1_c10"] = ""
         table["cell_r2_c10"] = "مطالعه"
         table["cell_r3_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r4_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r5_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r4_c10"] = ""
+        table["cell_r5_c10"] = ""
         table["cell_r6_c10"] = " مطالعه +15 تشریحی"
-        table["cell_r7_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r7_c10"] = ""
     elif q10_answer=="گزینه سوم":
-        table["cell_r1_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r1_c10"] = ""
         table["cell_r2_c10"] = " مطالعه +10 تشریحی"
         table["cell_r3_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r4_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r5_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r4_c10"] = ""
+        table["cell_r5_c10"] = ""
         table["cell_r6_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r7_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r7_c10"] = ""
 
     elif q10_answer=="گزینه چهارم":
-        table["cell_r1_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r1_c10"] = ""
         table["cell_r2_c10"] = " مطالعه +10 تشریحی"
         table["cell_r3_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r4_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r5_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r7_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r4_c10"] = ""
+        table["cell_r5_c10"] = ""
+        table["cell_r6_c10"] = ""
+        table["cell_r7_c10"] = ""
         
     elif q10_answer=="گزینه پنجم":
-        table["cell_r1_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r1_c10"] = ""
         table["cell_r2_c10"] = " مطالعه +10 تشریحی"
         table["cell_r3_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r4_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r4_c10"] = ""
         table["cell_r5_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r6_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r6_c10"] = ""
         table["cell_r7_c10"] = " مطالعه +10 تشریحی"
     elif q10_answer=="گزینه ششم":
-        table["cell_r1_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r1_c10"] = ""
         table["cell_r2_c10"] = "مطالعه"
         table["cell_r3_c10"] = "20 تمرین تشریحی "
         table["cell_r5_c10"] = " مطالعه +20 تشریحی"
-        table["cell_r4_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r4_c10"] = ""
         table["cell_r6_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r7_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r7_c10"] = ""
 
     
     elif q10_answer=="گزینه سیزدهم":
         table["cell_r1_c10"] = " مرور +20 تشریحی"
         table["cell_r2_c10"] = " مرور +10 تشریحی"
-        table["cell_r4_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r4_c10"] = ""
         table["cell_r3_c10"] = " مرور +15 تشریحی"
-        table["cell_r5_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r5_c10"] = ""
+        table["cell_r6_c10"] = ""
         table["cell_r7_c10"] = "مرور"
 
     elif q10_answer=="گزینه چهاردهم":
         table["cell_r1_c10"] = " مرور +10 تشریحی"
         table["cell_r2_c10"] = "ازمون"
-        table["cell_r3_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r4_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r5_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r3_c10"] = " "
+        table["cell_r4_c10"] = ""
+        table["cell_r5_c10"] = ""
+        table["cell_r6_c10"] = ""
         table["cell_r7_c10"] = "ازمون"
     elif q10_answer=="گزینه پانزدهم":
-        table["cell_r1_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r1_c10"] = ""
         table["cell_r2_c10"] = " مطالعه و 20تمرین تشریحی"
         table["cell_r3_c10"] = " مطالعه و 20تمرین تشریحی"
-        table["cell_r4_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r5_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r4_c10"] = ""
+        table["cell_r5_c10"] = ""
         table["cell_r6_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r7_c10"] ="مطالعه و 20 تمرین تشریحی"
+        table["cell_r7_c10"] =""
     elif q10_answer=="گزینه شانزدهم":
-        table["cell_r1_c10"] ="مطالعه و 20 تمرین تشریحی"
+        table["cell_r1_c10"] = ""
         table["cell_r2_c10"] = "ویدیو"
-        table["cell_r3_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r3_c10"] = ""
         table["cell_r4_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r5_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r5_c10"] = ""
+        table["cell_r6_c10"] = ""
         table["cell_r7_c10"] = " مطالعه +10 تشریحی"
     elif q10_answer=="گزینه هفدهتم":
-        table["cell_r1_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r1_c10"] = ""
         table["cell_r2_c10"] = "ویدیو"
         table["cell_r3_c10"] = "ویدیو"
-        table["cell_r4_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r4_c10"] = ""
         table["cell_r5_c10"] = " مطالعه +10 تشریحی"
         table["cell_r6_c10"] =" مطالعه +10 تشریحی"
-        table["cell_r7_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r7_c10"] = ""
     elif q10_answer=="گزینه هیجدهم":
-        table["cell_r1_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r1_c10"] = ""
         table["cell_r2_c10"] = "ویدیو"
         table["cell_r3_c10"] = "ویدیو"
         table["cell_r4_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r5_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r5_c10"] = ""
         table["cell_r6_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r7_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r7_c10"] = ""
     elif q10_answer=="گزینه نوزدهم":
-        table["cell_r1_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r1_c10"] = ""
         table["cell_r2_c10"] = "ویدیو"
         table["cell_r3_c10"] = "ویدیو"
-        table["cell_r4_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r4_c10"] = "  "
         table["cell_r5_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r6_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r6_c10"] = ""
         table["cell_r7_c10"] = " مطالعه +10 تشریحی"
     elif q10_answer=="گزینه بیستم":
-        table["cell_r1_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r1_c10"] = ""
         table["cell_r2_c10"] = "ویدیو"
         table["cell_r3_c10"] = "ویدیو"
         table["cell_r4_c10"] = " مطالعه +10 تشریحی"
-        table["cell_r5_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r5_c10"] = ""
         table["cell_r6_c10"] = " مطالعه +10 تشریحی"
         table["cell_r7_c10"] = "ویدیو"
 
@@ -2837,121 +2838,121 @@ def run_algorithm(answers):
     q11_answer = answers.get("q11", "")
     topic11= answers.get("topic_q11", "")
     if q7_answer == "گزینه اول":
-        table["cell_r1_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r1_c10"] = ""
         table["cell_r2_c10"] = "مطالعه"
-        table["cell_r3_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r4_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r5_c10"] ="مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r7_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r3_c10"] = ""
+        table["cell_r4_c10"] = ""
+        table["cell_r5_c10"] = ""
+        table["cell_r6_c10"] = ""
+        table["cell_r7_c10"] = ""
     elif q11_answer == "گزینه دوم":
-        table["cell_r1_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r1_c10"] = ""
         table["cell_r2_c10"] = "مطالعه"
         table["cell_r3_c10"] = "مطالعه"
-        table["cell_r4_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r5_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r7_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r4_c10"] = ""
+        table["cell_r5_c10"] = ""
+        table["cell_r6_c10"] = ""
+        table["cell_r7_c10"] = ""
     elif q11_answer=="گزینه سوم":
-        table["cell_r1_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r1_c10"] = ""
         table["cell_r2_c10"] = "مطالعه"
         table["cell_r3_c10"] = "مطالعه"
-        table["cell_r4_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r5_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r7_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r4_c10"] = ""
+        table["cell_r5_c10"] = ""
+        table["cell_r6_c10"] = ""
+        table["cell_r7_c10"] = ""
 
-    elif q11_answer=="گزینه چهارم":
-        table["cell_r1_c10"] = "مطالعه و 20 تمرین تشریحی"
+    elif q11_answer=="گزنه چهارم":
+        table["cell_r1_c10"] = ""
         table["cell_r2_c10"] = "مطالعه"
         table["cell_r3_c10"] = "مطالعه"
-        table["cell_r4_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r5_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r7_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r4_c10"] = ""
+        table["cell_r5_c10"] = ""
+        table["cell_r6_c10"] = ""
+        table["cell_r7_c10"] = ""
         
     elif q11_answer=="گزینه پنجم":
-        table["cell_r1_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r1_c10"] = ""
         table["cell_r2_c10"] = "مطالعه"
         table["cell_r3_c10"] = "مطالعه"
-        table["cell_r4_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r4_c10"] = ""
         table["cell_r5_c10"] = "مطالعه"
-        table["cell_r6_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r7_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r6_c10"] = ""
+        table["cell_r7_c10"] = ""
     elif q11_answer=="گزینه ششم":
-        table["cell_r1_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r1_c10"] = ""
         table["cell_r2_c10"] = "مطالعه"
         table["cell_r3_c10"] = "20 تمرین تشریحی "
-        table["cell_r5_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r4_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r7_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r5_c10"] = ""
+        table["cell_r4_c10"] = ""
+        table["cell_r6_c10"] = ""
+        table["cell_r7_c10"] = ""
 
     
     elif q11_answer=="گزینه سیزدهم":
-        table["cell_r1_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r1_c10"] = ""
         table["cell_r2_c10"] = "مرور"
-        table["cell_r4_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r3_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r5_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r4_c10"] = ""
+        table["cell_r3_c10"] = ""
+        table["cell_r5_c10"] = ""
+        table["cell_r6_c10"] = ""
         table["cell_r7_c10"] = "مرور"
 
     elif q11_answer=="گزینه چهاردهم":
-        table["cell_r1_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r1_c10"] = " "
         table["cell_r2_c10"] = "ازمون"
-        table["cell_r3_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r4_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r5_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r3_c10"] = " "
+        table["cell_r4_c10"] = ""
+        table["cell_r5_c10"] = ""
+        table["cell_r6_c10"] = ""
         table["cell_r7_c10"] = "ازمون"
     elif q11_answer=="گزینه پانزدهم":
-        table["cell_r1_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r1_c10"] = ""
         table["cell_r2_c10"] = " مطالعه و 20تمرین تشریحی"
         table["cell_r3_c10"] = " مطالعه و 20تمرین تشریحی"
-        table["cell_r4_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r5_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r7_c10"] ="مطالعه و 20 تمرین تشریحی"
+        table["cell_r4_c10"] = ""
+        table["cell_r5_c10"] = ""
+        table["cell_r6_c10"] = ""
+        table["cell_r7_c10"] =""
     elif q11_answer=="گزینه شانزدهم":
-        table["cell_r1_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r1_c10"] = ""
         table["cell_r2_c10"] = "ویدیو"
-        table["cell_r3_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r4_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r5_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r7_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r3_c10"] = ""
+        table["cell_r4_c10"] = ""
+        table["cell_r5_c10"] = ""
+        table["cell_r6_c10"] = ""
+        table["cell_r7_c10"] = ""
     elif q11_answer=="گزینه هفدهتم":
-        table["cell_r1_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r1_c10"] = ""
         table["cell_r2_c10"] = "ویدیو"
         table["cell_r3_c10"] = "ویدیو"
-        table["cell_r4_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r5_c10"] ="مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r7_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r4_c10"] = ""
+        table["cell_r5_c10"] = ""
+        table["cell_r6_c10"] = ""
+        table["cell_r7_c10"] = ""
     elif q11_answer=="گزینه هیجدهم":
-        table["cell_r1_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r1_c10"] = ""
         table["cell_r2_c10"] = "ویدیو"
         table["cell_r3_c10"] = "ویدیو"
-        table["cell_r4_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r5_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r7_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r4_c10"] = ""
+        table["cell_r5_c10"] = ""
+        table["cell_r6_c10"] = ""
+        table["cell_r7_c10"] = ""
     elif q11_answer=="گزینه نوزدهم":
-        table["cell_r1_c10"] ="مطالعه و 20 تمرین تشریحی"
+        table["cell_r1_c10"] = ""
         table["cell_r2_c10"] = "ویدیو"
         table["cell_r3_c10"] = "ویدیو"
-        table["cell_r4_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r5_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r7_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r4_c10"] = "  "
+        table["cell_r5_c10"] = ""
+        table["cell_r6_c10"] = ""
+        table["cell_r7_c10"] = ""
     elif q11_answer=="گزینه بیستم":
-        table["cell_r1_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r1_c10"] = ""
         table["cell_r2_c10"] = "ویدیو"
         table["cell_r3_c10"] = "ویدیو"
-        table["cell_r4_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r5_c10"] = "مطالعه و 20 تمرین تشریحی"
-        table["cell_r6_c10"] = "مطالعه و 20 تمرین تشریحی"
+        table["cell_r4_c10"] = ""
+        table["cell_r5_c10"] = ""
+        table["cell_r6_c10"] = ""
         table["cell_r7_c10"] = "ویدیو"
 
     rows = 7   # تعداد ردیف
@@ -2970,13 +2971,84 @@ def run_algorithm(answers):
 
 
 
- 
+    q91_answer = answers.get("q91", "")
+    if q91_answer == "شنبه":
+        table["cell_r1_c9"] = ""
+
+
+    q92_answer = answers.get("q92", "")
+    if q92_answer == "یکشنبه":
+        table["cell_r2_c9"] = ""
+
+
+    q93_answer = answers.get("q93", "")
+    if q93_answer == "دوشنبه":
+        table["cell_r3_c9"] = ""
+
+
+    q94_answer = answers.get("q94", "")
+    if q94_answer == "سه شنبه":
+        table["cell_r4_c9"] = ""
+        
+
+        
+
+    q95_answer = answers.get("q95", "")
+    if q95_answer == "چهارشنبه":
+        table["cell_r5_c9"] = ""
+
+        
+
+    q96_answer = answers.get("q96", "")
+    if q96_answer == "پنجشنبه":
+        table["cell_r6_c9"] = ""
+
+        
+
+    q97_answer = answers.get("q97", "")
+    if q97_answer == "جمعه":
+        table["cell_r7_c9"] = ""
+
+        
+    q101_answer = answers.get("q101", "")
+    if q101_answer == "شنبه":
+        table["cell_r7_c6"] = 'مبحث امتحان'
+
+    q102_answer = answers.get("q102", "")
+    if q102_answer == "یکشنبه":
+        table["cell_r1_c6"] = "مبحث امتحان"
+
+
+           
+    q103_answer = answers.get("q103", "")
+    if q103_answer == "دوشنبه":
+        table["cell_r2_c6"] = "مبحث امتحان"
+        
+    q104_answer = answers.get("q104", "")
+    if q104_answer =="سه شنبه" :
+        table["cell_r3_c6"] = "مبحث امتحان"
+
+    q105_answer = answers.get("q105", "")
+    if q105_answer == "چهارشنبه":
+        table["cell_r4_c6"] = "مبحث امتحان"
+
+
+
+    q106_answer = answers.get("q106", "")
+    if q106_answer == "پنجشنبه":
+        table["cell_r5_c6"] = "مبحث امتحان"
+
+
+    q107_answer = answers.get("q107", "")
+    if q107_answer == "جمعه":
+        table["cell_r6_c6"] = "مبحث امتحان"
+
 
     q121_answer = answers.get("q121", "")
     if q121_answer == "گزینه اول":
         total_columns = 13
-        empty_per_row = 8
-        for row in range(1, 2): 
+        empty_per_row = 7
+        for row in range(1, 8): 
             empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
@@ -2984,8 +3056,8 @@ def run_algorithm(answers):
 
     elif q121_answer == "گزینه دوم":
         total_columns = 13
-        empty_per_row = 8
-        for row in range(1, 2): 
+        empty_per_row = 7
+        for row in range(1, 8): 
             empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
@@ -2993,8 +3065,8 @@ def run_algorithm(answers):
 
     elif q121_answer == "گزینه سوم":
         total_columns = 13
-        empty_per_row = 7
-        for row in range(1, 2): 
+        empty_per_row = 6
+        for row in range(1, 8): 
             empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
@@ -3002,8 +3074,8 @@ def run_algorithm(answers):
 
     elif q121_answer == "گزینه چهارم":
         total_columns = 13
-        empty_per_row = 7
-        for row in range(1, 2): 
+        empty_per_row = 5
+        for row in range(1, 8): 
             empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
@@ -3011,8 +3083,8 @@ def run_algorithm(answers):
 
     elif q121_answer == "گزینه پنچم":
         total_columns = 13
-        empty_per_row = 6
-        for row in range(1, 2): 
+        empty_per_row = 5
+        for row in range(1, 8): 
             empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
@@ -3020,8 +3092,8 @@ def run_algorithm(answers):
 
     elif q121_answer == "گزینه ششم":
         total_columns = 13
-        empty_per_row = 6
-        for row in range(1, 2): 
+        empty_per_row = 4
+        for row in range(1, 8): 
             empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
@@ -3029,8 +3101,8 @@ def run_algorithm(answers):
 
     elif q121_answer == "گزینه هفتم":
         total_columns = 13
-        empty_per_row = 5
-        for row in range(1, 2): 
+        empty_per_row = 3
+        for row in range(1, 8): 
             empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
@@ -3038,8 +3110,8 @@ def run_algorithm(answers):
 
     elif q121_answer == "گزینه هشتم":
         total_columns = 13
-        empty_per_row = 5
-        for row in range(1, 2): 
+        empty_per_row = 3
+        for row in range(1, 8): 
             empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
@@ -3047,8 +3119,8 @@ def run_algorithm(answers):
     
     elif q121_answer == "گزینه نهم":
         total_columns = 13
-        empty_per_row = 4
-        for row in range(1, 2): 
+        empty_per_row = 3
+        for row in range(1, 8): 
             empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
@@ -3056,8 +3128,8 @@ def run_algorithm(answers):
 
     elif q121_answer == "گزینه دهم":
         total_columns = 13
-        empty_per_row = 3
-        for row in range(1, 2): 
+        empty_per_row = 2
+        for row in range(1, 8): 
             empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
@@ -3065,8 +3137,8 @@ def run_algorithm(answers):
     
     elif q121_answer == "گزینه یازدهم":
         total_columns = 13
-        empty_per_row = 2
-        for row in range(1, 2): 
+        empty_per_row = 1
+        for row in range(1, 8): 
             empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
@@ -3075,99 +3147,99 @@ def run_algorithm(answers):
       
     q122_answer = answers.get("q122", "")
     if q122_answer == "گزینه اول":
-        total_columns = 14
-        empty_per_row = 8
-        for row in range(2, 3): 
+        total_columns = 13
+        empty_per_row = 7
+        for row in range(2, 8): 
             empty_cols = random.sample(range(2, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
 
     elif q122_answer == "گزینه دوم":
-        total_columns = 14
-        empty_per_row = 8
-        for row in range(2, 3): 
+        total_columns = 13
+        empty_per_row = 7
+        for row in range(2, 8): 
             empty_cols = random.sample(range(2, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
 
     elif q122_answer == "گزینه سوم":
-        total_columns = 14
-        empty_per_row = 7
-        for row in range(2, 3): 
+        total_columns = 13
+        empty_per_row = 6
+        for row in range(2, 8): 
             empty_cols = random.sample(range(2, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
 
     elif q122_answer == "گزینه چهارم":
-        total_columns = 14
-        empty_per_row = 7
-        for row in range(2, 3): 
+        total_columns = 13
+        empty_per_row = 5
+        for row in range(2, 8): 
             empty_cols = random.sample(range(2, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
 
-    elif q122_answer == "گزینه پنجم":
-        total_columns = 14
-        empty_per_row = 6
-        for row in range(2, 3): 
+    elif q122_answer == "گزینه پنچم":
+        total_columns = 13
+        empty_per_row = 5
+        for row in range(2, 8): 
             empty_cols = random.sample(range(2, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
 
     elif q122_answer == "گزینه ششم":
-        total_columns = 14
-        empty_per_row = 6
-        for row in range(2, 3): 
+        total_columns = 13
+        empty_per_row = 4
+        for row in range(2, 8): 
             empty_cols = random.sample(range(2, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
 
     elif q122_answer == "گزینه هفتم":
-        total_columns = 14
-        empty_per_row = 5
-        for row in range(2, 3): 
+        total_columns = 13
+        empty_per_row = 3
+        for row in range(2, 8): 
             empty_cols = random.sample(range(2, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = "" 
 
     elif q122_answer == "گزینه هشتم":
-        total_columns = 14
-        empty_per_row = 5
-        for row in range(2, 3): 
+        total_columns = 13
+        empty_per_row = 3
+        for row in range(2, 8): 
             empty_cols = random.sample(range(2, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
     
     elif q122_answer == "گزینه نهم":
-        total_columns = 14
-        empty_per_row = 4
-        for row in range(2, 3): 
+        total_columns = 13
+        empty_per_row = 3
+        for row in range(2, 8): 
             empty_cols = random.sample(range(2, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = "" 
 
     elif q122_answer == "گزینه دهم":
-        total_columns = 14
-        empty_per_row = 3
-        for row in range(2, 3): 
+        total_columns = 13
+        empty_per_row = 2
+        for row in range(2, 8): 
             empty_cols = random.sample(range(2, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
     
     elif q122_answer == "گزینه یازدهم":
-        total_columns = 14
-        empty_per_row = 2
-        for row in range(2, 3): 
+        total_columns = 13
+        empty_per_row = 1
+        for row in range(2, 8): 
             empty_cols = random.sample(range(2, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
@@ -3176,101 +3248,99 @@ def run_algorithm(answers):
 
     q123_answer = answers.get("q123", "")
     if q123_answer == "گزینه اول":
-        total_columns = 14
-        empty_per_row = 8
-        for row in range(3, 4): 
+        total_columns = 13
+        empty_per_row = 7
+        for row in range(3, 8): 
             empty_cols = random.sample(range(3, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
 
     elif q123_answer == "گزینه دوم":
-       total_columns = 14
-       empty_per_row = 8
-       for row in range(3, 4):  # ردیف‌های 3 تا 7
-        # انتخاب 7 ستون تصادفی بدون تکرار
-           empty_cols = random.sample(range(3, total_columns + 1), min(empty_per_row, total_columns - 2))
-           for col in empty_cols:
-            cell_key = f"cell_r{row}_c{col}"
-            table[cell_key] = ""  # فقط در همان ردیف خودش خالی شود
-
+        total_columns = 13
+        empty_per_row = 7
+        for row in range(3, 8): 
+            empty_cols = random.sample(range(3, total_columns + 1), empty_per_row)
+            for col in empty_cols:
+                cell_key = f"cell_r{row}_c{col}"
+                table[cell_key] = ""  
 
     elif q123_answer == "گزینه سوم":
-        total_columns = 14
-        empty_per_row = 7
-        for row in range(3, 4): 
+        total_columns = 13
+        empty_per_row = 6
+        for row in range(3, 8): 
             empty_cols = random.sample(range(3, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
 
     elif q123_answer == "گزینه چهارم":
-        total_columns = 14
-        empty_per_row = 7
-        for row in range(3, 4): 
+        total_columns = 13
+        empty_per_row = 5
+        for row in range(3, 8): 
             empty_cols = random.sample(range(3, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
 
     elif q123_answer == "گزینه پنچم":
-        total_columns = 14
-        empty_per_row = 6
-        for row in range(3, 4): 
+        total_columns = 13
+        empty_per_row = 5
+        for row in range(3, 8): 
             empty_cols = random.sample(range(3, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
 
     elif q123_answer == "گزینه ششم":
-        total_columns = 14
-        empty_per_row = 6
-        for row in range(3, 4): 
+        total_columns = 13
+        empty_per_row = 4
+        for row in range(3, 8): 
             empty_cols = random.sample(range(3, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
 
     elif q123_answer == "گزینه هفتم":
-        total_columns = 14
-        empty_per_row = 5
-        for row in range(3, 4): 
+        total_columns = 13
+        empty_per_row = 3
+        for row in range(2, 8): 
             empty_cols = random.sample(range(3, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = "" 
 
     elif q123_answer == "گزینه هشتم":
-        total_columns = 14
-        empty_per_row = 5
-        for row in range(3, 4): 
+        total_columns = 13
+        empty_per_row = 3
+        for row in range(3, 8): 
             empty_cols = random.sample(range(3, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
     
     elif q123_answer == "گزینه نهم":
-        total_columns = 14
-        empty_per_row = 4
-        for row in range(3, 4): 
+        total_columns = 13
+        empty_per_row = 3
+        for row in range(3, 8): 
             empty_cols = random.sample(range(3, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = "" 
 
     elif q123_answer == "گزینه دهم":
-        total_columns = 14
-        empty_per_row = 3
-        for row in range(3, 4): 
+        total_columns = 13
+        empty_per_row = 2
+        for row in range(3, 8): 
             empty_cols = random.sample(range(3, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
     
     elif q123_answer == "گزینه یازدهم":
-        total_columns = 14
-        empty_per_row = 2
-        for row in range(3, 4): 
+        total_columns = 13
+        empty_per_row = 1
+        for row in range(3, 8): 
             empty_cols = random.sample(range(3, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
@@ -3288,99 +3358,99 @@ def run_algorithm(answers):
 
     q124_answer = answers.get("q124", "")
     if q124_answer == "گزینه اول":
-        total_columns = 14
-        empty_per_row = 8
-        for row in range(4, 5): 
+        total_columns = 13
+        empty_per_row = 7
+        for row in range(4, 8): 
             empty_cols = random.sample(range(4, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
 
     elif q124_answer == "گزینه دوم":
-        total_columns = 14
-        empty_per_row = 8
-        for row in range(4, 5): 
+        total_columns = 13
+        empty_per_row = 7
+        for row in range(4, 8): 
             empty_cols = random.sample(range(4, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
 
     elif q124_answer == "گزینه سوم":
-        total_columns = 14
-        empty_per_row = 7
-        for row in range(4, 5): 
+        total_columns = 13
+        empty_per_row = 6
+        for row in range(4, 8): 
             empty_cols = random.sample(range(2, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
 
     elif q124_answer == "گزینه چهارم":
-        total_columns = 14
-        empty_per_row = 7
-        for row in range(4, 5): 
+        total_columns = 13
+        empty_per_row = 5
+        for row in range(4, 8): 
             empty_cols = random.sample(range(4, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
 
     elif q124_answer == "گزینه پنچم":
-        total_columns = 14
-        empty_per_row = 6
-        for row in range(4, 5): 
+        total_columns = 13
+        empty_per_row = 5
+        for row in range(4, 8): 
             empty_cols = random.sample(range(4, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
 
     elif q124_answer == "گزینه ششم":
-        total_columns = 14
-        empty_per_row = 6
-        for row in range(4, 5): 
+        total_columns = 13
+        empty_per_row = 4
+        for row in range(4, 8): 
             empty_cols = random.sample(range(4, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
 
     elif q124_answer == "گزینه هفتم":
-        total_columns = 14
-        empty_per_row = 5
-        for row in range(4, 5): 
+        total_columns = 13
+        empty_per_row = 3
+        for row in range(4, 8): 
             empty_cols = random.sample(range(4, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = "" 
 
     elif q124_answer == "گزینه هشتم":
-        total_columns = 14
-        empty_per_row = 5
-        for row in range(4, 5): 
+        total_columns = 13
+        empty_per_row = 3
+        for row in range(4, 8): 
             empty_cols = random.sample(range(4, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
     
     elif q124_answer == "گزینه نهم":
-        total_columns = 14
-        empty_per_row = 4
-        for row in range(4, 5): 
+        total_columns = 13
+        empty_per_row = 3
+        for row in range(4, 8): 
             empty_cols = random.sample(range(4, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = "" 
 
     elif q124_answer == "گزینه دهم":
-        total_columns = 14
-        empty_per_row = 3
-        for row in range(4, 5): 
+        total_columns = 13
+        empty_per_row = 2
+        for row in range(4, 8): 
             empty_cols = random.sample(range(4, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
     
     elif q124_answer == "گزینه یازدهم":
-        total_columns = 14
-        empty_per_row = 2
-        for row in range(4, 5): 
+        total_columns = 13
+        empty_per_row = 1
+        for row in range(4, 8): 
             empty_cols = random.sample(range(4, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
@@ -3392,99 +3462,99 @@ def run_algorithm(answers):
        
     q125_answer = answers.get("q125", "")
     if q125_answer == "گزینه اول":
-        total_columns = 14
-        empty_per_row = 8
-        for row in range(5, 6): 
+        total_columns = 13
+        empty_per_row = 7
+        for row in range(5, 8): 
             empty_cols = random.sample(range(5, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
 
     elif q125_answer == "گزینه دوم":
-        total_columns = 14
-        empty_per_row = 8
-        for row in range(5, 6): 
+        total_columns = 13
+        empty_per_row = 7
+        for row in range(5, 8): 
             empty_cols = random.sample(range(5, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
 
     elif q125_answer == "گزینه سوم":
-        total_columns = 14
-        empty_per_row = 7
-        for row in range(5, 6): 
+        total_columns = 13
+        empty_per_row = 6
+        for row in range(5, 8): 
             empty_cols = random.sample(range(5, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
 
     elif q125_answer == "گزینه چهارم":
-        total_columns = 14
-        empty_per_row = 7
-        for row in range(5, 6): 
+        total_columns = 13
+        empty_per_row = 5
+        for row in range(5, 8): 
             empty_cols = random.sample(range(5, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
 
     elif q125_answer == "گزینه پنچم":
-        total_columns = 14
-        empty_per_row = 6
-        for row in range(5, 6): 
+        total_columns = 13
+        empty_per_row = 5
+        for row in range(5, 8): 
             empty_cols = random.sample(range(5, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
 
     elif q125_answer == "گزینه ششم":
-        total_columns = 14
-        empty_per_row = 6
-        for row in range(5, 6): 
+        total_columns = 13
+        empty_per_row = 4
+        for row in range(5, 8): 
             empty_cols = random.sample(range(5, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
 
     elif q125_answer == "گزینه هفتم":
-        total_columns = 14
-        empty_per_row = 5
-        for row in range(5, 6): 
+        total_columns = 13
+        empty_per_row = 3
+        for row in range(5, 8): 
             empty_cols = random.sample(range(5, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = "" 
 
     elif q125_answer == "گزینه هشتم":
-        total_columns = 14
-        empty_per_row = 5
-        for row in range(5, 6): 
+        total_columns = 13
+        empty_per_row = 3
+        for row in range(5, 8): 
             empty_cols = random.sample(range(5, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
     
     elif q125_answer == "گزینه نهم":
-        total_columns = 14
-        empty_per_row = 4
-        for row in range(5, 6): 
+        total_columns = 13
+        empty_per_row = 3
+        for row in range(5, 8): 
             empty_cols = random.sample(range(5, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = "" 
 
     elif q125_answer == "گزینه دهم":
-        total_columns = 14
-        empty_per_row = 3
-        for row in range(5, 6): 
+        total_columns = 13
+        empty_per_row = 2
+        for row in range(5, 8): 
             empty_cols = random.sample(range(5, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
     
     elif q125_answer == "گزینه یازدهم":
-        total_columns = 14
-        empty_per_row = 2
-        for row in range(5, 6): 
+        total_columns = 13
+        empty_per_row = 1
+        for row in range(5, 8): 
             empty_cols = random.sample(range(5, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
@@ -3496,99 +3566,99 @@ def run_algorithm(answers):
        
     q126_answer = answers.get("q126", "")
     if q126_answer == "گزینه اول":
-        total_columns = 14
-        empty_per_row = 8
-        for row in range(6, 7): 
+        total_columns = 13
+        empty_per_row = 7
+        for row in range(6, 8): 
             empty_cols = random.sample(range(6, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
 
     elif q126_answer == "گزینه دوم":
-        total_columns = 14
-        empty_per_row = 8
-        for row in range(6, 7): 
+        total_columns = 13
+        empty_per_row = 7
+        for row in range(6, 8): 
             empty_cols = random.sample(range(6, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
 
     elif q126_answer == "گزینه سوم":
-        total_columns = 14
-        empty_per_row = 7
-        for row in range(6, 7): 
+        total_columns = 13
+        empty_per_row = 6
+        for row in range(6, 8): 
             empty_cols = random.sample(range(6, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
 
     elif q126_answer == "گزینه چهارم":
-        total_columns = 14
-        empty_per_row = 7
-        for row in range(6, 7): 
+        total_columns = 13
+        empty_per_row = 5
+        for row in range(6, 8): 
             empty_cols = random.sample(range(6, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
 
     elif q126_answer == "گزینه پنچم":
-        total_columns = 14
-        empty_per_row = 6
-        for row in range(6, 7): 
+        total_columns = 13
+        empty_per_row = 5
+        for row in range(6, 8): 
             empty_cols = random.sample(range(6, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
 
     elif q126_answer == "گزینه ششم":
-        total_columns = 14
-        empty_per_row = 6
-        for row in range(6, 7): 
+        total_columns = 13
+        empty_per_row = 4
+        for row in range(6, 8): 
             empty_cols = random.sample(range(6, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
 
     elif q126_answer == "گزینه هفتم":
-        total_columns = 14
-        empty_per_row = 5
-        for row in range(6, 7): 
+        total_columns = 13
+        empty_per_row = 3
+        for row in range(6, 8): 
             empty_cols = random.sample(range(6, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = "" 
 
     elif q126_answer == "گزینه هشتم":
-        total_columns = 14
-        empty_per_row = 5
-        for row in range(6, 7): 
+        total_columns = 13
+        empty_per_row = 3
+        for row in range(6, 8): 
             empty_cols = random.sample(range(6, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
     
     elif q126_answer == "گزینه نهم":
-        total_columns = 14
-        empty_per_row = 4
-        for row in range(6, 7): 
+        total_columns = 13
+        empty_per_row = 3
+        for row in range(6, 8): 
             empty_cols = random.sample(range(6, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = "" 
 
     elif q126_answer == "گزینه دهم":
-        total_columns = 14
-        empty_per_row = 3
-        for row in range(6, 7): 
+        total_columns = 13
+        empty_per_row = 2
+        for row in range(6, 8): 
             empty_cols = random.sample(range(6, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
     
     elif q126_answer == "گزینه یازدهم":
-        total_columns = 14
-        empty_per_row = 2
-        for row in range(6, 7): 
+        total_columns = 13
+        empty_per_row = 1
+        for row in range(6, 8): 
             empty_cols = random.sample(range(6, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
@@ -3599,8 +3669,8 @@ def run_algorithm(answers):
 
     q127_answer = answers.get("q127", "")
     if q127_answer == "گزینه اول":
-        total_columns = 14
-        empty_per_row = 8
+        total_columns = 13
+        empty_per_row = 7
         for row in range(7, 8): 
             empty_cols = random.sample(range(7, total_columns + 1), empty_per_row)
             for col in empty_cols:
@@ -3608,8 +3678,8 @@ def run_algorithm(answers):
                 table[cell_key] = ""  
 
     elif q127_answer == "گزینه دوم":
-        total_columns = 14
-        empty_per_row = 8
+        total_columns = 13
+        empty_per_row = 7
         for row in range(7, 8): 
             empty_cols = random.sample(range(7, total_columns + 1), empty_per_row)
             for col in empty_cols:
@@ -3617,8 +3687,8 @@ def run_algorithm(answers):
                 table[cell_key] = ""  
 
     elif q127_answer == "گزینه سوم":
-        total_columns = 14
-        empty_per_row = 7
+        total_columns = 13
+        empty_per_row = 6
         for row in range(7, 8): 
             empty_cols = random.sample(range(7, total_columns + 1), empty_per_row)
             for col in empty_cols:
@@ -3626,17 +3696,17 @@ def run_algorithm(answers):
                 table[cell_key] = ""  
 
     elif q127_answer == "گزینه چهارم":
-        total_columns = 14
-        empty_per_row = 7
+        total_columns = 13
+        empty_per_row = 5
         for row in range(7, 8): 
             empty_cols = random.sample(range(7, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
 
-    elif q127_answer == "گزینه پنجم":
-        total_columns = 14
-        empty_per_row = 6
+    elif q127_answer == "گزینه پنچم":
+        total_columns = 13
+        empty_per_row = 5
         for row in range(7, 8): 
             empty_cols = random.sample(range(7, total_columns + 1), empty_per_row)
             for col in empty_cols:
@@ -3644,8 +3714,8 @@ def run_algorithm(answers):
                 table[cell_key] = ""  
 
     elif q127_answer == "گزینه ششم":
-        total_columns = 14
-        empty_per_row = 6
+        total_columns = 13
+        empty_per_row = 4
         for row in range(7, 8): 
             empty_cols = random.sample(range(7, total_columns + 1), empty_per_row)
             for col in empty_cols:
@@ -3653,8 +3723,8 @@ def run_algorithm(answers):
                 table[cell_key] = ""  
 
     elif q127_answer == "گزینه هفتم":
-        total_columns = 14
-        empty_per_row = 5
+        total_columns = 13
+        empty_per_row = 3
         for row in range(7, 8): 
             empty_cols = random.sample(range(7, total_columns + 1), empty_per_row)
             for col in empty_cols:
@@ -3662,25 +3732,7 @@ def run_algorithm(answers):
                 table[cell_key] = "" 
 
     elif q127_answer == "گزینه هشتم":
-        total_columns = 14
-        empty_per_row = 5
-        for row in range(7, 8): 
-            empty_cols = random.sample(range(7, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = ""  
-    
-    elif q127_answer == "گزینه نهم":
-        total_columns = 14
-        empty_per_row = 4
-        for row in range(7, 8): 
-            empty_cols = random.sample(range(7, total_columns + 1), empty_per_row)
-            for col in empty_cols:
-                cell_key = f"cell_r{row}_c{col}"
-                table[cell_key] = "" 
-
-    elif q127_answer == "گزینه دهم":
-        total_columns = 14
+        total_columns = 13
         empty_per_row = 3
         for row in range(7, 8): 
             empty_cols = random.sample(range(7, total_columns + 1), empty_per_row)
@@ -3688,9 +3740,27 @@ def run_algorithm(answers):
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
     
-    elif q127_answer == "گزینه یازدهم":
-        total_columns = 14
+    elif q127_answer == "گزینه نهم":
+        total_columns = 13
+        empty_per_row = 3
+        for row in range(7, 8): 
+            empty_cols = random.sample(range(7, total_columns + 1), empty_per_row)
+            for col in empty_cols:
+                cell_key = f"cell_r{row}_c{col}"
+                table[cell_key] = "" 
+
+    elif q127_answer == "گزینه دهم":
+        total_columns = 13
         empty_per_row = 2
+        for row in range(7, 8): 
+            empty_cols = random.sample(range(7, total_columns + 1), empty_per_row)
+            for col in empty_cols:
+                cell_key = f"cell_r{row}_c{col}"
+                table[cell_key] = ""  
+    
+    elif q127_answer == "گزینه یازدهم":
+        total_columns = 13
+        empty_per_row = 1
         for row in range(7, 8): 
             empty_cols = random.sample(range(7, total_columns + 1), empty_per_row)
             for col in empty_cols:
@@ -3742,9 +3812,7 @@ def run_algorithm(answers):
 
 
 
-
 if __name__ == "__main__":
-    app.run(debug=True)
     with app.app_context():
         db.create_all()
 
