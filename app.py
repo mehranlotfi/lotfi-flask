@@ -3048,7 +3048,7 @@ def run_algorithm(answers):
     if q121_answer == "گزینه اول":
         total_columns = 13
         empty_per_row = 7
-        for row in range(1, 8): 
+        for row in range(1, 2): 
             empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
@@ -3057,7 +3057,7 @@ def run_algorithm(answers):
     elif q121_answer == "گزینه دوم":
         total_columns = 13
         empty_per_row = 7
-        for row in range(1, 8): 
+        for row in range(1, 2): 
             empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
@@ -3066,7 +3066,7 @@ def run_algorithm(answers):
     elif q121_answer == "گزینه سوم":
         total_columns = 13
         empty_per_row = 6
-        for row in range(1, 8): 
+        for row in range(1, 2): 
             empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
@@ -3075,7 +3075,7 @@ def run_algorithm(answers):
     elif q121_answer == "گزینه چهارم":
         total_columns = 13
         empty_per_row = 5
-        for row in range(1, 8): 
+        for row in range(1, 2): 
             empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
@@ -3084,7 +3084,7 @@ def run_algorithm(answers):
     elif q121_answer == "گزینه پنچم":
         total_columns = 13
         empty_per_row = 5
-        for row in range(1, 8): 
+        for row in range(1, 2): 
             empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
@@ -3093,7 +3093,7 @@ def run_algorithm(answers):
     elif q121_answer == "گزینه ششم":
         total_columns = 13
         empty_per_row = 4
-        for row in range(1, 8): 
+        for row in range(1, 2): 
             empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
@@ -3102,7 +3102,7 @@ def run_algorithm(answers):
     elif q121_answer == "گزینه هفتم":
         total_columns = 13
         empty_per_row = 3
-        for row in range(1, 8): 
+        for row in range(1, 2): 
             empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
@@ -3111,7 +3111,7 @@ def run_algorithm(answers):
     elif q121_answer == "گزینه هشتم":
         total_columns = 13
         empty_per_row = 3
-        for row in range(1, 8): 
+        for row in range(1, 2): 
             empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
@@ -3120,7 +3120,7 @@ def run_algorithm(answers):
     elif q121_answer == "گزینه نهم":
         total_columns = 13
         empty_per_row = 3
-        for row in range(1, 8): 
+        for row in range(1, 2): 
             empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
@@ -3129,7 +3129,7 @@ def run_algorithm(answers):
     elif q121_answer == "گزینه دهم":
         total_columns = 13
         empty_per_row = 2
-        for row in range(1, 8): 
+        for row in range(1, 2): 
             empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
@@ -3138,7 +3138,7 @@ def run_algorithm(answers):
     elif q121_answer == "گزینه یازدهم":
         total_columns = 13
         empty_per_row = 1
-        for row in range(1, 8): 
+        for row in range(1, 2): 
             empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
@@ -3149,8 +3149,8 @@ def run_algorithm(answers):
     if q122_answer == "گزینه اول":
         total_columns = 13
         empty_per_row = 7
-        for row in range(2, 8): 
-            empty_cols = random.sample(range(2, total_columns + 1), empty_per_row)
+        for row in range(2, 3): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3158,8 +3158,8 @@ def run_algorithm(answers):
     elif q122_answer == "گزینه دوم":
         total_columns = 13
         empty_per_row = 7
-        for row in range(2, 8): 
-            empty_cols = random.sample(range(2, total_columns + 1), empty_per_row)
+        for row in range(2, 3): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3167,8 +3167,8 @@ def run_algorithm(answers):
     elif q122_answer == "گزینه سوم":
         total_columns = 13
         empty_per_row = 6
-        for row in range(2, 8): 
-            empty_cols = random.sample(range(2, total_columns + 1), empty_per_row)
+        for row in range(2, 3): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3176,8 +3176,8 @@ def run_algorithm(answers):
     elif q122_answer == "گزینه چهارم":
         total_columns = 13
         empty_per_row = 5
-        for row in range(2, 8): 
-            empty_cols = random.sample(range(2, total_columns + 1), empty_per_row)
+        for row in range(2, 3): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3185,8 +3185,8 @@ def run_algorithm(answers):
     elif q122_answer == "گزینه پنچم":
         total_columns = 13
         empty_per_row = 5
-        for row in range(2, 8): 
-            empty_cols = random.sample(range(2, total_columns + 1), empty_per_row)
+        for row in range(2, 3): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3194,8 +3194,8 @@ def run_algorithm(answers):
     elif q122_answer == "گزینه ششم":
         total_columns = 13
         empty_per_row = 4
-        for row in range(2, 8): 
-            empty_cols = random.sample(range(2, total_columns + 1), empty_per_row)
+        for row in range(2, 3): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3203,8 +3203,8 @@ def run_algorithm(answers):
     elif q122_answer == "گزینه هفتم":
         total_columns = 13
         empty_per_row = 3
-        for row in range(2, 8): 
-            empty_cols = random.sample(range(2, total_columns + 1), empty_per_row)
+        for row in range(2, 3): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = "" 
@@ -3212,8 +3212,8 @@ def run_algorithm(answers):
     elif q122_answer == "گزینه هشتم":
         total_columns = 13
         empty_per_row = 3
-        for row in range(2, 8): 
-            empty_cols = random.sample(range(2, total_columns + 1), empty_per_row)
+        for row in range(2, 3): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3221,8 +3221,8 @@ def run_algorithm(answers):
     elif q122_answer == "گزینه نهم":
         total_columns = 13
         empty_per_row = 3
-        for row in range(2, 8): 
-            empty_cols = random.sample(range(2, total_columns + 1), empty_per_row)
+        for row in range(2, 3): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = "" 
@@ -3230,8 +3230,8 @@ def run_algorithm(answers):
     elif q122_answer == "گزینه دهم":
         total_columns = 13
         empty_per_row = 2
-        for row in range(2, 8): 
-            empty_cols = random.sample(range(2, total_columns + 1), empty_per_row)
+        for row in range(2, 3): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3239,8 +3239,8 @@ def run_algorithm(answers):
     elif q122_answer == "گزینه یازدهم":
         total_columns = 13
         empty_per_row = 1
-        for row in range(2, 8): 
-            empty_cols = random.sample(range(2, total_columns + 1), empty_per_row)
+        for row in range(2, 3): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""
@@ -3250,8 +3250,8 @@ def run_algorithm(answers):
     if q123_answer == "گزینه اول":
         total_columns = 13
         empty_per_row = 7
-        for row in range(3, 8): 
-            empty_cols = random.sample(range(3, total_columns + 1), empty_per_row)
+        for row in range(3, 4): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3259,8 +3259,8 @@ def run_algorithm(answers):
     elif q123_answer == "گزینه دوم":
         total_columns = 13
         empty_per_row = 7
-        for row in range(3, 8): 
-            empty_cols = random.sample(range(3, total_columns + 1), empty_per_row)
+        for row in range(3, 4): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3268,8 +3268,8 @@ def run_algorithm(answers):
     elif q123_answer == "گزینه سوم":
         total_columns = 13
         empty_per_row = 6
-        for row in range(3, 8): 
-            empty_cols = random.sample(range(3, total_columns + 1), empty_per_row)
+        for row in range(3, 4): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3277,8 +3277,8 @@ def run_algorithm(answers):
     elif q123_answer == "گزینه چهارم":
         total_columns = 13
         empty_per_row = 5
-        for row in range(3, 8): 
-            empty_cols = random.sample(range(3, total_columns + 1), empty_per_row)
+        for row in range(3, 4): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3286,8 +3286,8 @@ def run_algorithm(answers):
     elif q123_answer == "گزینه پنچم":
         total_columns = 13
         empty_per_row = 5
-        for row in range(3, 8): 
-            empty_cols = random.sample(range(3, total_columns + 1), empty_per_row)
+        for row in range(3, 4): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3295,8 +3295,8 @@ def run_algorithm(answers):
     elif q123_answer == "گزینه ششم":
         total_columns = 13
         empty_per_row = 4
-        for row in range(3, 8): 
-            empty_cols = random.sample(range(3, total_columns + 1), empty_per_row)
+        for row in range(3, 4): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3304,8 +3304,8 @@ def run_algorithm(answers):
     elif q123_answer == "گزینه هفتم":
         total_columns = 13
         empty_per_row = 3
-        for row in range(2, 8): 
-            empty_cols = random.sample(range(3, total_columns + 1), empty_per_row)
+        for row in range(3, 4): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = "" 
@@ -3313,8 +3313,8 @@ def run_algorithm(answers):
     elif q123_answer == "گزینه هشتم":
         total_columns = 13
         empty_per_row = 3
-        for row in range(3, 8): 
-            empty_cols = random.sample(range(3, total_columns + 1), empty_per_row)
+        for row in range(3, 4): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3322,8 +3322,8 @@ def run_algorithm(answers):
     elif q123_answer == "گزینه نهم":
         total_columns = 13
         empty_per_row = 3
-        for row in range(3, 8): 
-            empty_cols = random.sample(range(3, total_columns + 1), empty_per_row)
+        for row in range(3, 4): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = "" 
@@ -3331,8 +3331,8 @@ def run_algorithm(answers):
     elif q123_answer == "گزینه دهم":
         total_columns = 13
         empty_per_row = 2
-        for row in range(3, 8): 
-            empty_cols = random.sample(range(3, total_columns + 1), empty_per_row)
+        for row in range(3, 4): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3340,8 +3340,8 @@ def run_algorithm(answers):
     elif q123_answer == "گزینه یازدهم":
         total_columns = 13
         empty_per_row = 1
-        for row in range(3, 8): 
-            empty_cols = random.sample(range(3, total_columns + 1), empty_per_row)
+        for row in range(3, 4): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""
@@ -3360,8 +3360,8 @@ def run_algorithm(answers):
     if q124_answer == "گزینه اول":
         total_columns = 13
         empty_per_row = 7
-        for row in range(4, 8): 
-            empty_cols = random.sample(range(4, total_columns + 1), empty_per_row)
+        for row in range(4, 5): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3369,8 +3369,8 @@ def run_algorithm(answers):
     elif q124_answer == "گزینه دوم":
         total_columns = 13
         empty_per_row = 7
-        for row in range(4, 8): 
-            empty_cols = random.sample(range(4, total_columns + 1), empty_per_row)
+        for row in range(4, 5): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3378,8 +3378,8 @@ def run_algorithm(answers):
     elif q124_answer == "گزینه سوم":
         total_columns = 13
         empty_per_row = 6
-        for row in range(4, 8): 
-            empty_cols = random.sample(range(2, total_columns + 1), empty_per_row)
+        for row in range(4, 5): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3387,8 +3387,8 @@ def run_algorithm(answers):
     elif q124_answer == "گزینه چهارم":
         total_columns = 13
         empty_per_row = 5
-        for row in range(4, 8): 
-            empty_cols = random.sample(range(4, total_columns + 1), empty_per_row)
+        for row in range(4, 5): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3396,8 +3396,8 @@ def run_algorithm(answers):
     elif q124_answer == "گزینه پنچم":
         total_columns = 13
         empty_per_row = 5
-        for row in range(4, 8): 
-            empty_cols = random.sample(range(4, total_columns + 1), empty_per_row)
+        for row in range(4, 5): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3405,8 +3405,8 @@ def run_algorithm(answers):
     elif q124_answer == "گزینه ششم":
         total_columns = 13
         empty_per_row = 4
-        for row in range(4, 8): 
-            empty_cols = random.sample(range(4, total_columns + 1), empty_per_row)
+        for row in range(4, 5): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3414,8 +3414,8 @@ def run_algorithm(answers):
     elif q124_answer == "گزینه هفتم":
         total_columns = 13
         empty_per_row = 3
-        for row in range(4, 8): 
-            empty_cols = random.sample(range(4, total_columns + 1), empty_per_row)
+        for row in range(4, 5): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = "" 
@@ -3423,8 +3423,8 @@ def run_algorithm(answers):
     elif q124_answer == "گزینه هشتم":
         total_columns = 13
         empty_per_row = 3
-        for row in range(4, 8): 
-            empty_cols = random.sample(range(4, total_columns + 1), empty_per_row)
+        for row in range(4, 5): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3432,8 +3432,8 @@ def run_algorithm(answers):
     elif q124_answer == "گزینه نهم":
         total_columns = 13
         empty_per_row = 3
-        for row in range(4, 8): 
-            empty_cols = random.sample(range(4, total_columns + 1), empty_per_row)
+        for row in range(4, 5): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = "" 
@@ -3441,8 +3441,8 @@ def run_algorithm(answers):
     elif q124_answer == "گزینه دهم":
         total_columns = 13
         empty_per_row = 2
-        for row in range(4, 8): 
-            empty_cols = random.sample(range(4, total_columns + 1), empty_per_row)
+        for row in range(4, 5): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3450,8 +3450,8 @@ def run_algorithm(answers):
     elif q124_answer == "گزینه یازدهم":
         total_columns = 13
         empty_per_row = 1
-        for row in range(4, 8): 
-            empty_cols = random.sample(range(4, total_columns + 1), empty_per_row)
+        for row in range(4, 5): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""
@@ -3464,8 +3464,8 @@ def run_algorithm(answers):
     if q125_answer == "گزینه اول":
         total_columns = 13
         empty_per_row = 7
-        for row in range(5, 8): 
-            empty_cols = random.sample(range(5, total_columns + 1), empty_per_row)
+        for row in range(5, 6): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3473,8 +3473,8 @@ def run_algorithm(answers):
     elif q125_answer == "گزینه دوم":
         total_columns = 13
         empty_per_row = 7
-        for row in range(5, 8): 
-            empty_cols = random.sample(range(5, total_columns + 1), empty_per_row)
+        for row in range(5, 6): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3482,8 +3482,8 @@ def run_algorithm(answers):
     elif q125_answer == "گزینه سوم":
         total_columns = 13
         empty_per_row = 6
-        for row in range(5, 8): 
-            empty_cols = random.sample(range(5, total_columns + 1), empty_per_row)
+        for row in range(5, 6): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3491,8 +3491,8 @@ def run_algorithm(answers):
     elif q125_answer == "گزینه چهارم":
         total_columns = 13
         empty_per_row = 5
-        for row in range(5, 8): 
-            empty_cols = random.sample(range(5, total_columns + 1), empty_per_row)
+        for row in range(5, 6): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3500,8 +3500,8 @@ def run_algorithm(answers):
     elif q125_answer == "گزینه پنچم":
         total_columns = 13
         empty_per_row = 5
-        for row in range(5, 8): 
-            empty_cols = random.sample(range(5, total_columns + 1), empty_per_row)
+        for row in range(5, 6): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3509,8 +3509,8 @@ def run_algorithm(answers):
     elif q125_answer == "گزینه ششم":
         total_columns = 13
         empty_per_row = 4
-        for row in range(5, 8): 
-            empty_cols = random.sample(range(5, total_columns + 1), empty_per_row)
+        for row in range(5, 6): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3518,8 +3518,8 @@ def run_algorithm(answers):
     elif q125_answer == "گزینه هفتم":
         total_columns = 13
         empty_per_row = 3
-        for row in range(5, 8): 
-            empty_cols = random.sample(range(5, total_columns + 1), empty_per_row)
+        for row in range(5, 6): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = "" 
@@ -3527,8 +3527,8 @@ def run_algorithm(answers):
     elif q125_answer == "گزینه هشتم":
         total_columns = 13
         empty_per_row = 3
-        for row in range(5, 8): 
-            empty_cols = random.sample(range(5, total_columns + 1), empty_per_row)
+        for row in range(5, 6): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3536,8 +3536,8 @@ def run_algorithm(answers):
     elif q125_answer == "گزینه نهم":
         total_columns = 13
         empty_per_row = 3
-        for row in range(5, 8): 
-            empty_cols = random.sample(range(5, total_columns + 1), empty_per_row)
+        for row in range(5, 6): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = "" 
@@ -3545,8 +3545,8 @@ def run_algorithm(answers):
     elif q125_answer == "گزینه دهم":
         total_columns = 13
         empty_per_row = 2
-        for row in range(5, 8): 
-            empty_cols = random.sample(range(5, total_columns + 1), empty_per_row)
+        for row in range(5, 6): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3554,8 +3554,8 @@ def run_algorithm(answers):
     elif q125_answer == "گزینه یازدهم":
         total_columns = 13
         empty_per_row = 1
-        for row in range(5, 8): 
-            empty_cols = random.sample(range(5, total_columns + 1), empty_per_row)
+        for row in range(5, 6): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""
@@ -3568,8 +3568,8 @@ def run_algorithm(answers):
     if q126_answer == "گزینه اول":
         total_columns = 13
         empty_per_row = 7
-        for row in range(6, 8): 
-            empty_cols = random.sample(range(6, total_columns + 1), empty_per_row)
+        for row in range(6, 7): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3577,8 +3577,8 @@ def run_algorithm(answers):
     elif q126_answer == "گزینه دوم":
         total_columns = 13
         empty_per_row = 7
-        for row in range(6, 8): 
-            empty_cols = random.sample(range(6, total_columns + 1), empty_per_row)
+        for row in range(6, 7): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3586,8 +3586,8 @@ def run_algorithm(answers):
     elif q126_answer == "گزینه سوم":
         total_columns = 13
         empty_per_row = 6
-        for row in range(6, 8): 
-            empty_cols = random.sample(range(6, total_columns + 1), empty_per_row)
+        for row in range(6, 7): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3595,8 +3595,8 @@ def run_algorithm(answers):
     elif q126_answer == "گزینه چهارم":
         total_columns = 13
         empty_per_row = 5
-        for row in range(6, 8): 
-            empty_cols = random.sample(range(6, total_columns + 1), empty_per_row)
+        for row in range(6, 7): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3604,8 +3604,8 @@ def run_algorithm(answers):
     elif q126_answer == "گزینه پنچم":
         total_columns = 13
         empty_per_row = 5
-        for row in range(6, 8): 
-            empty_cols = random.sample(range(6, total_columns + 1), empty_per_row)
+        for row in range(6, 7): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3613,8 +3613,8 @@ def run_algorithm(answers):
     elif q126_answer == "گزینه ششم":
         total_columns = 13
         empty_per_row = 4
-        for row in range(6, 8): 
-            empty_cols = random.sample(range(6, total_columns + 1), empty_per_row)
+        for row in range(6, 7): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3622,8 +3622,8 @@ def run_algorithm(answers):
     elif q126_answer == "گزینه هفتم":
         total_columns = 13
         empty_per_row = 3
-        for row in range(6, 8): 
-            empty_cols = random.sample(range(6, total_columns + 1), empty_per_row)
+        for row in range(6, 7): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = "" 
@@ -3631,8 +3631,8 @@ def run_algorithm(answers):
     elif q126_answer == "گزینه هشتم":
         total_columns = 13
         empty_per_row = 3
-        for row in range(6, 8): 
-            empty_cols = random.sample(range(6, total_columns + 1), empty_per_row)
+        for row in range(6, 7): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3640,8 +3640,8 @@ def run_algorithm(answers):
     elif q126_answer == "گزینه نهم":
         total_columns = 13
         empty_per_row = 3
-        for row in range(6, 8): 
-            empty_cols = random.sample(range(6, total_columns + 1), empty_per_row)
+        for row in range(6, 7): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = "" 
@@ -3649,8 +3649,8 @@ def run_algorithm(answers):
     elif q126_answer == "گزینه دهم":
         total_columns = 13
         empty_per_row = 2
-        for row in range(6, 8): 
-            empty_cols = random.sample(range(6, total_columns + 1), empty_per_row)
+        for row in range(6,7): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3658,8 +3658,8 @@ def run_algorithm(answers):
     elif q126_answer == "گزینه یازدهم":
         total_columns = 13
         empty_per_row = 1
-        for row in range(6, 8): 
-            empty_cols = random.sample(range(6, total_columns + 1), empty_per_row)
+        for row in range(6, 7): 
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""
@@ -3672,7 +3672,7 @@ def run_algorithm(answers):
         total_columns = 13
         empty_per_row = 7
         for row in range(7, 8): 
-            empty_cols = random.sample(range(7, total_columns + 1), empty_per_row)
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3681,7 +3681,7 @@ def run_algorithm(answers):
         total_columns = 13
         empty_per_row = 7
         for row in range(7, 8): 
-            empty_cols = random.sample(range(7, total_columns + 1), empty_per_row)
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3690,7 +3690,7 @@ def run_algorithm(answers):
         total_columns = 13
         empty_per_row = 6
         for row in range(7, 8): 
-            empty_cols = random.sample(range(7, total_columns + 1), empty_per_row)
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3699,7 +3699,7 @@ def run_algorithm(answers):
         total_columns = 13
         empty_per_row = 5
         for row in range(7, 8): 
-            empty_cols = random.sample(range(7, total_columns + 1), empty_per_row)
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3708,7 +3708,7 @@ def run_algorithm(answers):
         total_columns = 13
         empty_per_row = 5
         for row in range(7, 8): 
-            empty_cols = random.sample(range(7, total_columns + 1), empty_per_row)
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3717,7 +3717,7 @@ def run_algorithm(answers):
         total_columns = 13
         empty_per_row = 4
         for row in range(7, 8): 
-            empty_cols = random.sample(range(7, total_columns + 1), empty_per_row)
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3726,7 +3726,7 @@ def run_algorithm(answers):
         total_columns = 13
         empty_per_row = 3
         for row in range(7, 8): 
-            empty_cols = random.sample(range(7, total_columns + 1), empty_per_row)
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = "" 
@@ -3735,7 +3735,7 @@ def run_algorithm(answers):
         total_columns = 13
         empty_per_row = 3
         for row in range(7, 8): 
-            empty_cols = random.sample(range(7, total_columns + 1), empty_per_row)
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3744,7 +3744,7 @@ def run_algorithm(answers):
         total_columns = 13
         empty_per_row = 3
         for row in range(7, 8): 
-            empty_cols = random.sample(range(7, total_columns + 1), empty_per_row)
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = "" 
@@ -3753,7 +3753,7 @@ def run_algorithm(answers):
         total_columns = 13
         empty_per_row = 2
         for row in range(7, 8): 
-            empty_cols = random.sample(range(7, total_columns + 1), empty_per_row)
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
@@ -3762,7 +3762,7 @@ def run_algorithm(answers):
         total_columns = 13
         empty_per_row = 1
         for row in range(7, 8): 
-            empty_cols = random.sample(range(7, total_columns + 1), empty_per_row)
+            empty_cols = random.sample(range(1, total_columns + 1), empty_per_row)
             for col in empty_cols:
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""
