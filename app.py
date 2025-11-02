@@ -223,7 +223,7 @@ def map_grade_to_label(grade_fa):
         "grade_10_riazi": "grade_10_riazi",
         "grade_10_tajrobi": "grade_10_tajrobi",
         "grade_10_ensani": "grade_10_ensani",
-        "grade_10_tajrobi": "grade_11_tajrobi",
+        "grade_10_tajrobi": "grade_10_tajrobi",
         "grade_11_ensani": "grade_11_ensani",
         "grade_11_riazi": "grade_11_riazi",
         "grade_12_tajrobi": "grade_12_tajrobi",
@@ -3782,28 +3782,28 @@ def run_algorithm(answers):
 
 
   
-    rows = 7
-    cols = 13
+    # rows = 7
+    # cols = 13
 
-    for r in range(1, rows+1):
-    # 1. گرفتن مقادیر
-     row_values = [table.get(f"cell_r{r}_c{c}", "") for c in range(1, cols+1)]
+    # for r in range(1, rows+1):
+    # # 1. گرفتن مقادیر
+    #  row_values = [table.get(f"cell_r{r}_c{c}", "") for c in range(1, cols+1)]
 
-    # 2. حذف خالی‌ها
-     non_empty = [v for v in row_values if v.strip()]
+    # # 2. حذف خالی‌ها
+    #  non_empty = [v for v in row_values if v.strip()]
 
-    # 3. پرها مرتب بشن (از ستون اول شروع کنن)
-     ordered = non_empty + [""] * (cols - len(non_empty))
+    # # 3. پرها مرتب بشن (از ستون اول شروع کنن)
+    #  ordered = non_empty + [""] * (cols - len(non_empty))
 
-    # 4. فقط بخش پرها رو shuffle کن
-     random.shuffle(non_empty)
+    # # 4. فقط بخش پرها رو shuffle کن
+    #  random.shuffle(non_empty)
 
-    # دوباره بچین: پرهای مخلوط + خالی‌ها در انتها
-     row_values = non_empty + [""] * (cols - len(non_empty))
+    # # دوباره بچین: پرهای مخلوط + خالی‌ها در انتها
+    #  row_values = non_empty + [""] * (cols - len(non_empty))
 
-    # 5. بازنویسی تو جدول
-     for c, val in enumerate(row_values, start=1):
-      table[f"cell_r{r}_c{c}"] = val
+    # # 5. بازنویسی تو جدول
+    #  for c, val in enumerate(row_values, start=1):
+    #   table[f"cell_r{r}_c{c}"] = val
 
 
     return table
