@@ -3663,7 +3663,7 @@ def run_algorithm(answers):
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
 
-    elif q121_answer == "گزینه پنچم":
+    elif q121_answer == "گزینه پنجم":
         total_columns = 13
         empty_per_row = 7
         for row in range(1, 2): 
@@ -3764,7 +3764,7 @@ def run_algorithm(answers):
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
 
-    elif q122_answer == "گزینه پنچم":
+    elif q122_answer == "گزینه پنجم":
         total_columns = 13
         empty_per_row = 7
         for row in range(2, 3): 
@@ -3865,7 +3865,7 @@ def run_algorithm(answers):
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
 
-    elif q123_answer == "گزینه پنچم":
+    elif q123_answer == "گزینه پنجم":
         total_columns = 13
         empty_per_row = 7
         for row in range(3, 4): 
@@ -3975,7 +3975,7 @@ def run_algorithm(answers):
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
 
-    elif q124_answer == "گزینه پنچم":
+    elif q124_answer == "گزینه پنجم":
         total_columns = 13
         empty_per_row = 7
         for row in range(4, 5): 
@@ -4079,7 +4079,7 @@ def run_algorithm(answers):
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
 
-    elif q125_answer == "گزینه پنچم":
+    elif q125_answer == "گزینه پنجم":
         total_columns = 13
         empty_per_row = 7
         for row in range(5, 6): 
@@ -4183,7 +4183,7 @@ def run_algorithm(answers):
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
 
-    elif q126_answer == "گزینه پنچم":
+    elif q126_answer == "گزینه پنجم":
         total_columns = 13
         empty_per_row = 7
         for row in range(6, 7): 
@@ -4286,7 +4286,7 @@ def run_algorithm(answers):
                 cell_key = f"cell_r{row}_c{col}"
                 table[cell_key] = ""  
 
-    elif q127_answer == "گزینه پنچم":
+    elif q127_answer == "گزینه پنجم":
         total_columns = 13
         empty_per_row = 7
         for row in range(7, 8): 
